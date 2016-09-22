@@ -1,0 +1,1419 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>WebWang-笔记</title>
+    <meta name="keywords" content="WebWang,web前端,HTML,ASP,PHP,SQL,javascript,jquery,前端,前端框架,UI设计">
+    <link href="images/ico.ico" rel="shortcut icon"/>
+    <link type="text/css" rel="stylesheet" href="css/shCoreDefault.css"/>
+    <link href="css/base.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-2.2.3.min.js" type="text/javascript"></script>
+    <script src="js/juicer-min.js" type="text/javascript"></script>
+    <!-- 语法着色 -->
+    <script type="text/javascript" src="js/shCore.js"></script>
+    <script type="text/javascript" src="js/shBrushJScript.js"></script>
+    <script type="text/javascript" src="js/shBrushPhp.js"></script>
+    <script type="text/javascript" src="js/shBrushAppleScript.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        /*SyntaxHighlighter.defaults['auto-links'] = false;*/
+        SyntaxHighlighter.defaults['class-name'] = 'abc';
+        SyntaxHighlighter.all();
+    </script>
+    <!-- end-->
+</head>
+<body>
+<div class="header">
+    <div class="h-logo">
+        <a href="index.html" title="Home">
+            <img src="images/qaup_logo.png" width="180" alt="Logo"/></a></div>
+    <div class="h-nav">
+        <div class="h-tx"><a href="index.html"><img src="images/tx.jpg" alt="" width="100%"></a></div>
+        <div class="h-outer h-noborder">
+            <div class="link">
+                <span class="select-txt2">HeardWang</span>
+                <a class="select-open"></a>
+                <div class="option" style="display: none;" id="option_btn"><a>个人资料</a> <a>系统设置</a> <a>退出系统</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="layout_content">
+    <div class="layout_leftnav">
+        <div class="nav-vertical">
+            <ul class="accordion" id="sidebar">
+                <li>
+                    <a href="javascript:;"><i class="fa-bars fa"></i>收起昨边栏</a>
+                    <div class="text">展开侧边栏</div>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-home"></i>个人中心</a>
+                    <div class="text">个人中心</div>
+                </li>
+                <li>
+                    <a href="javascript:;" class="active"><i class="fa fa-pencil"></i>笔记</a>
+                    <div class="text">笔记</div>
+                </li>
+                <li>
+                    <a href="message.html"><i class="fa fa-bell"></i>消息</a>
+                    <div class="text">消息</div>
+                </li>
+                <li>
+                    <a href="letter.html"><i class="fa fa-envelope-o"></i>私信</a>
+                    <div class="text">私信</div>
+                </li>
+                <li>
+                    <a href="album.html"><i class="fa fa-camera"></i>相册</a>
+                    <div class="text">相册</div>
+                </li>
+                <li>
+                    <a href="recycle.html"><i class="fa fa-trash-o"></i>回收站</a>
+                    <div class="text">回收站</div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="layout_rightmain">
+        <!-- right content -->
+        <div class="rightmain">
+            <div class="right_title">
+                <h2>笔记</h2>
+                <ul class="tabs">
+                    <li><a href="javascript:;" class="active" title="js">JavaScript</a></li>
+                    <li><a href="javascript:;" title="css">css</a></li>
+                    <li><a href="javascript:;" title="htm">Html</a></li>
+                    <li><a href="javascript:;" title="feTools">前端工具</a></li>
+                    <li><a href="javascript:;" title="frame">前端框架</a></li>
+                    <li><a href="javascript:;" title="sql">性能优化</a></li>
+                    <li><a href="javascript:;" title="be">后端</a></li>
+                </ul>
+            </div>
+            <div class="right_content">
+                <!--   javascript    -->
+                <div class="right_items show">
+                    <button id="note_add" type="button">写笔记</button>
+                    <div id="js_content">
+                        <div class="right_item"><h4>网页滚动回顶部</h4>
+                            <p>Jquery，animate动画：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">$('html,body').animate({scrollTop: '0px'}, 500);//不是$(window)</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>横竖屏判断</h4>
+                            <p>设备竖屏时调用该段css代码：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;"
+                                             name="code">@media all and (orientation : portrait){}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>横竖屏判断</h4>
+                            <p>设备横屏时调用该段css代码：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;"
+                                             name="code">@media all and (orientation : landscape){}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>JS技巧</h4>
+                            <p>取消选取、防止复制：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;"
+                                             name="code">&lt;body onselectstart='return false'&gt;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>JS不允许粘贴：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">onpaste='return false'</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>永远都会带着框架：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">&lt;script language='javaScript'&gt;
+&lt; !–if (window == top)top.location.href = 'frames.htm'; //frames.htm 为框架网页// –&gt;
+&lt;/script&gt;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>防止被人 frame：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">&lt;script language='javaScript'&gt;
+&lt; !–if (top.location != self.location)top.location=self.location;// –&gt;
+&lt;/script&gt;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>屏蔽功能键 Shift,Alt,Ctrl：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">&lt;script&gt;
+function look(){
+if(event.shiftKey)
+alert('禁止按 Shift 键!'); //可以换成 ALT CTRL
+}
+document.onkeydown=look;
+&lt; /script&gt;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>在打开的子窗口刷新父窗口的代码里如何写？：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">window.opener.location.reload()</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>如何设定打开页面的大小？：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">&lt;body onload='top.resizeTo(300,200);'&gt;
+打开页面的位置&lt;body onload='top.moveBy(300,200);'&gt;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>获得一个窗口的大小：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">document.body.clientWidth; document.body.clientHeight</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>怎么判断是否是字符：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">if (/[^/x00-/xff]/g.test(s)) alert('含有汉字');
+else alert('全是字符');</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>检查一段字符串是否全由数字组成：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">&lt;script language=”Javascript”&gt;&lt; !–
+function checkNum(str){return str.match(//D/)==null}
+alert(checkNum('1232142141'))
+alert(checkNum('123214214a1'))// –&gt;
+&lt;/script&gt;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>ENTER 键可以让光标移到下一个输入框：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">&lt;input onkeydown='if(event.keyCode==13)event.keyCode=9'&gt;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>常用内置函数总结</h4>
+                            <p>js常用内置函数：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code"> typeof(); 检测数据类型
+ String(); 转换成字符串
+ parseInt(); 解析出一个string或number的整数部分
+ parseFloat(); 解析出一个string的浮点数部分
+ Number(); 把一个string解析为number
+ Blooean(); 转换成布尔类型''（NaN，undefined，null，0返回false）
+ isNaN(); 判断是否为NaN
+ isFinite(); 指明所提供的数字是否是有限的（NaN 、负无穷或正无穷返回false）
+ decodeURI(); 对 encodeURI() 函数编码过的 URI 进行解码
+ decodeURIComponent(); 可对 encodeURIComponent() 函数编码的 URI 进行解码
+ encodeURI(); 把字符串作为 URI 进行编码
+ encodeURIComponent(); 可把字符串作为 URI 组件进行编码
+ .toLowerCase(); 把字符串转换为小写
+ .toUpperCase(); 把字符串转换为大写
+ .charAt(); 返回指定位置的字符
+ .charCodeAt(); 返回指定位置的字符的 Unicode 编码
+ .fromCharCode(); 接受一个指定的 Unicode 值，然后返回一个字符串
+ .indexOf(); 返回某个指定的字符串值在字符串中首次出现的位置
+ .lastIndexOf(); 返回一个指定的字符串值最后出现的位置，在一个字符串中的指定位置从后向前搜索
+ .slice(); 提取字符串的某个部分，并以新的字符串返回被提取的部分
+ .substring(); 提取字符串中介于两个指定下标之间的字符
+ .substr(); 在字符串中抽取从 start 下标开始的指定数目的字符
+ .split(); 把一个字符串分割成字符串数组
+ .concat(); 连接两个或多个字符串
+ .replace(); 在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串
+ .match(); 在字符串内检索指定的值，或找到一个或多个正则表达式的匹配
+ .search(); 检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串
+ .join('连接符'); 把数组中的所有元素放入一个字符串
+ .concat(); 连接两个或多个数组
+ .slice(); 提取字符串的某个部分，并以新的字符串返回被提取的部分
+ .splice(); 从数组中添加/删除项目，然后返回被删除的项目
+ .reverse(); 颠倒数组中元素的顺序
+ .sort(); 对数组的元素进行排序.push(); 向数组的末尾添加一个或多个元素，并返回新的长度
+ .pop(); 删除并返回数组的最后一个元素
+ .unshift(); 向数组的开头添加一个或更多元素，并返回新的长度
+ .shift(); 把数组的第一个元素从其中删除，并返回第一个元素的值
+ .abs(); 返回数的绝对值
+ .ceil(); 对一个数进行上舍入
+ .floor(); 对一个数进行下舍入
+ .max(); 返回两个指定的数中带有较大的值的那个数
+ .min(); 返回指定的数字中带有最低值的数字
+ .pow(); 返回 x 的 y 次幂的值
+ .random(); 返回介于 0 ~ 1 之间的一个随机数（parseInt(Math.random()*(max-min+1)+min);）
+ .round(); 把一个数字舍入为最接近的整数
+ .toFixed(); 保留x为小数
+ .toString(); 把一个 Number 对象转换为一个字符串，并返回结果
+ Date(); 返回当天的日期和时间
+ .getDate(); 返回月份的某一天
+ .getDay(); 返回表示星期的某一天的数字
+ .getMonth(); 返回表示月份的数字
+ .getFullYear(); 返回一个表示年份的 4 位数字
+ .getHours(); 返回时间的小时字段
+ .getMinutes(); 返回时间的分钟字段
+ .getSeconds(); 返回时间的秒
+ .getMilliseconds(); 返回时间的毫秒
+ .getTime(); 返回距 1970 年 1 月 1 日之间的毫秒数
+ .setDate(); 设置一个月的某一天
+ .setMonth(); 设置月份
+ .setFullYear(); 设置年份
+ .setHours(); 设置指定时间的小时字段
+ .setMinutes(); 设置指定时间的分钟字段
+ .setSeconds(); 设置指定时间的秒字段
+ .setMilliseconds()； 设置指定时间的毫秒字段
+ .toLocaleString(); 根据本地时间把 Date 对象转换为字符串，并返回结果
+ .toLocaleTimeString(); 根据本地时间把 Date 对象的时间部分转换为字符串，并返回结果
+ .toLocaleDateString(); 根据本地时间把 Date 对象的日期部分转换为字符串，并返回结果
+ .test(); 检测一个字符串是否匹配某个模式
+ .exec(); 检索字符串中的正则表达式的匹配[/b][b]
+ </pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>自定义右键菜单</h4>
+                            <p>HTML5 contextmenu事件：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">JS代码：
+EventUtil.addHandler(window,'load', function (event) {
+    var div = document.getElementById('myDiv');
+    EventUtil.addHandler(div,'contextmenu', function (event) {
+        event = EventUtil.getEvent(event);
+        EventUtil.preventDefault(event);
+        var menu = document.getElementById('myMenu');
+        menu.style.left = event.clientX + 'px';
+        menu.style.top = event.clientY + 'px';
+        menu.style.visibility = 'visible';
+    });
+    EventUtil.addHandler(document,'click', function (event) {
+        document.getElementById('myMenu').style.visibility = 'hidden';
+    });
+});
+
+Html代码：
+&lt;div id='myDiv'&gt;Right click to get the default context menu.&lt;br&gt;
+Click anywhere else to get the default context menu.&lt;/div&gt;
+&lt;ul id='myMenu'&gt;
+  &lt;li&gt;&lt;a href='http://www.baidu.com'&gt;百度&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href='http://www.sina.com'&gt;新浪&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href='http://www.qq.com'&gt;腾讯&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+CSS代码：
+#myDiv{
+  padding-top: 10px;
+  font-size: 14px;
+}
+#myMenu{
+  width: 80px;
+  height: 60px;
+  font-size: 12px;
+  color: #323232;
+  border-radius: 5px;
+  position: absolute;
+  visibility: hidden;
+  background-color: #ccc;
+  border: 1px solid #000;
+}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>获取选中文本内容</h4>
+                            <p>获取选中文本内容：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">function getSelectedText() {
+  if (window.getSelection) {
+     return window.getSelection().toString();
+  }else if (document.getSelection) {
+     return document.getSelection();
+  }else if (document.selection) {
+     return document.selection.createRange().text;
+  }
+}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>跨域</h4>
+                            <p>动态创建script标签：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = 'https://www.baidu.com/con?from=zhidao';
+document.body.appendChild(script);</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>是否存在某个class</h4>
+                            <p>函数：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">function hasClass(node,classname){
+  return node.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>对节点增加class</h4>
+                            <p>函数：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">function addClass(node,classname){
+  if(!this.hasClass(node,classname)){
+    node.className = (node.className+" "+classname).replace(/^\s+|\s+$/g,'');
+  }
+}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>对节点删除class</h4>
+                            <p>函数：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">function removeClass(node,classname){
+ node.className = (node.className.replace(classname,"")).replace(/^\s+|\s+$/g,'');
+}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>querySelector() 方法</h4>
+                            <p>querySelector() 方法返回文档中匹配指定 CSS 选择器的一个元素：</p>         <span>注意： querySelector() 方法仅仅返回匹配指定选择器的第一个元素。如果你需要返回所有的元素，请使用 querySelectorAll() 方法替代。</span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">document.querySelector('#demo');</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <!--   css    -->
+                <div class="right_items hide">
+                    <div id="css_content">
+                        <div class="right_item"><h4>CSS样式初始化</h4>
+                            <p>腾讯QQ官网 样式初始化：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+body{font:12px'宋体','Arial Narrow',HELVETICA;background:#fff;-webkit-text-size-adjust:100%;}
+a{color:#2d374b;text-decoration:none}
+a:hover{color:#cd0200;text-decoration:underline}
+em{font-style:normal}
+li{list-style:none}
+img{border:0;vertical-align:middle}
+table{border-collapse:collapse;border-spacing:0}
+p{word-wrap:break-word}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>新浪官网 样式初始化：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;}
+body{background:#fff;color:#333;font-size:12px; margin-top:5px;font-family:'SimSun','宋体','Arial Narrow';}
+ul,ol{list-style-type:none;}
+select,input,img,select{vertical-align:middle;}
+a{text-decoration:none;}
+a:link{color:#009;}
+a:visited{color:#800080;}
+a:hover,a:active,a:focus{color:#c00;text-decoration:underline;}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>淘宝官网 样式初始化：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font:12px/1.5tahoma, arial,\5b8b\4f53; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+table { border-collapse:collapse; border-spacing:0; }</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>网易官网 样式初始化：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">html {overflow-y:scroll;}
+body {margin:0; padding:29px00; font:12px'\5B8B\4F53',sans-serif;background:#ffffff;}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,p{padding:0; margin:0;}
+table,td,tr,th{font-size:12px;}
+li{list-style-type:none;}
+img{vertical-align:top;border:0;}
+ol,ul {list-style:none;}
+h1,h2,h3,h4,h5,h6{font-size:12px; font-weight:normal;}
+address,cite,code,em,th {font-weight:normal; font-style:normal;}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>transform属性</h4>
+                            <p>transform属性向元素应用2D或3D转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">none：定义不进行转换。
+translate(x,y)：定义2D转换
+translate3d(x,y,z)：定义3D转换。
+translateX(x)：定义转换，只是用X轴的值。
+translateY(y)：定义转换，只是用Y轴的值。
+translateZ(z)：定义3D转换，只是用Z轴的值。
+scale(x,y)：定义2D缩放转换。
+scale3d(x,y,z)：定义3D缩放转换。
+scaleX(x)通过设置X轴的值来：定义缩放转换。
+scaleY(y)通过设置Y轴的值来：定义缩放转换。
+scaleZ(z)通过设置Z轴的值来：定义3D缩放转换。
+rotate(angle)：定义2D旋转，在参数中规定角度。
+rotate3d(x,y,z,angle)：定义3D旋转。
+rotateX(angle)：定义沿着X轴的3D旋转。
+rotateY(angle)：定义沿着Y轴的3D旋转。
+rotateZ(angle)：定义沿着Z轴的3D旋转。
+skew(x-angle,y-angle)：定义沿着X和Y轴的2D倾斜转换。
+skewX(angle)：定义沿着X轴的2D倾斜转换。
+skewY(angle)：定义沿着Y轴的2D倾斜转换。
+perspective(n)为3D转换元素：定义透视视图。</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>伪元素清浮动</h4>
+                            <p>适用伪元素清浮动，给父元素加类名：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">.clearfix:after{content:'';display:block;height:0;clear:both;visibility:hidden;*zoom:1;}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>CSS画三角形</h4>
+                            <p>CSS画三角形：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">span {width: 0;height: 0;border-left: 4px solid transparent;border-right: 4px solid transparent;border-top: 6px solid #2c3e50;display: inline-block;}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>设置css3中placeholder的字体样式</h4>
+                            <p>默认的placeholder字体颜色是呈浅灰色，如果想改变这个默认颜色，解决方案如下：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">#put:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+color: #f00;font-size: 12px;
+}
+#put::-moz-placeholder { /* Mozilla Firefox 19+ */
+ color: #f00;font-size: 12px;
+}
+#put:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #f00;font-size: 12px;
+}
+#put::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #f00;font-size: 12px;
+}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>css重置默认行为</h4>
+                            <p>文本超出省略号：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">display:block;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>多行文本超出省略号：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">display: -webkit-box;
+-webkit-box-orient: vertical;
+text-overflow: ellipsis;
+overflow: hidden;
+-webkit-line-clamp: 2;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>禁用鼠标：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">pointer-events: none;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>禁止文本选中：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">-moz-user-select: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+-khtml-user-select: none;
+user-select: none;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>禁用输入法：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">ime-mode:disabled;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>禁用系统默认菜单：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">-webkit-touch-callout:none;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>禁止触发鼠标或者触屏事件：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">pointer-events: none;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>自定义文本选择：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">::selection { background: #e2eae2; }
+::-moz-selection { background: #e2eae2; }
+::-webkit-selection { background: #e2eae2; }</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>重置按键样式</h4>
+                            <p>去除表单自动填充颜色(Chrome浏览器)：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">input:-webkit-autofill {
+background-color: #FAFFBD;
+background-image: none;
+color: #000;
+}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>去除按键圆角(iPhone)：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">-webkit-appearance:none;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>去除搜索按键(Chrome浏览器)：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">input[type='search']
+::-webkit-search-cancel-button,input[type='search']
+::-webkit-search-decoration{
+-webkit-appearance: none;}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>去除数字输入框增减按键(Chrome浏览器)：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">input[type='number']::-webkit-outer-spin-button,input[type='number']::-webkit-inner-spin-button{
+-webkit-appearance: none;
+}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>去除date类型文本框多了个叉叉清除内容的效果(Chrome浏览器)：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">::-webkit-clear-button {
+-webkit-appearance: none;
+}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>去除按键虚线框(Firefox浏览器)：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">button::-moz-focus-inner,input::-moz-focus-inner{}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>改变password类型input框的默认样式(IE浏览器)：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">::-ms-reveal{display: none; }
+::-ms-reveal{background-color:#f0f3f9;}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>设置默认线框距离：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">input {outline-offset: 4px;}</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>input字体垂直居中：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">font-family: Tahoma,Arial,Helvetica,'Microsoft YaHei';</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>CSS3滤镜</h4>
+                            <p>模糊：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">-webkit-filter:blur(5px);</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>叠加褐色：</p>         <span>取值范围0-1，此处表示50%的褐色</span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">-webkit-filter:sepia(0.5);</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>亮度：</p>         <span>取值范围0-1，5倍亮度（数字为0时为正常样式，为1时表示的是100%亮度，无法看到图片）</span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">-webkit-filter:brightness(0.5);</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>色相：</p>         <span>按照色相环进行旋转，顺时针方向，红-橙-黄-黄绿-绿-蓝绿-蓝-蓝紫-紫-紫红-红</span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">-webkit-filter:hue-rotate(30deg);</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>反色：</p>         <span>取值范围0-1,0为原图，1为彻底反色之后，0.5为灰色</span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">-webkit-filter:invert(1);</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>饱和度：</p>         <span>取值范围0~*,0为无饱和度，1为原图，值越高饱和度越大</span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">-webkit-filter:saturate(4);</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>对比度：</p>         <span>取值范围0~*,0为无对比度（灰色），1为原图，值越高对比度越大</span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">-webkit-filter:contrast(2);</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>透明度：</p>         <span>取值范围0~1,0为全透明，1为原图</span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">-webkit-filter:opacity(0.8);</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>阴影：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">-webkit-filter:drop-shadow(17px 17px 20px black);</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>CSS下拉三角形</h4>
+                            <p>第一种是用标签直接排上，第二种是css的一个伪元素：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">&lt;style type='text/css'&gt;
+  /*第一种的样式*/
+  .one {
+  font-size: 18px;
+  color: #333;
+  margin-top: 100px;
+}
+.icons {
+  position: relative;
+  top: 14px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  border-width: 12px 10px;
+  border-style: solid;
+  border-color: #333 transparent transparent;
+}
+
+/*第二种的样式*/
+.two
+  position: relative;
+  display: block;
+  width: 230px;
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+}
+.two:after {
+  position: absolute;
+  content: '';
+  margin-left: 6px;
+  top: 8px;
+  right: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 12px solid #333;
+}
+&lt;/style&gt;
+
+&lt;!-- 第一种 --&gt;
+&lt;div class='one'&gt;
+1、这是其中第一种方法：&lt;span class='icons'&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- 第二种 --&gt;
+&lt;div class='two'&gt;
+2、这是其中第二种方法：
+&lt;/div&gt;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>webkit内核的浏览器滚动条定制</h4>
+                            <p>如下：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">                     <pre class="brush:js;" name="code">::-webkit-scrollbar 滚动条整体部分，其中的属性有width,height,background,border（就和一个块级元素一样）等。
+::-webkit-scrollbar-button 滚动条两端的按钮。可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果。
+::-webkit-scrollbar-track 外层轨道。可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果。
+::-webkit-scrollbar-track-piece 内层轨道，滚动条中间部分（除去）。
+::-webkit-scrollbar-thumb 滚动条里面可以拖动的那部分
+::-webkit-scrollbar-corner 边角
+::-webkit-resizer 定义右下角拖动块的样式</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <!--   Html    -->
+                <div class="right_items hide">
+                    <div id="htm_content">
+                        <div class="right_item"><h4>网页标题加图片</h4>
+                            <p>把图片做成ICO格式,然后在页面中的head里面添加代码：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">&lt;link href='favicon.ico' rel='shortcut icon'/&gt;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>可以在收藏夹中显示出你的图标：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">&lt;link rel='Bookmark' href='favicon.ico'&gt;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>关闭输入法：</p>
+                            <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">&lt;input style='ime-mode:disabled'&gt;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>网页将不能被另存为：</p>
+                            <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">&lt;noscript&gt;&lt;iframe src=*.html&gt;&lt;/iframe&gt;&lt;/noscript&gt;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>网页不会被缓存：</p>
+                            <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">&lt;meta HTTP-EQUIV=”pragma” CONTENT=”no-cache”&gt;
+&lt;meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"&gt;
+&lt;meta HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT"&gt;
+或者&lt;meta HTTP-EQUIV="expires" CONTENT="0"&gt;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>怎样让表单没有凹凸感？：</p>
+                            <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">&lt;input type=text style=”border:1 solid #000000″&gt;或&lt; input type=text style=”border-left:none; border-right:none; border-top:none; border-bottom: 1 solid #000000″&gt;&lt; /textarea&gt;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>&lt;div&gt;&lt;span&gt;&amp;&lt;layer&gt;的区别？：</p>
+                            <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">&lt;div&gt;(division)用来定义大段的页面元素，会产生转行
+&lt;span&gt;用来定义同一行内的元素，跟&lt;div&gt;的唯一区别是不产生转行
+&lt;layer&gt;是 ns 的标记，ie 不支持，相当于&lt; div&gt;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>隐藏滚动条：</p>
+                            <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">&lt;body style='overflow:scroll;overflow-y:hidden'&gt;&lt;/body&gt;
+&lt;body style='overflow:scroll;overflow-x:hidden'&gt;&lt;/body&gt;
+&lt;body scroll=”no”&gt;&lt;/body&gt;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>怎样去掉图片链接点击后，图片周围的虚线？：</p>
+                            <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">&lt; a href='#' onFocus='this.blur()'&gt;&lt; img src='logo.jpg' border=0&gt;&lt; /a&gt;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <!--   前端工具    -->
+                <div class="right_items hide">
+                    <div id="feTools_content">
+                        <div class="right_item"><h4>GIT分布式版本控制系统</h4>
+                            <p>常用命令行：</p>         <span>Git是一个开源的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。</span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">git add . # 将所有修改过的工作文件提交暂存区
+git push origin master # 将本地主分支推到远程主分支
+git pull # 抓取远程仓库所有分支更新并合并到本地
+git remote -v # 查看远程服务器地址和仓库名称
+git clone 加地址 克隆远程仓库</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <!--   前端框架    -->
+                <div class="right_items hide">
+                    <div id="frame_content">
+                        <div class="right_item"><h4>Juicer</h4>
+                            <p>一个完整的例子：</p>
+                            <span>Juicer 是一个高效、轻量的前端 (Javascript) 模板引擎，使用 Juicer 可以是你的代码实现数据和视图模型的分离(MVC)。 除此之外，它还可以在 Node.js 环境中运行。</span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">HTML 代码:
+&lt;script id='tpl' type='text/template'&gt;
+&lt;ul&gt;
+{@each list as it,index}
+  &lt;li&gt;${it.name} (index: ${index})&lt;/li&gt;
+{@/each}
+{@each blah as it}
+  &lt;li&gt;
+  num: ${it.num} &lt;br /&gt;
+  {@if it.num==3}
+  {@each it.inner as it2}
+  ${it2.time} &lt;br /&gt;
+  {@/each}
+  {@/if}
+  &lt;/li&gt;
+{@/each}
+&lt;/ul&gt;
+&lt;/script&gt;
+
+Javascript 代码:
+var data = {
+  list: [
+    {name:' guokai', show: true},
+    {name:' benben', show: false},
+    {name:' dierbaby', show: true}
+    ],
+    blah: [
+    {num: 1},
+    {num: 2},
+    {num: 3, inner:[
+    {'time': '15:00'},
+    {'time': '16:00'},
+    {'time': '17:00'},
+    {'time': '18:00'}
+    ]},
+    {num: 4}
+    ]
+  };
+
+var tpl = document.getElementById('tpl').innerHTML;
+var html = juicer(tpl, data);</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <!--    性能优化     -->
+                <div class="right_items hide">
+                    <div id="sql_content">
+                        <div class="right_item"><h4>如何提高HTML加载速度？</h4>
+                            <p>页面减肥：</p>
+                            <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">页面的肥瘦是影响加载速度最重要的因素
+删除不必要的空格、注释
+将inline的script和css移到外部文件
+可以使用HTML Tidy来给HTML减肥，还可以使用一些压缩工具来给JavaScript减肥</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>减少文件数量：</p>
+                            <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">减少页面上引用的文件数量可以减少HTTP连接数
+许多JavaScript、CSS文件可以合并最好合并</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>减少域名查询：</p>
+                            <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">DNS查询和解析域名也是消耗时间的，所以要减少对外部JavaScript、CSS、图片等资源的引用，不同域名的使用越少越好</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>缓存重用数据：</p>
+                            <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">使用缓存吧</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>优化页面元素加载顺序：</p>
+                            <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">首先加载页面最初显示的内容和与之相关的JavaScript和CSS
+然后加载DHTML相关的东西
+像什么不是最初显示相关的图片、flash、视频等很肥的资源就最后加载</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>减少inline JavaScript的数量：</p>
+                            <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">浏览器parser会假设inline JavaScript会改变页面结构，所以使用inline JavaScript开销较大
+不要使用document.write()这种输出内容的方法，使用现代W3C DOM方法来为现代浏览器处理页面内容</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>不要使用嵌套tables,指定图像和tables的大小：</p>
+                            <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">如果浏览器可以立即决定图像或tables的大小，那么它就可以马上显示页面而不要重新做一些布局安排的工作
+这不仅加快了页面的显示，也预防了页面完成加载后布局的一些不当的改变
+image使用height和width
+table使用table-layout: fixed并使用col和colgroup标签指定columns的width</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4></h4>
+                            <p>根据用户浏览器明智的选择策略：</p>
+                            <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">IE、Firefox、Safari等等等等</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right_item"><h4>HTML解析和加载时，什么时候开始渲染，什么时候停止渲染，什么时候重新渲染？</h4>
+                            <p>Q：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">加载完CSS后开始渲染，（dom树和render树已经形成）
+加载JS造成阻塞停止渲染，
+加载图片不会停止渲染，但是如果图片的尺寸没有规定，加载图片完成后要重新渲染
+加载新的CSS后要重新渲染
+JS操作改变dom树后要重新渲染
+参考文章链接：'http://www.51testing.com/html/38/225738-220986.html'</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <!--    后端     -->
+                <div class="right_items hide">
+                    <div id="be_content">
+                        <div class="right_item"><h4>第一个 PHP 页面</h4>
+                            <p>第一个 PHP 脚本：hello.php：</p>         <span></span>
+                            <dl>
+                                <dt></dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <pre class="brush:js;" name="code">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;PHP 测试&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;?php echo '&lt;p&gt;Hello World&lt;/p&gt;'; ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p>分享与创新开发，版权所有，保留一切权利&nbsp;Copyright © 2016-2021 · All rights reserved.<a class="fa fa-github" id="github"
+                                                                               title="访问我的github"></a></p>
+</div>
+<a id="return_top" title="返回顶部"></a>
+<!--  固件  -->
+<div id="suggest"><p>问&nbsp;题</p>
+    <p>反&nbsp;馈</p></div>
+<!--  弹窗  -->
+<div id="shade" style="top: 0;">
+</div>
+<div class="DW" id="Pop">
+    <h4><a href="javascript:Dialog.Close()" class="Cls" id="Cls"></a>功能锁定</h4>
+    <div class="Ctt">此功能尚未解锁,敬请期待。<br>
+        This feature has not yet been unlocked, please look forward to.<br>
+        Diese funktion IST noch nicht offen, sie freuen Sich.<br>
+        이 기능은 아직 잠금 기대해 주세요.<br>
+        <a href="javascript:Dialog.Close()" class="Btn" id="pop_btn">关&nbsp;闭</a></div>
+</div>
+<script src="js/base.js" type="text/javascript"></script>
+<script src="js/pop.js" type="text/javascript"></script>
+<script src="js/common.js"></script>
+
+<!--  模版  -->
+<script id="tmp" type="text/template">
+    {@each data as it}
+    <div class="right_item">
+        <h4>${it.title}</h4>
+        <p>${it.introduce}：</p>
+        <span>${it.describe}</span>
+        <dl>
+            <dt></dt>
+            <dd>
+                <div class="clearfix">
+                    <pre class="brush:js;" name="code">${it.code}</pre>
+                </div>
+            </dd>
+        </dl>
+    </div>
+    {@/each}
+</script>
+<!--
+                   <div class="right_item">
+                       <h4>文章标题</h4>
+                       <p>文章描述：</p>
+                       <dl>
+                           <dt>代码</dt>
+                           <dd>
+                               <div>
+                                   <p>代码内容</p>
+                               </div>
+                           </dd>
+                       </dl>
+                   </div>
+                   -->
+
+</body>
+</html>
