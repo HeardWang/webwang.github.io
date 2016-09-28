@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>前端开发-WebWang</title>
+    <meta name="keywords" content="WebWang,web前端网,HTML,javascript,jquery,前端,前端框架,UI设计,W3CSchool,前端工具箱,前端开发,用户体验,交互设计,jquery教程,javascript教程,html5教程,css3教程,web前端开发,网站模板,免费素材,AngularJS">
+    <meta name="description" content="WebWang-前端网，Web前端开发综合性网站，为广大WEB开发者提供HTML5/CSS3、Javascript/jQuery相关的技术文章，分享最前沿的Web开发技术，资源和素材，文章注重实用性和技巧性，是面向web开发人员和设计师的学习优质交流平台， 并为工程师及企业提供优质的前端资源和服务。  ">
+    <link href="back/images/ico.ico" rel="shortcut icon"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper.min.css" rel="stylesheet" type="text/css">
+    <script type=text/javascript src="js/jquery-1.7.1.min.js"></script>
+    <script type=text/javascript src="js/slides.jquery.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/juicer-min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        $(function () {
+/*            setInterval(function () {
+                var num = Math.round(Math.random()*10);
+                if(num > 5){
+                    return "vertical";
+                }else {
+                    return "horizontal";
+                }
+            },2000);*/
+            var mySwiper = new Swiper('.swiper-container', {
+                autoplay: 3000,//可选选项，自动滑动
+                prevButton:'.swiper-button-prev',
+                nextButton:'.swiper-button-next',
+                loop : true,
+                autoplayDisableOnInteraction : false,
+                pagination: '.swiper-pagination',
+                paginationClickable: true,
+                paginationBulletRender: function (index, className) {
+                    return '<li class="item_0'+index+' '+className+'"></li>';
+                },
+                effect : 'cube',
+                cube: {
+                    slideShadows: true,
+                    shadow: false
+                },
+                speed : 2000,
+                direction:"vertical"
+            });
+        });
+    </script>
+</head>
+<body id="bgimg">
+<div class="header">
+    <div class="inner">
+        <div class="h-logo"><a href="index.html" title="WebWang">WebWang</a></div>
+        <div class="h-account"><img src="back/images/tx.jpg" alt="id"/> Hi，Welcome！<a href="back/center.html">进入后院</a>
+        </div>
+        <ul class="h-nav">
+            <li><a href="index.html" class="active">前端开发</a></li>
+            <li><a href="resource.html">前端资源</a></li>
+            <li><a href="source.html">开源项目</a></li>
+            <li><a href="website.html">网址导航</a></li>
+            <li><a href="about.html">关于</a></li>
+        </ul>
+    </div>
+</div>
+<!--   banner   -->
+<div class="banner-bg index-bg01" id="bannerbox">
+    <div class="inner">
+        <div id="slides" class="banner-left clearfix">
+            <div class="swiper-container">
+                <div class="clearfix swiper-wrapper">
+                    <div class="swiper-slide swiper-item item_00">
+                        <a href="article/fe/article_07.html" target="_blank">
+                            <span>移动端样式小技巧</span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide swiper-item item_01">
+                        <a href="article/fe/article_03.html" target="_blank">
+                            <span>44个Javascript变态题，你遇到过几个？</span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide swiper-item item_02">
+                        <a href="article/fe/article_06.html" target="_blank">
+                            <span>用CSS3打造酷炫的3D文本滚动效果</span>
+                        </a>
+                    </div>
+                    <div class="swiper-slide swiper-item item_03">
+                        <a href="article/fe/article_01.html" target="_blank">
+                            <span>优秀程序员的十个习惯</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-button-prev swiper-button-white"></div>
+                <div class="swiper-button-next swiper-button-white"></div>
+            </div>
+        </div>
+        <ul class="banner-right swiper-pagination" id="static"></ul>
+    </div>
+    </div>
+<!--   container   -->
+    <div id="container" class="clearfix">
+        <div class="inner clearfix">
+            <ul class="container-left">
+                <!--  内容区域  -->
+            </ul>
+            <div class="container-right clearfix">
+                <ul>
+                    <li class="container-right-item clearfix">
+                        <div class="title">
+                            <h2>置顶推荐</h2>
+                        </div>
+                        <a class="style01" href="article/fe/article_03.html" target="_blank">
+                            <h3>44个Javascript变态题，你遇到过几个？</h3>
+                            <p>让我们一起来看看这些变态题到底变态不变态吧!</p>
+                        </a>
+                        <a class="style01" href="article/fe/article_02.html" target="_blank">
+                            <h3>优秀程序员的十个习惯</h3>
+                            <p>如果你要成为一个优秀的程序员，你还可以需要有几件事你需要注意，如果你能让下 面十个条目成为你的习惯，那么你才能真正算得上是优秀程序员。</p>
+                        </a>
+                        <a class="style01" href="article/fe/article_04.html" target="_blank">
+                            <h3>前端开发规范</h3>
+                            <p>为提高团队协作效率, 便于后台人员添加功能及前端后期优化维护, 输出高质量的文档, 特制订此文档。</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="f-copyright"><p>分享与创新开发，版权所有，保留一切权利&nbsp;Copyright © 2016-2021 · All rights reserved.</p></div>
+    </div>
+    <a id="return_top" title="返回顶部"></a>
+<!--  模版  -->
+<script id="container-item" type="text/template">
+    {@each data as it}
+    <li class="container-left-item clearfix">
+        <div class="item-title">
+            <a class="label label-important" href=${it.link}>${it.tag}<i class="label-arrow"></i></a>
+            <h2><a target="_blank" href=${it.link} title=${it.title}>${it.title}</a>
+            </h2>
+        </div>
+        <div class="focus">
+            <a target="_blank" href=${it.link}>
+                <img class="thumb scale" src=${it.img} alt=${it.title}>
+            </a>
+        </div>
+        <span class="note">${it.preface}</span>
+    </li>
+    {@/each}
+</script>
+<script>
+    window.onload = function () {
+        getAjax('container-item','container-left',"json/project.json");
+    }
+</script>
+</body>
+</html>
