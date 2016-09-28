@@ -2,6 +2,7 @@
 <h3>V1.0</h3><br>
 2016/9/22<br>
 个人站点框架初步告成，每天积累一点点，记录工作中的点点滴滴。<br>
+<i>博客声明：本资料均源自互联网，仅作为学习参考实例，不用于商业用途，分享与创新开发，积累前端技能点点滴滴，为保护原作则版权，转载请注明原作者地址。</i><br>
 <h3>V2.0</h3><br>
 2016/9/28<br>
 <img class="" src='images/h5c3.jpg' alt='' width='550px'><br>
@@ -21,3 +22,7 @@
 <br>
 &lt;div class="i-photo">&lt;img src="images/article_07/3.png" alt="" title="WebWang-前端网"/>&lt;/div><br>
 &lt;div class="preface">&lt;/div><br>
+<style>
+i{font-weight:900;}
+i:hover{color:red;}
+</style>
