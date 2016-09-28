@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DOM常用方法总结-WebWang</title>
+    <meta name="keywords" content="WebWang,web前端,HTML,ASP,PHP,SQL,javascript,jquery,前端,前端框架,UI设计">
+    <link href="../../back/images/ico.ico" rel="shortcut icon"/>
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type=text/javascript src="../../js/jquery-1.7.1.min.js"></script>
+    <script src="../../js/juicer-min.js"></script>
+    <script src="../../js/common.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCoreDefault.css"/>
+    <script type="text/javascript" src="../../js/shCore.js"></script>
+    <script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../js/SyntaxSetting.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="inner clearfix">
+        <div class="h-logo"><a href="../../index.html" title="WebWang">WebWang</a></div>
+        <div class="h-account"><img src="../../back/images/tx.jpg" alt="id"/> Hi，Welcome！<a href="../../back/center.html">进入后院</a></div>
+        <ul class="h-nav">
+            <li><a href="../../index.html" class="active">前端开发</a></li>
+            <li><a href="../../resource.html">前端资源</a></li>
+            <li><a href="../../source.html">开源项目</a></li>
+            <li><a href="../../website.html">网址导航</a></li>
+            <li><a href="../../about.html">关于</a></li>
+        </ul>
+    </div>
+    <div class="banner-detail"></div>
+</div>
+
+<div class="clear"></div>
+<div class="gray-box">
+    <div class="inner">
+        <div class="w720 fl">
+            <dl class="main02 pt20">
+                <dt>DOM常用方法总结<span class="info">发布者：heardwang&nbsp;&nbsp;&nbsp;发布时间：2016-09-27&nbsp;&nbsp;&nbsp;<span class="zz">转载自：http://www.w3cfuns.com/</span></span>
+                    <a href="javascript:;" class="btn btn-large like-btn"><i class="icon16 icon16-like"></i> 喜欢 (10)</a></dt>
+                <dd>
+                    <div class="gallery-item">
+                        <div class="preface">DOM常用方法总结</div>
+                        <p>
+                            <h2>DOM(Document Object Model)</h2>
+                            当网页被加载时，浏览器会创建页面的文档对象模型<br>
+                            DOM树DOM节点12个(*常用)<br>
+                            ELEMENT_NODE 1元素节点*<br>
+                            ATTRIBUTE_NODE    2属性节点*<br>
+                            TEXT_NODE  3文本节点*<br>
+                            CDATA_SECTION_NODE4CDATA 区段<br>
+                            ENTITY_REFERENCE_NODE5实体引用<br>
+                            ENTITY_NODE6实体<br>
+                            PROCESSING_INSTRUCTION_NODE7处理指令<br>
+                            COMMENT_NODE8注释节点*<br>
+                            DOCUMENT_NODE9文档节点*<br>
+                            DOCUMENT_TYPE_NODE 10向为文档定义的实体提供接口。<br>
+                            DOCUMENT_FRAGMENT_NODE 11表示轻量级的 Document 对象，其中容纳了一部分文档。<br>
+                            NOTATION_NODE 12表示在 DTD 中声明的符号。<br>
+                            通过DOM树控制<br>
+                            HTML的元素、属性<br>
+                            CSS的样式<br>
+                            DOM两部走： 获取、操作<br><br>
+                            <h2>获取</h2>
+                            <h3>获取节点</h3>
+                            <p>document.documentElement 返回文档的根节点<br>
+                            document.body   返回文档的body元素<br>
+                            document.title 返回文档的title元素<br>
+                            document.getElementById() 返回对拥有指定 id 的第一个对象的引用。<br>
+                            document.getElementsByClassName() 返回文档中所有指定类名的元素集合不兼容IE8-<br>
+                            document.getElementsByTagName() 返回带有指定标签名的对象集合。<br>
+                            document.getElementsByName() 返回带有指定名称的对象集合。<br>
+                            document.querySelectorAll() 返回文档中匹配的CSS选择器的所有元素节点列表<br>
+                            document.querySelector() 返回文档中匹配指定的CSS选择器的第一元素<br>
+                            document.activeElement 返回当前获取焦点元素<br></p>
+                        <h3>属性节点</h3><p>attr.isId 检测元素是否拥有id<br>
+                            attr.specified 如果属性被指定返回 true ，否则返回 false<br>
+                            attr.specified 如果属性被指定返回 true ，否则返回 false<br>
+                            nodemap.item() 返回节点列表中处于指定索引号的节点。<br>
+                            nodemap.length 返回节点列表的节点数目。<br>
+                            nodemap.removeNamedItem() 删除指定属性节点<br>
+                            nodemap.setNamedItem() 设置指定属性节点(通过名称)<br>
+                        </p><h3>获取元素</h3><p>
+                            element.ownerDocument 返回元素的根元素（文档对象）<br>
+                            element.parentNode 返回元素的父节点<br>
+                            element.querySelector() 返回匹配指定 CSS 选择器元素的第一个子元素<br>
+                            nodelist.length 返回节点列表的节点数目。<br>
+                            nodelist.item() 返回某个元素基于文档树的索引<br>
+                            element.previousSibling 返回某个元素紧接之前元素<br>
+                            element.nextSibling 返回该元素紧跟的一个元素<br>
+                            element.firstChild 返回元素的第一个子节点<br>
+                            element.lastChild 返回的最后一个子元素<br>
+                            element.childNodes 返回元素的一个子节点的数组<br>
+                            element.attributes 返回一个元素的属性数组<br>
+                    </p><h3>获取元素属相</h3><p>
+                            element.clientHeight 在页面上返回内容的可视高度（不包括边框，边距或滚动条）<br>
+                            element.clientWidth 在页面上返回内容的可视宽度（不包括边框，边距或滚动条）<br>
+                            element.offsetHeight 返回，任何一个元素的高度包括边框和填充，但不是边距<br>
+                            element.offsetWidth 返回，任何一个元素的宽度包括边框和填充，但不是边距<br>
+                            element.offsetLeft 返回当前元素的相对水平偏移位置的偏移容器<br>
+                            element.offsetTop 返回当前元素的相对垂直偏移位置的偏移容器<br>
+                            element.scrollHeight 返回整个元素的高度（包括带滚动条的隐蔽的地方）<br>
+                            element.scrollWidth 返回元素的整个宽度（包括带滚动条的隐蔽的地方）<br>
+                            element.scrollLeft 返回当前视图中的实际元素的左边缘和左边缘之间的距离<br>
+                            element.scrollTop 返回当前视图中的实际元素的顶部边缘和顶部边缘之间的距离<br>
+                            document.body.scrollTop;只兼容谷歌<br>
+                            document.documentElement.scrollTop;兼容非谷歌<br>
+                            element.offsetParent 返回元素的偏移容器</p><br><br>
+                            <h2>操作</h2>
+                            <h3>文档操作</h3>
+                            <p>document.normalize() 删除空文本节点，并连接相邻节点<br>
+                            document.normalizeDocument() 删除空文本节点，并连接相邻节点的<br>
+                            document.open() 打开一个流，以收集来自任何document.write()或 document.writeln()法的输出。<br>
+                            document.close() 关闭用 document.open() 方法打开的输出流，并显示选定的数据。<br>
+                            document.writeln() 等同于 write() 方法，不同的是在每个表达式之后写一个换行符。<br>
+                            document.write() 向文档写 HTML 表达式 或 JavaScript 代码。<br>
+                            </p><h3>节点操作</h3><p>
+                            document.createAttribute() 创建一个属性节点<br>
+                            document.createComment() 创建注释节点。<br>
+                            document.createDocumentFragment() 创建空的 DocumentFragment 对象，并返回此对象。<br>
+                            document.createElement() 创建元素节点。<br>
+                            document.createTextNode() 创建文本节点。<br>
+                            document.importNode() 把一个节点从另一个文档复制到该文档以便应用。<br>
+                            document.renameNode() 重命名元素或者属性节点。<br></p>
+                        <h3>元素操作</h3>
+                        <p>element.compareDocumentPosition() 比较两个元素的文档位置。<br>
+                            element.isSameNode() 检查两个元素所有有相同节点。<br>
+                            element.isEqualNode() 检查两个元素是否相等<br>
+                            element.toString()一个元素转换成字符串<br>
+                            element.removeChild() 删除一个子元素<br>
+                            element.replaceChild() 替换一个子元素<br>
+                            element.insertBefore() 现有的子元素之前插入一个新的子元素<br>
+                            element.appendChild() 为元素添加一个新的子元素<br>
+                            element.cloneNode()   克隆某个元素<br>
+                            element.textContent 设置或返回一个节点和它的文本内容<br>
+                            element.innerHTML 设置或者返回元素的内容。<br>
+                            </p><h3>元素属相操作</h3><p>
+                            element.nodeValue 返回元素的类型<br>
+                            element.lang 设置或者返回一个元素的语言。<br>
+                            element.dir 设置或返回一个元素中的文本方向<br>
+                            element.id 设置或者返回元素的 id。<br>
+                            element.className 设置或返回元素的class属性<br>
+                            element.classlist 返回元素的类名，作为 DOMTokenList 对象。<br>
+                            element.title 设置或返回元素的title属性<br>
+                            element.style 设置或返回元素的样式属性<br>
+                            element.tabIndex 设置或返回元素的标签顺序。<br>
+                            element.contentEditable 设置或返回元素的内容是否可编辑<br>
+                            element.isContentEditable 如果元素内容可编辑返回 true，否则返回false<br>
+                            element.hasAttribute() 如果元素中存在指定的属性返回 true，否则返回false。<br>
+                            element.hasAttributes() 如果元素有任何属性返回true，否则返回false。<br>
+                            element.getAttributeNode() 返回指定属性节点<br>
+                            element.getAttribute() 返回指定元素的属性值<br>
+                            element.setAttributeNode() 设置或者改变指定属性节点。<br>
+                            element.setAttribute() 设置或者改变指定属性并指定值。<br>
+                            element.removeAttribute() 从元素中删除指定的属性<br>
+                            element.removeAttributeNode() 删除指定属性节点并返回移除后的节点。<br>
+                            element.hasfocus() 返回布尔值，检测文档或元素是否获取焦点<br>
+                            element.focus()设置文档或元素获取焦点<br>
+                            element.nodeName 返回元素的标记名（大写）<br>
+                            element.hasChildNodes() 返回一个元素是否具有任何子元素<br>
+                            element.namespaceURI 返回命名空间的 URI。<br>
+                            element.getFeature() 返回指定特征的执行APIs对象。<br>
+                            element.isSupported() 如果在元素中支持指定特征返回 true。<br>
+                            element.isDefaultNamespace() 如果指定了namespaceURI 返回 true，否则返回 false。<br>
+                            element.getUserData() 返回一个元素中关联键值的对象。<br></p>
+                            <br><br>
+                            <p>01 Attributes：存储节点的属性列表(只读)<br>
+                            02  childNodes：存储节点的子节点列表(只读)<br>
+                            03  dataType：返回此节点的数据类型<br>
+                            04  Definition：以DTD或XML模式给出的节点的定义(只读)<br>
+                            05  Doctype：指定文档类型节点(只读)<br>
+                            06  documentElement：返回文档的根元素(可读写)<br>
+                            07  firstChild：返回当前节点的第一个子节点(只读)<br>
+                            08  Implementation：返回XMLDOMImplementation对象<br>
+                            09  lastChild：返回当前节点最后一个子节点(只读)<br>
+                            10 nextSibling：返回当前节点的下一个兄弟节点(只读)<br>
+                            11 nodeName：返回节点的名字(只读)<br>
+                            12 nodeType：返回节点的类型(只读)<br>
+                            13 nodeTypedValue：存储节点值(可读写)<br>
+                            14 nodeValue：返回节点的文本(可读写)<br>
+                            15 ownerDocument：返回包含此节点的根文档(只读)<br>
+                            16 parentNode：返回父节点(只读)<br>
+                            17 Parsed：返回此节点及其子节点是否已经被解析(只读)<br>
+                            18 Prefix：返回名称空间前缀(只读)<br>
+                            19 preserveWhiteSpace：指定是否保留空白(可读写)<br>
+                            20 previousSibling：返回此节点的前一个兄弟节点(只读)<br>
+                            21 Text：返回此节点及其后代的文本内容(可读写)<br>
+                            22 url    返回最近载入的XML文档的URL(只读)<br>
+                            23 Xml：返回节点及其后代的XML表示(只读)<br></p>
+                            <h3>方法:</h3><p>
+                            01 appendChild：为当前节点添加一个新的子节点,放在最后的子节点后<br>
+                            02 cloneNode：返回当前节点的拷贝<br>
+                            03 createAttribute：创建新的属性<br>
+                            04 createCDATASection：创建包括给定数据的CDATA段<br>
+                            05 createComment：创建一个注释节点<br>
+                            06 createDocumentFragment：创建DocumentFragment对象<br>
+                            07 createElement：创建一个元素节点<br>
+                            08 createEntityReference：创建EntityReference对象<br>
+                            09 createNode：创建给定类型,名字和命名空间的节点<br>
+                            10 createPorcessingInstruction：创建操作指令节点<br>
+                            11 createTextNode：创建包括给定数据的文本节点<br>
+                            12 getElementsByTagName：返回指定名字的元素集合<br>
+                            13 hasChildNodes：返回当前节点是否有子节点<br>
+                            14 insertBefore：在指定节点前插入子节点<br>
+                            15 Load：导入指定位置的XML文档<br>
+                            16 loadXML：导入指定字符串的XML文档<br>
+                            17 removeChild：从子结点列表中删除指定的子节点<br>
+                            18 replaceChild：从子节点列表中替换指定的子节点<br>
+                            19 Save：把XML文件存到指定节点<br>
+                            20 selectNodes：对节点进行指定的匹配,并返回匹配节点列表<br>
+                            21 selectSingleNode：对节点进行指定的匹配,并返回第一个匹配节点<br>
+                            22 transformNode：使用指定的样式表对节点及其后代进行转换<br>
+                            23 transformNodeToObject：使用指定的样式表将节点及其后代转换为对象</p>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="main03">
+                <dt><i class="icon24 icon24-comment"></i> 评论 (1)<a href="#" class="more"><i
+                        class="icon16 icon16-edit"></i> 发表评论</a></dt>
+                <dd>
+                    <ul class="comment-1column">
+                        <li>
+                            <p class="i-info"><b>张无忌</b> 发表于 2016-09-23</p>
+                            <p class="i-text">文章写得不错，有深度，赞一个。</p>
+                        </li>
+                    </ul>
+                    <div class="page-mini">
+                        <div class="list"><span><</span><span class="active">1</span><a href="javascript:;">2</a><a
+                                href="javascript:;">3</a><a href="javascript:;">4</a><a href="javascript:;">5</a><a href="javascript:;">></a></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="i-textarea">
+                            <textarea></textarea>
+                        </div>
+                        <div class="i-btn">
+                            <input type="button" class="btn btn-large btn-blue" value="提交评论">
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="w220 fr">
+            <dl class="main04 pt20">
+                <dt>最新文章</dt>
+                <dd class="clearfix">
+                    <ul class="widget-1column">
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="f-copyright"><p>分享与创新开发，版权所有，保留一切权利&nbsp;Copyright © 2016-2021 · All rights reserved.</p></div>
+</div>
+<a id="return_top" title="返回顶部"></a>
+<!--  推荐文章模版  -->
+<script id="content-item" type="text/template">
+    {@each data as it,index}
+    {@if index <=3}
+    <li>
+        <div class="item-cont">
+            <div class="i-photo"><a href='../../${it.link}'><img src='../../${it.img}' alt=""/></a></div>
+            <div class="i-text"><a class="like"><i class="icon16 icon16-interest"></i> 15</a><a href="#">${it.title}</a></div>
+        </div>
+    </li>
+    {@/if}
+    {@/each}
+</script>
+<script>
+    getAjax('content-item','widget-1column',"../../json/project.json");
+</script>
+</body>
+</html>

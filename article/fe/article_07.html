@@ -1,0 +1,363 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>移动端样式小技巧-WebWang</title>
+    <meta name="keywords" content="WebWang,web前端网,HTML,javascript,jquery,前端,前端框架,UI设计,W3CSchool,前端工具箱,前端开发,用户体验,交互设计,jquery教程,javascript教程,html5教程,css3教程,web前端开发,网站模板,免费素材,AngularJS">
+    <meta name="description" content="WebWang-前端网，Web前端开发综合性网站，为广大WEB开发者提供HTML5/CSS3、Javascript/jQuery相关的技术文章，分享最前沿的Web开发技术，资源和素材，文章注重实用性和技巧性，是面向web开发人员和设计师的学习优质交流平台， 并为工程师及企业提供优质的前端资源和服务。  ">
+    <link href="../../back/images/ico.ico" rel="shortcut icon"/>
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type=text/javascript src="../../js/jquery-1.7.1.min.js"></script>
+    <script src="../../js/juicer-min.js"></script>
+    <script src="../../js/common.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCoreDefault.css"/>
+    <script type="text/javascript" src="../../js/shCore.js"></script>
+    <script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../js/SyntaxSetting.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="inner clearfix">
+        <div class="h-logo"><a href="../../index.html" title="WebWang">WebWang</a></div>
+        <div class="h-account"><img src="../../back/images/tx.jpg" alt="id"/> Hi，Welcome！<a href="../../back/center.html">进入后院</a></div>
+        <ul class="h-nav">
+            <li><a href="../../index.html" class="active">前端开发</a></li>
+            <li><a href="../../resource.html">前端资源</a></li>
+            <li><a href="../../source.html">开源项目</a></li>
+            <li><a href="../../website.html">网址导航</a></li>
+            <li><a href="../../about.html">关于</a></li>
+        </ul>
+    </div>
+    <div class="banner-detail"></div>
+</div>
+
+<div class="clear"></div>
+<div class="gray-box">
+    <div class="inner">
+        <div class="w720 fl">
+            <dl class="main02 pt20">
+                <dt>移动端样式小技巧<span class="info">发布者：heardwang&nbsp;&nbsp;&nbsp;发布时间：2016-09-28&nbsp;&nbsp;&nbsp;<span class="zz">转载自：http://helloweb.wang/jingyan~jiqiao/601.html</span></span>
+                    <a href="javascript:;" class="btn btn-large like-btn"><i class="icon16 icon16-like"></i> 喜欢 (10)</a></dt>
+                <dd>
+                    <div class="gallery-item">
+                        平时在移动端开发拼页面的过程中总会遇到一些问题，主要是各手机webview样式显示效果不一致造成的。以下总结了一些常见坑和一些小技巧，希望对看官有所帮助！
+                        <div class="preface">本文只针对两大手机阵营 Android和IOS 中的魅蓝metal 和 iPhone6进行样式对比。</div>
+                        <h3>一、line-height</h3>
+                        line-height经常用于文字居中，当然也有小伙伴会用上下padding去写.but！不管你用padding还是line-height，不同手机显示效果还是...不一样。
+                        <p>一般会这样写</p>
+                        <pre class="brush:js;">
+.demo{
+    height:16px;
+    line-height:14px;
+    font-size:9px;
+    border:1px solid #ff6815;
+}
+                        </pre>
+                        <div class="i-photo"><img src="../images/article_07/1.png" alt=""/></div>
+                        嗯，在我们的chrome由于字体小于9px已经看不出边框和字之间的间隙了，再来看看Android和IOS的
+                        <div class="i-photo"><img src="../images/article_07/2.png" alt=""/></div>
+                        魅蓝文字已经飞起~
+                        <div class="i-photo"><img src="../images/article_07/3.png" alt=""/></div>
+                        ios正常显示<br>
+                        如果把line-height加1px，iPhone文字就会下移，由于我们app的ios用户居多，并且android机型太多，不同机型也会显示不同，所以只能退而求其次了。
+                        <div class="preface">line-height的兼容问题不太好解决，容器高度越小，显示效果的差距越明显。稍微大一点的高度，最好把line-height设置为高度+1px，两个平台显示都还不错。</div>
+                        <h3>二、多行省略</h3>
+                        一般我们的产品列表样式，会有标题行数的限制。
+                        <div class="i-photo"><img src="../images/article_07/4.png" alt=""/></div>
+                        <pre class="brush:js;">
+.demo{
+    display: -webkit-box;    //1.设置display类型为-webkit-box
+    font-size: 14px;
+    line-height: 18px;
+    overflow: hidden;        //2.设置元素超出隐藏
+    text-overflow: ellipsis; //3.设置超出样式为省略号
+    -webkit-line-clamp: 2;   //4.设置2行应用省略
+    -webkit-box-orient: vertical;
+}
+                        </pre>
+                        这样设置还要考虑一个极端的情况，就是标题不足两行。具体要看PM的需求，一是空出第二行的距离，二是让标题下边的元素顶上去。如果是第一种需求，有2种解决的方案。<br>
+                        1：把下边的元素都使用position:absoulte定位到固定的位置，不受标题行数影响。<br>
+                        2：把标题容器的高度写死，这样写必须要考虑行高的坑，因为容器高度写死以后，不同机型行高实际上显示效果不一样。<br>
+                        高度写少了，有的机型会这样。
+                        <div class="i-photo"><img src="../images/article_07/5.png" alt=""/></div>
+                        写多了可能会这样。
+                        <div class="i-photo"><img src="../images/article_07/6.png" alt=""/></div>
+                        我的做法是，不影响布局的情况下尽量控制line-height值大一些，行与行的间距变大，容器高度的设定需要多测试一些机型，控制文字不多出也不被挡住。
+                        <h3>三、角标的实现</h3>
+                        <div class="i-photo"><img src="../images/article_07/7.png" alt=""/></div>
+                        不少项目ui会要求我们画这种梯形角标。问题来了
+                        <div class="preface">1.我们不确定角标内容的长度<br>2.角标的底色不能定死，能定死（能定死的话直接切个小体形就行了）</div>
+                        通常就是一段文案后边拼接一个三角形，三角形很好写
+                        <pre class="brush:js;">
+.script {
+    width: 0;
+    height: 0;        //控制宽高为0，用border宽度撑出一个三角形
+    border-right: 10px solid transparent;
+    border-top: 15px solid #c59c53;
+}
+                        </pre>
+                        我看到的第一种写法是把三角形直接拼在前边的文案后边，当然这在iphone上是没有问题的。但在部分安卓机型上却会有1像素的间隙，就像这样：
+                        <div class="i-photo"><img src="../images/article_07/8.png" alt=""/></div>
+                        我现在感受到安卓阵营深深的恶意<br>
+                        原因可能是定位在各安卓手机上会有不同的效果。。好像大家都是猴子，长的却都不一样。<br>
+                        对此有个好的解决方案：
+                        <pre class="brush:js;">
+&lt;p class="rongqi">
+    &lt;span class="wenan">跟团游&lt;/span>
+    &lt;span class="script">&lt;/span>
+&lt;/p>
+                        </pre>
+                        <pre class="brush:js;">
+.rongqi {//容器
+    height: 15px;
+    overflow: hidden;//设置超出隐藏
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.wenan{//文案
+    float: left;
+    position: relative;  //设置相对定位
+    z-index: 3;          //设置层级不被三角形挡住
+    height: 15px;
+    padding-left: 4px;
+    line-height: 16px;
+    color: #fff;
+    font-size: 10px;
+}
+.script {
+    width: 0;
+    height: 0;
+    border-right: 20px solid transparent;
+    border-top: 30px solid #c59c53;  //这里的30px实际上远远超出容器的高度
+    float: right;                    //就是为了高度超出被挡住做出梯形的效果，兼容各种机型
+    margin-left: -9px;
+}
+                        </pre>
+                        如果去除容器的overflow:hidden就可以看的更明白：
+                        <div class="i-photo"><img src="../images/article_07/9.png" alt=""/></div>
+                        <h3>四、图文标题</h3>
+                        <div class="i-photo"><img src="../images/article_07/10.png" alt=""/></div>
+                        一些常见的布局例如图+文案的，有多种方式可以去写，比如padding-left+background或者position+padding-left或者before伪元素。<br>
+                        前两种方法都可以把图片做到绝对的垂直居中，但是它们都是相对整行的容器进行定位的，由于line-height兼容问题的坑，图片实际上不一定会和文字对齐。如果有图文对齐的需求的话，个人建议才用before伪元素来布局，before可以相对文案来定位。
+                        <pre class="brush:js;">
+p{
+    height:44px;
+    line-height:45px;
+    padding-left:40px;
+}
+p::before{
+    content: '';
+    display: inline-block;
+    background: url("../img/xxx.png") center center no-repeat;
+    background-size: contain;    //这里把背景图片尺寸设置成contain，不需要考虑图片拉伸的问题
+    width: 14px;
+    height: 18px;
+    margin: 0 5px -4px 0;
+}
+                        </pre>
+                        还有一种情况，我们的图文布局，是从数组中遍历出来的，类似下图：
+                        <div class="i-photo"><img src="../images/article_07/11.png" alt=""/></div>
+                        这种情况更适合position去写，所以写样式一定要根据不同情况去选择合适的方式。
+                        <h3>五、左右宽度自适应</h3>
+                        第四个小技巧结尾，图中的布局实际上是分左右两块的，依照ui的需求，文案是要左对齐，数字是要右对齐的。你可能最先想到的是把右侧的数字定位或者浮动到那，左侧的容器加上个margin-right或者padding-right。这样可以实现，但是两侧的文案有极端情况出现。
+                        <p>效果可能是这样的：</p>
+                        <div class="i-photo"><img src="../images/article_07/12.png" alt=""/></div>
+                        也可能是这样的
+                        <div class="i-photo"><img src="../images/article_07/13.png" alt=""/></div>
+                        因为你根本不知道两侧文案的长度到底是多少。<br>
+                        我的方案是用box布局，左侧的容器设置box-flex:1，右侧不管它：
+                        <pre class="brush:js;">
+&lt;li class="ent-li">
+    &lt;img class="ent-img" src="img/1.png">
+    &lt;div class="left">主题门票&lt;/div>
+    &lt;div class="right">10&lt;/div>
+&lt;/li>
+                        </pre>
+                        <pre class="brush:js;">
+.ent-li {
+    margin-left: 45px;
+    height: 44px;
+    display: -webkit-box; //box布局并做好兼容
+    display: box;
+    position: relative;
+}
+.ent-li .left {
+    -webkit-box-flex: 1; //box-flex:1控制宽度自适应
+    box-flex: 1;
+    text-align: left;
+    line-height: 45px;
+    font-size: 16px;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.ent-li .right {    //右侧啥都不用管
+    text-align: right;
+    line-height: 45px;
+    font-size: 12px;
+    color: #999;
+    padding-left: 10px;
+}
+                        </pre>
+                        让我们看看最终极端条件下的显示效果：
+                        <div class="i-photo"><img src="../images/article_07/14.png" alt=""/></div>
+                        或者：
+                        <div class="i-photo"><img src="../images/article_07/15.png" alt=""/></div>
+                        <div class="preface">因为pm觉得数字更重要，所以让文案去自适应，数字有多长就多长</div>
+                        <h3>六、display:inline-block</h3>
+                        众所周知，元素有3种基本显示框类型，block块级，inline-block行内块级，inline行内。<br>
+                        inline-block是一种特殊存在，可以设置宽高也可以使元素在一行排列。<br>
+                        我在开发中会遇到以下两种布局：
+                        <div class="i-photo"><img src="../images/article_07/16.png" alt=""/></div><br>
+                        <div class="i-photo"><img src="../images/article_07/17.png" alt=""/></div>
+                        这两种布局都可以用float:left来写，但是浮动完了还需要清楚浮动。所以可以直接把元素设置成inline-block同样可以自动排列
+                        <pre class="brush:js;">
+.rongqi{//每块容器
+    display: inline-block;//设置行内块级
+    width: 25%;           //设置宽度为1/4
+    font-size: 12px;
+    text-align: center;
+}
+                        </pre>
+                        这里会有个小坑，就是行内元素在水平和垂直排列的时候会有间距。造成这种结果
+                        <div class="i-photo"><img src="../images/article_07/18.png" alt=""/></div>
+                        左边是默认情况下的效果，右侧是改进后的效果，左边第二行和第一行中间有段莫名的间距，这并不是我们真正想要的。<br>
+                        解决的办法很简单：
+                        <pre class="brush:js;">
+.father{
+    font-size:0;//父容器字体大小设置成0，具体的字体大小应用在文案上
+}
+                        </pre>
+                        <h3>七、模拟滚动</h3>
+                        <div class="i-photo"><img src="../images/article_07/19.png" alt=""/></div>
+                        模拟滚动也是在项目中遇到的常见布局。布局要求弹层出来后，弹层中的内容可以滚动，弹层背后的列表不能随弹层滚动而滚动。并且在弹层上滑动的时候，整个页面也不能随之滚动。
+                        <br>直接上代码：
+                        <pre class="brush:js;">
+&lt;section class="father">
+    &lt;section class="content-body">
+        <!--页面内容、蒙层、蒙层中的内容互为兄弟节点，防止点击时页面穿透-->
+    &lt;/section>
+    &lt;section class="layout">
+        <!--页面内容、蒙层、蒙层中的内容互为兄弟节点，防止点击时页面穿透-->
+    &lt;/section>
+    &lt;section class="layout-body">
+        <!--页面内容、蒙层、蒙层中的内容互为兄弟节点，防止点击时页面穿透-->
+    &lt;/section>
+&lt;/section>
+                        </pre>
+                        <pre class="brush:js;">
+.father{
+    height: 533px;
+    overflow-y: scroll;//页面高度设置为屏幕高度，正常情况下超出滚动
+}
+.content-body{
+    height: 533px;
+    overflow-y: scroll;//内容高度设置为屏幕高度，正常情况下超出滚动
+}
+.layout{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    z-index: 1000000;
+}
+.layout-body{
+    height: 46%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    z-index: 1000001;
+}
+                        </pre>
+                        当我们触发蒙层弹出时控制样式
+                        <pre class="brush:js;">
+.father{
+    height: 533px;
+    overflow-y: hidden;//设置超出隐藏，那么页面不会触发滚动
+}
+.content-body{
+    height: 533px;
+    overflow-y: hidden;//设置超出隐藏，那么页面不会触发滚动
+}
+                        </pre>
+                        这个方法虽然实现了页面模拟滚动的效果，但是当蒙层弹出的时候设置了overflow:hidden会导致页面scrollTop变成0，页面相当于被滚到顶部了。如果UI或者PM不愿意，请与他们撕逼。
+                        <div class="preface">原文链接：<a href="http://helloweb.wang/jingyan~jiqiao/601.html">HelloWeb-前端网 » 移动端样式小技巧 »</a> </div>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="main03">
+                <dt><i class="icon24 icon24-comment"></i> 评论 (2)<a href="#" class="more"><i
+                        class="icon16 icon16-edit"></i> 发表评论</a></dt>
+                <dd>
+                    <ul class="comment-1column">
+                        <li>
+                            <p class="i-info"><b>张无忌</b> 发表于 2016-09-28</p>
+                            <p class="i-text">文章写得不错，有深度，赞一个。</p>
+                        </li>
+                        <li>
+                            <p class="i-info"><b>WebWang</b> 发表于 2016-09-28</p>
+                            <p class="i-text">移动端实用技巧。</p>
+                        </li>
+                    </ul>
+                    <div class="page-mini">
+                        <div class="list"><span><</span><span class="active">1</span><a href="javascript:;">2</a><a
+                                href="javascript:;">3</a><a href="javascript:;">4</a><a href="javascript:;">5</a><a href="javascript:;">></a></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="i-textarea">
+                            <textarea></textarea>
+                        </div>
+                        <div class="i-btn">
+                            <input type="button" class="btn btn-large btn-blue" value="提交评论">
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="w220 fr">
+            <dl class="main04 pt20">
+                <dt>最新文章</dt>
+                <dd class="clearfix">
+                    <ul class="widget-1column">
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="f-copyright"><p>分享与创新开发，版权所有，保留一切权利&nbsp;Copyright © 2016-2021 · All rights reserved.</p></div>
+</div>
+<a id="return_top" title="返回顶部"></a>
+<!--  推荐文章模版  -->
+<script id="content-item" type="text/template">
+    {@each data as it,index}
+    {@if index <=3}
+    <li>
+        <div class="item-cont">
+            <div class="i-photo"><a href='../../${it.link}'><img src='../../${it.img}' alt=""/></a></div>
+            <div class="i-text"><a class="like"><i class="icon16 icon16-interest"></i> 15</a><a href="#">${it.title}</a></div>
+        </div>
+    </li>
+    {@/if}
+    {@/each}
+</script>
+<script>
+    getAjax('content-item','widget-1column',"../../json/project.json");
+</script>
+</body>
+</html>

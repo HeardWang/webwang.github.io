@@ -1,0 +1,666 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>44个 Javascript变态题，你遇到过几个？-WebWang</title>
+    <meta name="keywords" content="WebWang,web前端,HTML,ASP,PHP,SQL,javascript,jquery,前端,前端框架,UI设计">
+    <link href="../../back/images/ico.ico" rel="shortcut icon"/>
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type=text/javascript src="../../js/jquery-1.7.1.min.js"></script>
+    <script src="../../js/juicer-min.js"></script>
+    <script src="../../js/common.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCoreDefault.css"/>
+    <script type="text/javascript" src="../../js/shCore.js"></script>
+    <script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../js/SyntaxSetting.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="inner clearfix">
+        <div class="h-logo"><a href="../../index.html" title="WebWang">WebWang</a></div>
+        <div class="h-account"><img src="../../back/images/tx.jpg" alt="id"/> Hi，Welcome！<a href="../../back/center.html">进入后院</a></div>
+        <ul class="h-nav">
+            <li><a href="../../index.html" class="active">前端开发</a></li>
+            <li><a href="../../resource.html">前端资源</a></li>
+            <li><a href="../../source.html">开源项目</a></li>
+            <li><a href="../../website.html">网址导航</a></li>
+            <li><a href="../../about.html">关于</a></li>
+        </ul>
+    </div>
+    <div class="banner-detail"></div>
+</div>
+
+<div class="clear"></div>
+<div class="gray-box">
+    <div class="inner">
+        <div class="w720 fl">
+            <dl class="main02 pt20">
+                <dt>44个Javascript变态题，你遇到过几个？<span class="info">发布者：heardwang&nbsp;&nbsp;&nbsp;发布时间：2016-09-27&nbsp;&nbsp;&nbsp;<span class="zz">转载自：微信公共平台</span></span>
+                    <a href="javascript:;" class="btn btn-large like-btn"><i class="icon16 icon16-like"></i> 喜欢 (10)</a></dt>
+                <dd>
+                    <div class="gallery-item">
+                        <div class="preface">让我们一起来看看这些变态题到底变态不变态吧!</div>
+                        <h3>第1题</h3>
+                        <pre class="brush:js;">["1", "2", "3"].map(parseInt)</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>Array/map</li>
+                            <li>Number/parseInt</li>
+                            <li>JavaScript parseInt</li>
+                        </ul>
+                        <p>首先, map接受两个参数, 一个回调函数 callback, 一个回调函数的this值<br>其中回调函数接受三个参数 currentValue, index, arrary;<br>而题目中, map只传入了回调函数--parseInt.<br>其次, parseInt 只接受两个两个参数 string, radix(基数).<br>可选。表示要解析的数字的基数。该值介于 2 ~ 36 之间。<br>如果省略该参数或其值为 0，则数字将以 10 为基础来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。<br>如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN。<br>所以本题即问<br></p>
+                        <pre class="brush:js;">parseInt('1', 0);parseInt('2', 1);parseInt('3', 2);</pre>
+                        <p>首先后两者参数不合法.所以答案是 [1, NaN, NaN]</p>
+                        <h3>第2题</h3>
+                        <pre class="brush:js;">[typeof null, null instanceof Object]</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>Operators/typeof</li>
+                            <li>Operators/instanceof</li>
+                            <li>Operators/instanceof(中)</li>
+                        </ul>
+                        <p>typeof 返回一个表示类型的字符串.<br>
+                            instanceof 运算符用来检测 constructor.prototype 是否存在于参数 object 的原型链上.<br>
+                            这个题可以直接看链接... 因为 typeof null === 'object' 自语言之初就是这样....<br>
+                            typeof 的结果请看下表:</p>
+                        <pre class="brush:js;">
+                            type         result
+                            Undefined    "undefined"
+                            Null         "object"
+                            Boolean      "boolean"
+                            Number       "number"
+                            String       "string"
+                            Symbol       "symbol"
+                            Host object Implementation-dependentFunction   "function"
+                            Object       "object"</pre>
+                        <p>所以答案 [object, false]</p>
+                        <h3>第3题</h3>
+                        <pre class="brush:js;">[ [3,2,1].reduce(Math.pow), [].reduce(Math.pow) ]</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>Array/Reduce</li>
+                        </ul>
+                        <p>arr.reduce(callback[, initialValue])<br>
+                            reduce接受两个参数, 一个回调, 一个初始值.<br>
+                            回调函数接受四个参数 previousValue, currentValue, currentIndex, array<br>
+                            需要注意的是 If the array is empty and no initialValue was provided, TypeError would be thrown.<br>
+                            所以第二个表达式会报异常. 第一个表达式等价于 Math.pow(3, 2) => 9; Math.pow(9, 1) =>9<br>
+                            答案 an error</p>
+                        <h3>第4题</h3>
+                        <pre class="brush:js;">var val = 'smtg';console.log('Value is ' + (val === 'smtg') ? 'Something' : 'Nothing');</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>Operators/Operator_Precedence</li>
+                            <li>Operators/Conditional_Operator</li>
+                        </ul>
+                        <p>简而言之 + 的优先级 大于  ?<br>
+                            所以原题等价于 'Value is true' ? 'Somthing' : 'Nonthing' 而不是  'Value is' + (true ? 'Something' : 'Nonthing')<br>
+                            答案 'Something'</p>
+                        <h3>第5题</h3>
+                        <pre class="brush:js;">
+var name = 'World!';
+(function () {
+    if (typeof name === 'undefined') {
+        var name = 'Jack';
+        console.log('Goodbye ' + name);
+    } else {
+        console.log('Hello ' + name);}
+})();</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>Hoisting</li>
+                        </ul>
+                        <p>在 JavaScript中， functions 和 variables 会被提升。变量提升是JavaScript将声明移至作用域 scope (全局域或者当前函数作用域) 顶部的行为。<br>
+                            这个题目相当于</p>
+                        <pre class="brush:js;">var name = 'World!';
+(function () {
+              var name;
+              if (typeof name === 'undefined') {
+                name = 'Jack'; console.log('Goodbye ' + name);
+             } else {console.log('Hello ' + name);}
+})();</pre>
+                        <p>所以答案是 'Goodbye Jack'</p>
+                        <h3>第6题</h3>
+                        <pre class="brush:js;">
+                            var END = Math.pow(2, 53);
+                            var START = END - 100;
+                            var count = 0;
+                            for (var i = START; i <= END; i++) {
+                            count++;
+                            }
+                            console.log(count);</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>Infinity</li>
+                        </ul>
+                        <p>在 JS 里, Math.pow(2, 53) == 9007199254740992 是可以表示的最大值. 最大值加一还是最大值. 所以循环不会停.</p>
+                        <h3>第7题</h3>
+                        <pre class="brush:js;">
+                            var ary = [0,1,2];
+                            ary[10] = 10;
+                            ary.filter(function(x) {
+                            return x === undefined;
+                            });</pre>
+                        <p>答案是 []</p>
+                        <p>看一篇文章理解稀疏数组:</p>
+                        <ul class="code-list">
+                            <li>译 JavaScript中的稀疏数组与密集数组
+                                </li>
+                            <li>Array/filter</li>
+                        </ul>
+                        <p>我们来看一下 Array.prototype.filter 的 polyfill:</p>
+                        <pre class="brush:js;">
+                            if (!Array.prototype.filter) {
+                            Array.prototype.filter = function(fun/*, thisArg*/) {
+                            'use strict';
+                            if (this === void 0 || this === null) {
+                            throw new TypeError();
+                            }
+                            var t = Object(this);
+                            var len = t.length >>> 0;
+                            if (typeof fun !== 'function') {
+                            throw new TypeError();}
+                            var res = [];
+                            var thisArg = arguments.length >= 2 ? arguments[1] : void 0;
+                            for (var i = 0; i < len; i++) {
+                            if (i in t) { // 注意这里!!!
+                            var val = t[i];
+                            if (fun.call(thisArg, val, i, t)) {
+                            res.push(val);}
+                            }
+                            }return res;
+                            };
+                            }</pre>
+                        <p>我们看到在迭代这个数组的时候, 首先检查了这个索引值是不是数组的一个属性, 那么我们测试一下.</p>
+                        <pre class="brush:js;">0 in ary; => true3 in ary; => false10 in ary; => true</pre>
+                        <p>也就是说 从 3 - 9 都是没有初始化的'坑'!, 这些索引并不存在与数组中. 在 array 的函数调用的时候是会跳过这些'坑'的.</p>
+                        <h3>第8题</h3>
+                        <pre class="brush:js;">
+                            var two = 0.2;
+                            var one   = 0.1;
+                            var eight = 0.8;
+                            var six   = 0.6;
+                            [two - one == one, eight - six == two]</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>JavaScript的设计缺陷?浮点运算：0.1 + 0.2 != 0.3</li>
+                        </ul>
+                        <p>IEEE 754标准中的浮点数并不能精确地表达小数<br>
+                            那什么时候精准, 什么时候不经准呢? 笔者也不知道...<br>
+                            答案 [true, false]</p>
+                        <h3>第9题</h3>
+                        <pre class="brush:js;">
+                            function showCase(value) {
+                            switch(value) {
+                            case 'A':
+                            console.log('Case A');
+                            break;
+                            case 'B':
+                            console.log('Case B');
+                            break;
+                            case undefined:
+                            console.log('undefined');
+                            break;
+                            default:
+                            console.log('Do not know!');
+                              }
+                            }
+                            showCase(new String('A'));</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>Statements/switch
+                                </li>
+                            <li>String</li>
+                        </ul>
+                        <p>switch 是严格比较, String 实例和 字符串不一样.</p>
+                        <pre class="brush:js;">
+                            var s_prim = 'foo';var s_obj = new String(s_prim);
+                            console.log(typeof s_prim); // "string"
+                            console.log(typeof s_obj);  // "object"
+                            console.log(s_prim === s_obj); // false</pre>
+                        答案是 'Do not know!'
+                        <h3>第10题</h3>
+                        <pre class="brush:js;">
+                            function showCase2(value) {
+                            switch(value) {
+                            case 'A':
+                            console.log('Case A');
+                            break;
+                            case 'B':
+                            console.log('Case B');
+                            break;
+                            case undefined:
+                            console.log('undefined');
+                            break;
+                            default:
+                            console.log('Do not know!');
+                             }
+                            }
+                            showCase2(String('A'));</pre>
+                        <p>知识点:</p>
+                        <p>解释:<br>
+                            String(x) does not create an object but does return a string, i.e. typeof String(1) === "string"<br>
+                            还是刚才的知识点, 只不过 String 不仅是个构造函数 直接调用返回一个字符串哦.<br>
+                            答案 'Case A'</p>
+                        <h3>第11题</h3>
+                        <pre class="brush:js;">
+                            function isOdd(num) {
+                            return num % 2 == 1;
+                            }function isEven(num) {
+                            return num % 2 == 0;
+                            }function isSane(num) {
+                            return isEven(num) || isOdd(num);
+                            }var values = [7, 4, '13', -9, Infinity];
+                            values.map(isSane);</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>Arithmetic_Operators#Remainder</li>
+                        </ul>
+                        此题等价于
+                        <pre class="brush:js;">
+                            7 % 2 => 14 % 2 => 0'13' % 2 => 1-9 % % 2 => -1Infinity % 2 => NaN</pre>
+                        <p>需要注意的是 余数的正负号随第一个操作数.<br>
+                            答案 [true, true, true, false, false]</p>
+                        <h3>第12题</h3>
+                        <pre class="brush:js;">parseInt(3, 8)parseInt(3, 2)parseInt(3, 0)</pre>
+                        <p>第一个题讲过了, 答案 3, NaN, 3</p>
+                        <h3>第13题</h3>
+                        <pre class="brush:js;">Array.isArray( Array.prototype )</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>Array/prototype</li>
+                        </ul>
+                        <p>一个鲜为人知的实事: Array.prototype => [] ;<br>
+                            答案: true</p>
+                        <h3>第14题</h3>
+                        <pre class="brush:js;">
+                            var a = [0];if ([0]) {
+                            console.log(a == true);
+                            } else {  console.log("wut");
+                            }</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>JavaScript-Equality-Table</li>
+                        </ul>
+                        <p>答案: false</p>
+                        <h3>第15题</h3>
+                        <pre class="brush:js;">[]==[]</pre>
+                        <p>知识点:</p>
+                        <p>== 是万恶之源</p>
+                        <p>答案是:false</p>
+                        <h3>第16题</h3>
+                        <pre class="brush:js;">5' + 3'5' - 3</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>Arithmetic_Operators#Addition</li>
+                            <li>Arithmetic_Operators#Subtraction</li>
+                        </ul>
+                        <p>请看例子, 体会区别:</p>
+                        <pre class="brush:js;">> '5' + 3'53'> 5 + '3''53'> 5 - '3'2> '5' - 32> '5' - '3'2</pre>
+                        <p>也就是说 - 会尽可能的将两个操作数变成数字, 而  + 如果两边不都是数字, 那么就是字符串拼接.<br>
+                            答案是 '53', 2</p>
+                        <h3>第17题</h3>
+                        <pre class="brush:js;">1 + - + + + - + 1</pre>
+                        这里应该是(倒着看)
+                        <pre class="brush:js;">1 + (a)  => 2a = - (b) => 1b = + (c) => -1c = + (d) =>
+                            -1d = + (e) => -1e = + (f) => -1f = - (g) => -1g = + 1   => 1</pre>
+                        <p>所以答案 2</p>
+                        <h3>第18题</h3>
+                        <pre class="brush:js;">
+                            var ary = Array(3);
+                            ary[0]=2ary.map(function(elem) {
+                              return '1';
+                            });</pre>
+                        <p>答案是 ["1", undefined × 2]</p>
+                        <h3>第19题</h3>
+                        <pre class="brush:js;">
+                            function sidEffecting(ary) {
+                            ary[0] = ary[2];
+                            }function bar(a,b,c) {
+                            c = 10
+                            sidEffecting(arguments);  return a + b + c;
+                            }
+                            bar(1,1,1)</pre>
+                        这是一个大坑, 尤其是涉及到 ES6语法的时候
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>Functions/arguments</li>
+                        </ul>
+                        <p>
+                            首先 The arguments object is an Array-like object corresponding to the arguments passed to a function.<br>
+                            也就是说 arguments 是一个  object , c 就是 arguments[2], 所以对于 c 的修改就是对 arguments[2] 的修改.<br>
+                            所以答案是 21 .<br>
+                            然而!!!!!!<br>
+                            当函数参数涉及到 any rest parameters, any default parameters or any destructured parameters 的时候, 这个 arguments 就不在是一个  mapped arguments object 了.....
+                            <br>
+                            请看:
+                        </p>
+                        <pre class="brush:js;">
+                            function sidEffecting(ary) {
+                            ary[0] = ary[2];
+                            }function bar(a,b,c=3) {
+                            c = 10
+                            sidEffecting(arguments);  return a + b + c;
+                            }
+                            bar(1,1,1)</pre>
+                        <p>答案是 12 !!!!</p>
+                        <h3>第20题</h3>
+                        <pre class="brush:js;">
+                            var a = 111111111111111110000,
+                            b = 1111;
+                            a + b;</pre>
+                        <p>知识点:</p>
+                        <p>答案还是 111111111111111110000.解释是Lack of precision for numbers in JavaScript affects both small and big numbers.</p>
+                        <h3>第21题</h3>
+                        <pre class="brush:js;">var x = [].reverse;x();</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>Array/reverse</li>
+                        </ul>
+                        <p>The reverse method transposes the elements of the calling array object in place, mutating the array, and returning a reference to the array.<br>
+                            也就是说 最后会返回这个调用者(this), 可是 x 执行的时候是上下文是全局. 那么最后返回的是 window .<br>
+                            答案是 window</p>
+                        <h3>第22题</h3>
+                        <pre class="brush:js;">Number.MIN_VALUE > 0</pre>
+                        <p>true</p>
+                        <h3>第23题</h3>
+                        <pre class="brush:js;">[1 < 2 < 3, 3 < 2 < 1]</pre>
+                        这个题也还可以.<br>
+                        这个题会让人误以为是 2 > 1 && 2 < 3 其实不是的.<br>
+                        这个题等价于
+                        <pre class="brush:js;">
+                            1 < 2 => true;
+                            true < 3 =>  1 < 3 => true;
+                            3 < 2 => false;
+                            false < 1 => 0 < 1 => true;</pre>
+                        <p>答案是 [true, true]</p>
+                        <h3>第24题</h3>
+                        <pre class="brush:js;">// the most classic wtf2 == [[[2]]]</pre>
+                        <p>这个题我是猜的. 我猜的 true , 至于为什么.....both objects get converted to strings and in both cases the resulting string is "2" 我不能信服...</p>
+                        <h3>第25题</h3>
+                        <pre class="brush:js;">3.toString()3..toString()3...toString()</pre>
+                        这个题也挺逗, 我做对了 :) 答案是 error, '3', error<br>
+                        你如果换一个写法就更费解了
+                        <pre class="brush:js;">
+                            var a = 3;
+                            a.toString()</pre>
+                        <p>这个答案就是 '3' ;<br>
+                            为啥呢?<br>
+                            因为在 js 中 1.1 ,  1. ,  .1 都是合法的数字. 那么在解析  3.toString 的时候这个  . 到底是属于这个数字还是函数调用呢? 只能是数字, 因为 3. 合法啊!</p>
+                        <h3>第26题</h3>
+                        <pre class="brush:js;">
+                            (function(){  var x = y = 1;
+                            })();
+                            console.log(y);
+                            console.log(x);</pre>
+                        <p>答案是 1, error<br>
+                            y 被赋值到全局. x 是局部变量. 所以打印 x 的时候会报 ReferenceError</p>
+                        <h3>第27题</h3>
+                        <pre class="brush:js;">
+                            var a = /123/,
+                            b = /123/;
+                            a == b
+                            a === b</pre>
+                        <p>即使正则的字面量一致, 他们也不相等.<br>
+                            答案 false, false</p>
+                        <h3>第28题</h3>
+                        <pre class="brush:js;">
+                            var a = [1, 2, 3],
+                            b = [1, 2, 3],
+                            c = [1, 2, 4]
+                            a ==  b
+                            a === b
+                            a > c
+                            a < c</pre>
+                        <p>字面量相等的数组也不相等.<br>
+                            数组在比较大小的时候按照字典序比较<br>
+                            答案 false, false, false, true</p>
+                        <h3>第29题</h3>
+                        <pre class="brush:js;">
+                            var a = {}, b = Object.prototype;
+                            [a.prototype === b, Object.getPrototypeOf(a) === b]</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>Object/getPrototypeOf</li>
+                        </ul>
+                        <p>只有 Function 拥有一个 prototype 的属性. 所以 a.prototype 为  undefined .<br>
+                            而 Object.getPrototypeOf(obj) 返回一个具体对象的原型(该对象的内部 [[prototype]] 值)<br>
+                            答案 false, true</p>
+                        <h3>第30题</h3>
+                        <pre class="brush:js;">
+                            function f() {}var a = f.prototype, b = Object.getPrototypeOf(f);
+                            a === b</pre>
+                        <p>f.prototype is the object that will become the parent of any objects created with new f while Object.getPrototypeOf returns the parent in the inheritance hierarchy.<br>
+                            f.prototype 是使用使用 new 创建的 f 实例的原型. 而 Object.getPrototypeOf 是 f 函数的原型,
+                            请看:</p>
+                        <pre class="brush:js;">
+                            a === Object.getPrototypeOf(new f()) // trueb === Function.prototype // true</pre>
+                        <p>答案 false</p>
+                        <h3>第31题</h3>
+                        <pre class="brush:js;">
+                            function foo() { }var oldName = foo.name;
+                            foo.name = "bar";
+                            [oldName, foo.name]</pre>
+                        <p>答案 ['foo', 'foo']</p>
+                        <ul class="code-list">
+                            <li>Function/name</li>
+                        </ul>
+                        <p>因为函数的名字不可变.</p>
+                        <h3>第32题</h3>
+                        <pre class="brush:js;">"1 2 3".replace(/\d/g, parseInt)</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>String/replace#Specifying_a_function_as_a_parameter</li>
+                        </ul>
+                        <p>str.replace(regexp|substr, newSubStr|function)<br>
+                            如果replace函数传入的第二个参数是函数, 那么这个函数将接受如下参数</p>
+                        <ul class="code-list">
+                            <li>match 首先是匹配的字符串</li>
+                            <li>p1, p2 .... 然后是正则的分组</li>
+                            <li>offset match 匹配的index</li>
+                            <li>string 整个字符串</li>
+                        </ul>
+                        <p>由于题目中的正则没有分组, 所以等价于问</p>
+                        <pre class="brush:js;">parseInt('1', 0)parseInt('2', 2)parseInt('3', 4)</pre>
+                        答案: 1, NaN, 3
+                        <h3>第33题</h3>
+                        <pre class="brush:js;">
+                            function f() {}var parent = Object.getPrototypeOf(f);
+                            f.name // ?parent.name // ?typeof eval(f.name) // ?typeof eval(parent.name) //  ?</pre>
+                        <p>先说以下答案 'f', 'Empty', 'function', error 这个答案并不重要.....<br>
+                            这里第一小问和第三小问很简单不解释了.<br>
+                            第二小问笔者在自己的浏览器测试的时候是 '' , 第四问是  'undefined'<br>
+                            所以应该是平台相关的. 这里明白 parent === Function.prototype 就好了.</p>
+                        <h3>第34题</h3>
+                        <pre class="brush:js;">
+                            var lowerCaseOnly =  /^[a-z]+$/;
+                            [lowerCaseOnly.test(null), lowerCaseOnly.test()]</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>RegExp/test</li>
+                        </ul>
+                        <p>这里 test 函数会将参数转为字符串. 'nul' ,  'undefined' 自然都是全小写了<br>
+                            答案: true, true</p>
+                        <h3>第35题</h3>
+                        <pre class="brush:js;">[,,,].join(", ")</pre>
+                        <p>因为javascript 在定义数组的时候允许最后一个元素后跟一个 , , 所以这是个长度为三的稀疏数组(这是长度为三, 并没有 0, 1, 2三个属性哦)<br>
+                            答案: ", , "</p>
+                        <h3>第36题</h3>
+                        <pre class="brush:js;">
+                            var a = {class: "Animal", name: 'Fido'};
+                            a.class</pre>
+                        <p>class 是个保留字(现在是个关键字了)</p>
+                        <p>所以答案不重要, 重要的是自己在取属性名称的时候尽量避免保留字. 如果使用的话请加引号 a['class']</p>
+                        <h3>第37题</h3>
+                        <pre class="brush:js;">var a = new Date("epoch")</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>Date
+                                </li>
+                            <li>Date/parse</li>
+                        </ul>
+                        <p>简单来说, 如果调用 Date 的构造函数传入一个字符串的话需要符合规范, 即满足 Date.parse 的条件.<br>
+                            另外需要注意的是 如果格式错误 构造函数返回的仍是一个Date 的实例 Invalid Date .<br>
+                            答案 Invalid Date</p>
+                        <h3>第38题</h3>
+                        <pre class="brush:js;">
+                            var a = Function.length,
+                            b = new Function().length
+                            a === b</pre>
+                        <p>我们知道一个function(Function 的实例)的 length 属性就是函数签名的参数个数, 所以 b.length == 0.<br>
+                            另外 Function.length 定义为1......<br>
+                            所以不相等.......答案 false</p>
+                        <h3>第39题</h3>
+                        <pre class="brush:js;">
+                            var a = Date(0);var b = new Date(0);var c = new Date();
+                            [a === b, b === c, a === c]</pre>
+                        <p>还是关于Date 的题, 需要注意的是:</p>
+                        <ul class="code-list">
+                            <li>如果不传参数等价于当前时间.
+                                </li>
+                            <li>如果是函数调用 返回一个字符串.</li>
+                        </ul>
+                        <p>答案 false, false, false</p>
+                        <h3>第40题</h3>
+                        <pre class="brush:js;">
+                            var min = Math.min(), max = Math.max()
+                            min < max</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>Math/min</li>
+                            <li>Math/max</li>
+                        </ul>
+                        <p>有趣的是, Math.min 不传参数返回 Infinity , Math.max 不传参数返回  -Infinity<br>
+                            答案: false</p>
+                        <h3>第41题</h3>
+                        <pre class="brush:js;">
+                            function captureOne(re, str) {
+                            var match = re.exec(str);
+                            return match && match[1];
+                            }var numRe  = /num=(\d+)/ig,
+                            wordRe = /word=(\w+)/i,
+                            a1 = captureOne(numRe,  "num=1"),
+                            a2 = captureOne(wordRe, "word=1"),
+                            a3 = captureOne(numRe,  "NUM=2"),
+                            a4 = captureOne(wordRe,  "WORD=2");
+                            [a1 === a2, a3 === a4]</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>RegExp/exec</li>
+                        </ul>
+                        <p>因为第一个正则有一个 g 选项 它会‘记忆’他所匹配的内容, 等匹配后他会从上次匹配的索引继续, 而第二个正则不会<br>举个例子</p>
+                         <pre class="brush:js;">
+                            var myRe = /ab*/g;var str = 'abbcdefabh';
+                             var myArray;
+                             while ((myArray = myRe.exec(str)) !== null) {
+                             var msg = 'Found ' + myArray[0] + '. ';
+                             msg += 'Next match starts at ' + myRe.lastIndex;
+                             console.log(msg);
+                             }// Found abb. Next match starts at 3// Found ab. Next match starts at 9</pre>
+                        <p>所以 a1 = '1'; a2 = '1'; a3 = null; a4 = '2'<br>
+                            答案 [true, false]</p>
+                        <h3>第42题</h3>
+                        <pre class="brush:js;">
+                            var a = new Date("2014-03-19"),
+                            b = new Date(2014, 03, 19);
+                            [a.getDay() === b.getDay(), a.getMonth() === b.getMonth()]</pre>
+                        <p>JavaScript inherits 40 years old design from C: days are 1-indexed in C's struct tm, but months are 0 indexed. In addition to that, getDay returns the 0-indexed day of the week, to get the 1-indexed day of the month you have to use getDate, which doesn't return a Date object.</p>
+                        <pre class="brush:js;">
+                            a.getDay()3b.getDay()6a.getMonth()2b.getMonth()3</pre>
+                        <p>都是套路!答案 [false, false]</p>
+                        <h3>第43题</h3>
+                        <pre class="brush:js;">
+                            if ('http://giftwrapped.com/picture.jpg'.match('.gif')) {
+                            'a gif file'
+                            } else {
+                            'not a gif file'
+                            }</pre>
+                        <p>知识点:</p>
+                        <ul class="code-list">
+                            <li>String/match</li>
+                        </ul>
+                        <p>String.prototype.match 接受一个正则, 如果不是, 按照 new RegExp(obj) 转化. 所以. 并不会转义<br>
+                            那么  /gif 就匹配了 /.gif/<br>
+                            答案: 'a gif file'</p>
+                        <h3>第44题</h3>
+                        <pre class="brush:js;">
+                            function foo(a) {
+                              var a;
+                              return a;
+                            }function bar(a) {
+                              var a = 'bye';
+                              return a;
+                            }
+                            [foo('hello'), bar('hello')]</pre>
+                        <p>在两个函数里, a作为参数其实已经声明了, 所以 var a; var a = 'bye' 其实就是  a; a ='bye'<br>
+                            所以答案 'hello', 'bye'</p>
+                        <h3>总结</h3>
+                        <p>由于笔者水平有限, 如果解释有误, 还望指出，<br>
+                            通过整理, 笔者发现绝大部分题目都是因为自己对于基础知识或者说某个 API 的参数理解偏差才做错的，<br>
+                            笔者的重灾区在原型那一块, 所以这次被虐和整理还是很有意义呀，<br>
+                            笔者相信 坚实的基础是深入编程的前提. 所以基础书还是要常看啊，<br>
+                            最后这些变态题现在看看还变态嘛?</p>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="main03">
+                <dt><i class="icon24 icon24-comment"></i> 评论 (1)<a href="#" class="more"><i
+                        class="icon16 icon16-edit"></i> 发表评论</a></dt>
+                <dd>
+                    <ul class="comment-1column">
+                        <li>
+                            <p class="i-info"><b>张无忌</b> 发表于 2016-09-27</p>
+                            <p class="i-text">看完开始怀疑人生。</p>
+                        </li>
+                    </ul>
+                    <div class="page-mini">
+                        <div class="list"><span><</span><span class="active">1</span><a href="javascript:;">2</a><a
+                                href="javascript:;">3</a><a href="javascript:;">4</a><a href="javascript:;">5</a><a href="javascript:;">></a></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="i-textarea">
+                            <textarea></textarea>
+                        </div>
+                        <div class="i-btn">
+                            <input type="button" class="btn btn-large btn-blue" value="提交评论">
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="w220 fr">
+            <dl class="main04 pt20">
+                <dt>最新文章</dt>
+                <dd class="clearfix">
+                    <ul class="widget-1column">
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="f-copyright"><p>分享与创新开发，版权所有，保留一切权利&nbsp;Copyright © 2016-2021 · All rights reserved.</p></div>
+</div>
+<a id="return_top" title="返回顶部"></a>
+<!--  推荐文章模版  -->
+<script id="content-item" type="text/template">
+    {@each data as it,index}
+    {@if index <=3}
+    <li>
+        <div class="item-cont">
+            <div class="i-photo"><a href='../../${it.link}'><img src='../../${it.img}' alt=""/></a></div>
+            <div class="i-text"><a class="like"><i class="icon16 icon16-interest"></i> 15</a><a href="../${it.link}">${it.title}</a></div>
+        </div>
+    </li>
+    {@/if}
+    {@/each}
+</script>
+<script>
+    getAjax('content-item','widget-1column',"../../json/project.json");
+</script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>javascript鼠标滑过图片的方向进入透明背景效果-WebWang</title>
+    <meta name="keywords" content="WebWang,web前端网,HTML,javascript,jquery,前端,前端框架,UI设计,W3CSchool,前端工具箱,前端开发,用户体验,交互设计,jquery教程,javascript教程,html5教程,css3教程,web前端开发,网站模板,免费素材,AngularJS">
+    <meta name="description" content="WebWang-前端网，Web前端开发综合性网站，为广大WEB开发者提供HTML5/CSS3、Javascript/jQuery相关的技术文章，分享最前沿的Web开发技术，资源和素材，文章注重实用性和技巧性，是面向web开发人员和设计师的学习优质交流平台， 并为工程师及企业提供优质的前端资源和服务。  ">
+    <link href="../../back/images/ico.ico" rel="shortcut icon"/>
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type=text/javascript src="../../js/jquery-1.7.1.min.js"></script>
+    <script src="../../js/juicer-min.js"></script>
+    <script src="../../js/common.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCoreDefault.css"/>
+    <script type="text/javascript" src="../../js/shCore.js"></script>
+    <script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../js/SyntaxSetting.js"></script>
+    <style>
+        /*  高度均为376px */
+        #demo{width:630px; overflow:hidden; margin:50px auto;}
+        #demo li{float:left; width:200px; height:200px; background:#ccc; margin:5px; position:relative; overflow:hidden;}
+        #demo li span{position:absolute; top:0; left:200px; width:100%; height:100%; background:rgba(0,183,238,0.5);color:#fff;}
+        #demo li span p{font-size:14px;color:#fff;padding:10px;white-space:pre-wrap;}
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="inner clearfix">
+        <div class="h-logo"><a href="../../index.html" title="WebWang">WebWang</a></div>
+        <div class="h-account"><img src="../../back/images/tx.jpg" alt="id"/> Hi，Welcome！<a href="../../back/center.html">进入后院</a></div>
+        <ul class="h-nav">
+            <li><a href="../../index.html">前端开发</a></li>
+            <li><a href="../../resource.html" class="active">前端资源</a></li>
+            <li><a href="../../source.html">开源项目</a></li>
+            <li><a href="../../website.html">网址导航</a></li>
+            <li><a href="../../about.html">关于</a></li>
+        </ul>
+    </div>
+    <div class="banner-detail"></div>
+</div>
+
+<div class="clear"></div>
+<div class="gray-box">
+    <div class="inner">
+        <div class="w720 fl">
+            <dl class="main02 pt20">
+                <dt>类似拉勾网鼠标划入效果<span class="info">发布者：heardwang&nbsp;&nbsp;&nbsp;发布时间：2016-09-28&nbsp;&nbsp;&nbsp;<span class="zz">转载自：http://www.w3cfuns.com/</span></span>
+                    <a href="javascript:;" class="btn btn-large like-btn"><i class="icon16 icon16-like"></i> 喜欢 (10)</a></dt>
+                <dd>
+                    <div class="gallery-item">
+                        <div class="preface">javascript鼠标滑过图片的方向进入透明背景效果</div>
+                        <h3>请看效果</h3>
+                        <!--  内容区域  -->
+                        <ul id="demo">
+                            <li><span>第1项</span></li>
+                            <li><span>第2项</span></li>
+                            <li><span>第3项</span></li>
+                            <li><span>第4项</span></li>
+                            <li><span>第5项</span></li>
+                            <li><span>第6项</span></li>
+                        </ul>
+                        <div class="download"><a href="../demo/demo04.zip">下载源代码</a></div>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="main03">
+                <dt><i class="icon24 icon24-comment"></i> 评论 (1)<a href="#" class="more"><i
+                        class="icon16 icon16-edit"></i> 发表评论</a></dt>
+                <dd>
+                    <ul class="comment-1column">
+                        <li>
+                            <p class="i-info"><b>张无忌</b> 发表于 2016-09-28</p>
+                            <p class="i-text">感谢分享,100个赞！</p>
+                        </li>
+                    </ul>
+                    <div class="page-mini">
+                        <div class="list"><span><</span><span class="active">1</span><a href="javascript:;">2</a><a
+                                href="javascript:;">3</a><a href="javascript:;">4</a><a href="javascript:;">5</a><a href="javascript:;">></a></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="i-textarea">
+                            <textarea></textarea>
+                        </div>
+                        <div class="i-btn">
+                            <input type="button" class="btn btn-large btn-blue" value="提交评论">
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="w220 fr">
+            <dl class="main04 pt20">
+                <dt>最新文章</dt>
+                <dd class="clearfix">
+                    <ul class="widget-1column">
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="f-copyright"><p>分享与创新开发，版权所有，保留一切权利&nbsp;Copyright © 2016-2021 · All rights reserved.</p></div>
+</div>
+<a id="return_top" title="返回顶部"></a>
+<!--  推荐文章模版  -->
+<script id="content-item" type="text/template">
+    {@each data as it,index}
+    {@if index <=3}
+    <li>
+        <div class="item-cont">
+            <div class="i-photo"><a href='../../${it.link}'><img src='../../${it.img}' alt=""/></a></div>
+            <div class="i-text"><a class="like"><i class="icon16 icon16-interest"></i> 15</a><a href="#">${it.title}</a></div>
+        </div>
+    </li>
+    {@/if}
+    {@/each}
+</script>
+<script>
+    getAjax('content-item','widget-1column',"../../json/resource.json");
+</script>
+<script type="text/javascript">
+    function getStyle(obj,name){
+        if(obj.currentStyle){
+            return obj.currentStyle[name];
+        }else{
+            return getComputedStyle(obj,false)[name];
+        }
+    }
+
+    function move(obj,json,options){
+        options=options||{};
+        options.duration=options.duration||700;
+        options.easing=options.easing||'ease-in';
+
+        var count=Math.floor(options.duration/30);
+
+        var start={};
+        var dis={};
+
+        for(var name in json){
+            //name  = 名称
+            //json[name]= 值
+
+            start[name]=parseFloat(getStyle(obj,name));
+
+            dis[name]=json[name]-start[name];
+
+        }
+        var n=0;
+        clearInterval(obj.timer);
+        obj.timer=setInterval(function(){
+            n++;
+            //var cur=start+dis*n/count;
+
+            for(var name in json){
+
+                switch(options.easing){
+                    case 'linear':
+                        var cur=start[name]+dis[name]*n/count;
+                        break;
+                    case 'ease-in':
+                        var a=Math.pow(n/count,3);
+                        var cur=start[name]+dis[name]*a;
+                        break;
+                    case 'ease-out':
+                        var a=Math.pow(1-n/count,3);
+                        var cur=start[name]+dis[name]*(1-a);
+                        break;
+                }
+
+                if(name=='opacity'){
+                    obj.style[name]=cur;
+                    obj.style.filter='alpha(opacity:'+(cur*100)+')';
+                }else{
+                    obj.style[name]=cur+'px';
+                }
+
+            }
+
+            if(n==count){
+                clearInterval(obj.timer);
+
+                options.complete&&options.complete();
+            }
+
+        },30);
+    }
+</script>
+<script>
+    function a2d(n){
+        return n*180/Math.PI;
+    }
+    function hoverDir(obj,ev){
+        var a=ev.clientX-(obj.offsetLeft+obj.offsetWidth/2);
+        var b=obj.offsetTop+obj.offsetHeight/2-ev.clientY;
+        return Math.round((a2d(Math.atan2(b,a))+180)/90)%4;
+
+    }
+    function through(obj){
+        obj.onmouseenter=function(ev){
+            var oEvent=ev||event;
+            var oS=this.children[0];
+            var dir = hoverDir(obj,oEvent);
+            switch(dir){
+                case 0:
+                    oS.style.left = '-200px';
+                    oS.style.top = 0;
+                    break;
+                case 1:
+                    oS.style.left = 0;
+                    oS.style.top = '200px';
+                    break;
+                case 2:
+                    oS.style.left ='200px';
+                    oS.style.top = 0;
+                    break;
+                case 3:
+                    oS.style.left = 0;
+                    oS.style.top ='-200px';
+                    break;
+            }
+            move(oS,{left:0,top:0},{duration:300,easeing:'linear'});
+        }
+        obj.onmouseleave = function(ev){
+            var oEvent = ev||event;
+            var oS = this.children[0];
+            var dir = hoverDir(obj,oEvent);
+            switch(dir){
+                case 0:
+                    move(oS,{left:-200,top:0},{duration:300,easing:'linear'});
+                    break;
+                case 1:
+                    move(oS,{left:0,top:200},{duration:300,easing:'linear'});
+                    break;
+                case 2:
+                    move(oS,{left:200,top:0},{duration:300,easing:'linear'});
+                    break;
+                case 3:
+                    move(oS,{left:0,top:-200},{duration:300,easing:'linear'});
+                    break;
+            }
+        };
+    }
+    window.onload=function(){
+        var oLi=document.getElementsByTagName("li");
+        for(var i=0;i<oLi.length;i++){
+            through(oLi[i])
+        }
+
+    }
+</script>
+</body>
+</html>

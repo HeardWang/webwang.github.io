@@ -1,0 +1,377 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用CSS3 打造酷炫的3D文本滚动效果-WebWang</title>
+    <meta name="keywords" content="WebWang,web前端网,HTML,javascript,jquery,前端,前端框架,UI设计,W3CSchool,前端工具箱,前端开发,用户体验,交互设计,jquery教程,javascript教程,html5教程,css3教程,web前端开发,网站模板,免费素材,AngularJS">
+    <meta name="description" content="WebWang-前端网，Web前端开发综合性网站，为广大WEB开发者提供HTML5/CSS3、Javascript/jQuery相关的技术文章，分享最前沿的Web开发技术，资源和素材，文章注重实用性和技巧性，是面向web开发人员和设计师的学习优质交流平台， 并为工程师及企业提供优质的前端资源和服务。  ">
+    <link href="../../back/images/ico.ico" rel="shortcut icon"/>
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type=text/javascript src="../../js/jquery-1.7.1.min.js"></script>
+    <script src="../../js/juicer-min.js"></script>
+    <script src="../../js/common.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCoreDefault.css"/>
+    <script type="text/javascript" src="../../js/shCore.js"></script>
+    <script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../js/SyntaxSetting.js"></script>
+    <style>
+        #container_01{
+            perspective: 500px;
+            font-size: 0;
+            margin-top:10px;
+        }
+        #container_01 div{
+            font-size: 6rem;
+            width: 20rem;height: 10rem;
+            display: inline-block;
+            color: #fff;
+            line-height: 10rem;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        #container_01 div:first-of-type{
+            transform: rotateY(-30deg);
+            transform-origin: top right;
+            background: #E5233E;
+        }
+        #container_01 div:last-of-type{
+            transform: rotateY(60deg);
+            transform-origin: top left;
+            background: #1AA488;
+        }
+        #container_01 div span{
+            position: absolute;
+            width: 400%;
+        }
+        #container_01 div:first-of-type span{
+            transform: translateX(40rem);
+            animation: left_div 14s linear infinite;
+            text-shadow: 20px 0px 4px rgba(0,0,0,0.3);
+        }
+        #container_01 div:last-of-type span{
+            transform: translateX(20rem);
+            animation: right_div 14s linear infinite ;
+        }
+        @keyframes right_div{
+            to{transform: translateX(-230rem);}
+        }
+        @keyframes left_div{
+            to{transform: translateX(-200rem);}
+        }
+        @media all and (max-width: 993px) {
+            #container_01 {
+                perspective: none;
+            }
+            #container_01 div:last-of-type {
+                opacity: 0;
+                height: 0;
+            }
+            #container_01 div:first-of-type {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="inner clearfix">
+        <div class="h-logo"><a href="../../index.html" title="WebWang">WebWang</a></div>
+        <div class="h-account"><img src="../../back/images/tx.jpg" alt="id"/> Hi，Welcome！<a href="../../back/center.html">进入后院</a></div>
+        <ul class="h-nav">
+            <li><a href="../../index.html" class="active">前端开发</a></li>
+            <li><a href="../../resource.html">前端资源</a></li>
+            <li><a href="../../source.html">开源项目</a></li>
+            <li><a href="../../website.html">网址导航</a></li>
+            <li><a href="../../about.html">关于</a></li>
+        </ul>
+    </div>
+    <div class="banner-detail"></div>
+</div>
+
+<div class="clear"></div>
+<div class="gray-box">
+    <div class="inner">
+        <div class="w720 fl">
+            <dl class="main02 pt20">
+                <dt>用CSS3打造酷炫的3D文本滚动效果<span class="info">发布者：heardwang&nbsp;&nbsp;&nbsp;发布时间：2016-09-28&nbsp;&nbsp;&nbsp;<span class="zz">转载自：http://helloweb.wang/qianduankaifa/611.html</span></span>
+                    <a href="javascript:;" class="btn btn-large like-btn"><i class="icon16 icon16-like"></i> 喜欢 (10)</a></dt>
+                <dd>
+                    <div class="gallery-item">
+                        <div class="preface">分享一个纯CSS实现文本滚动</div>
+                        <h3>首先先看看效果</h3>
+                        <div id="container_01">
+                            <div><span>欢迎来到我的网站，WebWang专注于前端积累，积小流而成江河！</span></div>
+                            <div><span>欢迎来到我的网站，WebWang专注于前端积累，积小流而成江河！</span></div>
+                        </div>
+                        <p>根据效果图我们很容易发现肯定是要用到3D转换的，如果对这个还不是很了解的可以先看看下面的文章：<br>
+                            http://www.zhangxinxu.com/wordpress/2012/09/css3-3d-transform-perspective-animate-transition/comment-page-1/<br>
+                            http://www.w3cplus.com/blog/tags/95.html<br>
+                            那么首先我们就要把这个折角的效果做出来</p>
+                        <h3>HTML代码：</h3>
+                        <pre class="brush:js;">
+                            &lt;div id="container">
+                            &lt;div>
+                                &lt;span>用来装文字&lt;/span>
+                            &lt;/div>
+
+                            &lt;div>
+                                &lt;span>用来装文字&lt;/span>
+                            &lt;/div>
+                        &lt;/div></pre>
+                        既然是3D效果，那么就要把创建一个3D环境，我们跟id="container" 的div加一个 perspective:500px。然后跟底下的子div加上基本样式
+                        <h3>CSS代码：</h3>
+                        <pre class="brush:js;">
+                            #container{
+                              perspective: 500px;
+                              /*font-size: 0;*/
+                            }
+                            #container div{
+                              font-size: 1rem;
+                              width: 30rem;
+                              height: 10rem;
+                              background: #c40000;
+                              display: inline-block;
+                            }</pre>
+                        效果图：
+                        <div class="i-photo"><img src="../images/article_06/1.jpg" alt=""/></div>
+                        我们可以看到中间产生了空隙，为了解决这个问题我们可以将id=container的div设置font-size:0;更多可以见下面这篇文章<br>
+                        http://www.w3cplus.com/css/fighting-the-space-between-inline-block-elements<br>
+                        解决上述问题后，就要产生折角了，主要是通过transform:rotateY 来实现。<br>
+                        <h3>代码如下：</h3>
+                        <pre class="brush:js;">
+                            #container div:first-of-type{
+                            transform: rotateY(-40deg);
+                            transform-origin: top right;
+                            background: #E5233E;
+                            }
+                            #container div:last-of-type{
+                            transform: rotateY(40deg);
+                            transform-origin: top left;
+                            background: #B31E31;
+                            }</pre>
+                        为了实现更为逼真的效果，凸显出明暗，我们将两个子div的背景颜色设置成不同的值（ #E5233E和#B31E31），这样就会有背光和向光的区别，同时在#container div中加入如下基本设置代码
+                        <pre class="brush:js;">
+                            color: #fff;
+                            line-height: 10rem;</pre>
+                        看效果吧
+                        <div class="i-photo"><img src="../images/article_06/2.jpg" alt=""/></div>
+                        怎么样，基本雏形已经有了，那么接下来就是要让文字滚动起来，这时我们就需要用到transform:translateX 这个位移特性了。
+                        <p>现在我们把代码变成下面这个样子</p>
+                        <pre class="brush:js;">
+#container div{
+    font-size: 6rem;
+    width: 30rem;height: 10rem;
+    display: inline-block;
+    color: #fff;
+    line-height: 10rem;
+    position: relative;
+}
+#container div:first-of-type{
+    transform: rotateY(-40deg);
+    transform-origin: top right;
+    background: #E5233E;
+}
+#container div:last-of-type{
+    transform: rotateY(60deg);
+    transform-origin: top left;
+    background: #B31E31;
+}
+#container div span{
+    position: absolute;
+}
+#container div:first-of-type span{
+    transform: translateX(60rem);
+    /*这里值要设置成2倍div的宽度（实际上是div的宽度+下面的translateX的值）*/
+}
+#container div:last-of-type span{
+    transform: translateX(30rem);
+    /*这里的30rem要设置成刚好和div的宽度相同*/
+}
+                        </pre>
+                        <div class="i-photo"><img src="../images/article_06/3.jpg" alt=""/></div>
+                        在这里主要说一下这两个translateX的怎么设置，首先看第二个div也就是右边这个，如果要文字从最右边移动过来，首先我们就需要把文字全 部移到div的后面去，也就是上图蓝色部分；那么左边那个div的translateX的值就必须是上图中X+Y的值，如果说的不是很清楚，可以自己下来 实验自行体会。哎，这个图画的貌似有点丑，将就一下啰。
+                        <p>那么接下来就要运动动画来改变translateX的值使文字动起来了</p>
+                        <pre class="brush:js;">
+#container div:first-of-type span{
+    transform: translateX(60rem);
+    animation: left_div 14s linear infinite;
+    text-shadow: 20px 0px 4px rgba(0,0,0,0.3);
+    /*为了效果更逼真我们在向光的div加上文字阴影*/
+}
+
+#container div:last-of-type span{
+    transform: translateX(30rem);
+    animation: right_div 14s linear infinite ;
+}
+@keyframes right_div{
+    to{transform: translateX(-130rem);}
+}
+@keyframes left_div{
+    to{transform: translateX(-100rem);}
+}
+                        </pre>
+                        这里我们用到了关键帧，实现动画特效，这里需要注意的是  |（-130）-30|  和|（-100）-60|这两个的绝对值必须相等，这样你才可能，保证速度一直（简单点就是在所用的时间都相同的话，要想速度相同并排跑，那么跑的距离 也应该是相同的）。在这里究竟要位移多少（如代码中的-130rem和-100rem）这个取决于你的文字长度，文字越长，这个位移的距离肯定要越长。
+                        <div class="i-photo"><img src="../images/article_06/4.jpg" alt=""/></div>
+                        怎么样还是比较逼真吧！我们在这里跟子div都加了一个overflow:hidden，来隐藏已经溢出的文字，不然会见到下图
+                        <div class="i-photo"><img src="../images/article_06/5.jpg" alt=""/></div>
+                        当然这里还有一个问题，那就是如果文字过长，那么在div里面就会换行得到的就是下面的效果
+                        <div class="i-photo"><img src="../images/article_06/6.jpg" alt=""/></div>
+                        这种显然不是我们想要的，所以要在#container div中加入  white-space：nowrap;这样就正常了。<br>
+                        最后一步就是要实现响应式，因为当屏幕较小时，则会出现下面的效果
+                        <div class="i-photo"><img src="../images/article_06/7.jpg" alt=""/></div>
+                        所以我们加上如下代码
+                        <pre class="brush:js;">
+@media all and (max-width: 993px) {
+  #container {
+    perspective: none;
+  }
+  #container div:last-of-type {
+    opacity: 0;
+    height: 0;
+  }
+  #container div:first-of-type {
+    width: 80%;
+  }
+}
+                        </pre>
+                        当屏幕较小是，会显示如下效果
+                        <div class="i-photo"><img src="../images/article_06/8.jpg" alt=""/></div>
+                        好了，大功告成，各位拿去尽情装逼吧！最后附上完整代码
+                        <h3>HTML代码：</h3>
+                        <pre class="brush:js;">
+&lt;div id="container">
+    &lt;div>
+        &lt;span>DJL箫氏，三月七日，白桦林里，热爱前端，性别男，爱好女&lt;/span>
+    &lt;/div>
+
+    &lt;div>
+        &lt;span>DJL箫氏，三月七日，白桦林里，热爱前端，性别男，爱好女&lt;/span>
+    &lt;/div>
+&lt;/div>
+                        </pre>
+                        <h3>CSS代码：</h3>
+                        <pre class="brush:js;">
+#container{
+    perspective: 500px;
+    font-size: 0;
+}
+#container div{
+    font-size: 6rem;
+    width: 30rem;height: 10rem;
+    display: inline-block;
+    color: #fff;
+    line-height: 10rem;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#container div:first-of-type{
+    transform: rotateY(-40deg);
+    transform-origin: top right;
+    background: #E5233E;
+}
+#container div:last-of-type{
+    transform: rotateY(60deg);
+    transform-origin: top left;
+    background: #B31E31;
+}
+#container div span{
+    position: absolute;
+    width: 400%;
+}
+#container div:first-of-type span{
+    transform: translateX(60rem);
+    animation: left_div 14s linear infinite;
+    text-shadow: 20px 0px 4px rgba(0,0,0,0.3);
+}
+#container div:last-of-type span{
+    transform: translateX(30rem);
+    animation: right_div 14s linear infinite ;
+}
+@keyframes right_div{
+    to{transform: translateX(-130rem);}
+}
+@keyframes left_div{
+    to{transform: translateX(-100rem);}
+}
+@media all and (max-width: 993px) {
+  #container {
+    perspective: none;
+  }
+  #container div:last-of-type {
+    opacity: 0;
+    height: 0;
+  }
+  #container div:first-of-type {
+    width: 80%;
+  }
+}
+                        </pre>
+                        <h3>参考链接：</h3>
+                        <p>http://www.w3cplus.com/animation/wrapping-animated-3D-marquee-text-with-pure-CSS.html</p>
+                        <p>http://thenewcode.com/1096/Wrapping-Animated-3D-Marquee-Text-with-Pure-CSS</p>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="main03">
+                <dt><i class="icon24 icon24-comment"></i> 评论 (1)<a href="#" class="more"><i
+                        class="icon16 icon16-edit"></i> 发表评论</a></dt>
+                <dd>
+                    <ul class="comment-1column">
+                        <li>
+                            <p class="i-info"><b>WebWang</b> 发表于 2016-09-28</p>
+                            <p class="i-text">文章转载，感谢分享。</p>
+                        </li>
+                    </ul>
+                    <div class="page-mini">
+                        <div class="list"><span><</span><span class="active">1</span><a href="javascript:;">2</a><a
+                                href="javascript:;">3</a><a href="javascript:;">4</a><a href="javascript:;">5</a><a href="javascript:;">></a></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="i-textarea">
+                            <textarea></textarea>
+                        </div>
+                        <div class="i-btn">
+                            <input type="button" class="btn btn-large btn-blue" value="提交评论">
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="w220 fr">
+            <dl class="main04 pt20">
+                <dt>最新文章</dt>
+                <dd class="clearfix">
+                    <ul class="widget-1column">
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="f-copyright"><p>分享与创新开发，版权所有，保留一切权利&nbsp;Copyright © 2016-2021 · All rights reserved.</p></div>
+</div>
+<a id="return_top" title="返回顶部"></a>
+<!--  推荐文章模版  -->
+<script id="content-item" type="text/template">
+    {@each data as it,index}
+    {@if index <=3}
+    <li>
+        <div class="item-cont">
+            <div class="i-photo"><a href='../../${it.link}'><img src='../../${it.img}' alt=""/></a></div>
+            <div class="i-text"><a class="like"><i class="icon16 icon16-interest"></i> 15</a><a href="#">${it.title}</a></div>
+        </div>
+    </li>
+    {@/if}
+    {@/each}
+</script>
+<script>
+    getAjax('content-item','widget-1column',"../../json/project.json");
+</script>
+</body>
+</html>

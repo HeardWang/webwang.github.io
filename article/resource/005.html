@@ -1,0 +1,283 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>canvas鼠标指针特效，满天星-WebWang</title>
+    <meta name="keywords" content="WebWang,web前端网,HTML,javascript,jquery,前端,前端框架,UI设计,W3CSchool,前端工具箱,前端开发,用户体验,交互设计,jquery教程,javascript教程,html5教程,css3教程,web前端开发,网站模板,免费素材,AngularJS">
+    <meta name="description" content="WebWang-前端网，Web前端开发综合性网站，为广大WEB开发者提供HTML5/CSS3、Javascript/jQuery相关的技术文章，分享最前沿的Web开发技术，资源和素材，文章注重实用性和技巧性，是面向web开发人员和设计师的学习优质交流平台， 并为工程师及企业提供优质的前端资源和服务。  ">
+    <link href="../../back/images/ico.ico" rel="shortcut icon"/>
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type=text/javascript src="../../js/jquery-1.7.1.min.js"></script>
+    <script src="../../js/juicer-min.js"></script>
+    <script src="../../js/common.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCoreDefault.css"/>
+    <script type="text/javascript" src="../../js/shCore.js"></script>
+    <script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../js/SyntaxSetting.js"></script>
+    <style>
+        /*  高度均为376px */
+        #box{background:rgba(5,0,35,1.00);}
+        #cav{height: 376px;width: 100%;}
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="inner clearfix">
+        <div class="h-logo"><a href="../../index.html" title="WebWang">WebWang</a></div>
+        <div class="h-account"><img src="../../back/images/tx.jpg" alt="id"/> Hi，Welcome！<a href="../../back/center.html">进入后院</a></div>
+        <ul class="h-nav">
+            <li><a href="../../index.html">前端开发</a></li>
+            <li><a href="../../resource.html" class="active">前端资源</a></li>
+            <li><a href="../../source.html">开源项目</a></li>
+            <li><a href="../../website.html">网址导航</a></li>
+            <li><a href="../../about.html">关于</a></li>
+        </ul>
+    </div>
+    <div class="banner-detail"></div>
+</div>
+
+<div class="clear"></div>
+<div class="gray-box">
+    <div class="inner">
+        <div class="w720 fl">
+            <dl class="main02 pt20">
+                <dt>canvas鼠标指针特效<span class="info">发布者：heardwang&nbsp;&nbsp;&nbsp;发布时间：2016-09-28&nbsp;&nbsp;&nbsp;<span class="zz">转载自：http://www.w3cfuns.com/</span></span>
+                    <a href="javascript:;" class="btn btn-large like-btn"><i class="icon16 icon16-like"></i> 喜欢 (10)</a></dt>
+                <dd>
+                    <div class="gallery-item">
+                        <div class="preface">canvas鼠标指针特效，满天星</div>
+                        <h3>请看效果</h3>
+                        <!--  内容区域  -->
+                        <div id="box"><canvas id="cav"></canvas></div>
+                        <div class="download"><a href="../demo/demo05.zip">下载源代码</a></div>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="main03">
+                <dt><i class="icon24 icon24-comment"></i> 评论 (1)<a href="#" class="more"><i
+                        class="icon16 icon16-edit"></i> 发表评论</a></dt>
+                <dd>
+                    <ul class="comment-1column">
+                        <li>
+                            <p class="i-info"><b>张无忌</b> 发表于 2016-09-28</p>
+                            <p class="i-text">感谢分享,100个赞！</p>
+                        </li>
+                    </ul>
+                    <div class="page-mini">
+                        <div class="list"><span><</span><span class="active">1</span><a href="javascript:;">2</a><a
+                                href="javascript:;">3</a><a href="javascript:;">4</a><a href="javascript:;">5</a><a href="javascript:;">></a></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="i-textarea">
+                            <textarea></textarea>
+                        </div>
+                        <div class="i-btn">
+                            <input type="button" class="btn btn-large btn-blue" value="提交评论">
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="w220 fr">
+            <dl class="main04 pt20">
+                <dt>最新文章</dt>
+                <dd class="clearfix">
+                    <ul class="widget-1column">
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="f-copyright"><p>分享与创新开发，版权所有，保留一切权利&nbsp;Copyright © 2016-2021 · All rights reserved.</p></div>
+</div>
+<a id="return_top" title="返回顶部"></a>
+<!--  推荐文章模版  -->
+<script id="content-item" type="text/template">
+    {@each data as it,index}
+    {@if index <=3}
+    <li>
+        <div class="item-cont">
+            <div class="i-photo"><a href='../../${it.link}'><img src='../../${it.img}' alt=""/></a></div>
+            <div class="i-text"><a class="like"><i class="icon16 icon16-interest"></i> 15</a><a href="#">${it.title}</a></div>
+        </div>
+    </li>
+    {@/if}
+    {@/each}
+</script>
+<script>
+    getAjax('content-item','widget-1column',"../../json/resource.json");
+</script>
+<script>
+    function blossom(id){
+        var blossom=this;
+        this.cav_w=720;
+        this.cav_h=376;                                                          //设置 画布宽高
+        this.canvas=document.getElementById(id);
+        this.canvas.width=this.cav_w;
+        this.canvas.height=this.cav_h;
+        this.mouse_x=this.cav_w/2-this.canvas.offsetLeft-25;
+        this.mouse_y=this.cav_h/2-this.canvas.offsetTop-25;
+        this.ctx=this.canvas.getContext("2d");
+        this.starbox=[];
+        this.vcolor=0;
+        this.stars=function(locx,locy){
+            var self=this;
+            self.color="hsl("+blossom.vcolor+",90%,90%)";                   //h色相 0~360,S饱和度，L亮度，0~100%
+            self.xo=locx+Math.random()*50;
+            self.yo=locy+Math.random()*50;
+            self.direct=Math.random()>1/2 ? 1 : -1;
+            self.vx=(Math.random()-0.5)*2.5;
+            self.vy=Math.random()*2.5;
+            self.deg=Math.random()*360;
+            self.speed=Math.random()*10-5;
+            self.opacity=Math.random()*0.5+0.5;
+            self.vopacity=Math.random()*0.009;
+            self.scale=Math.random()*0.7-1;
+            self.img=document.createElement('canvas');
+            self.shape(5,20);                                                                       //设置星星的边数 和 大小
+        };
+        this.stars.prototype.move=function(){                                              //星星的轨迹运动
+            var self=this;
+            self.vx=self.vx+Math.random()*self.direct*0.01*self.speed;
+            self.vy=self.vy+Math.random()*0.01*self.speed;
+            self.vopacity=self.vopacity+0.0002;
+            self.xo=self.xo+self.vx;
+            self.yo=self.yo+self.vy;
+            self.opacity=self.opacity-self.vopacity;
+            self.deg=self.deg+Math.random()*3*self.direct;
+            if(blossom.vcolor<360){
+                blossom.vcolor=blossom.vcolor+0.009;
+            }
+            else{
+                blossom.vcolor=0;
+            }
+            self.color="hsl("+blossom.vcolor+",90%,70%)";
+        };
+        this.stars.prototype.shape=function(n,r){                                 //设置星星的边数 和 大小，N是边数，r是星星半径，用的贝塞尔，这是10实际星星半径并非为10哟~
+            var self=this;
+            var img=self.img;
+            img.width=3*r;
+            img.height=3*r;
+            var ctx=self.img.getContext('2d');
+            var outpoint=new Array();
+            var inpoint=new Array();
+            for(var i=0;i<n;i++){
+                outpoint[i]={
+                    xo:img.width/2+r*Math.cos(2*Math.PI*i/n),
+                    yo:img.height/2+r*Math.sin(2*Math.PI*i/n),
+                };
+                inpoint[i]={
+                    xo:img.width/2+0.5*r*Math.cos((2*i+1)*Math.PI/n),
+                    yo:img.height/2+0.5*r*Math.sin((2*i+1)*Math.PI/n),
+                }
+            }
+            ctx.beginPath();
+            /*for(var i=0;i<n;i++){
+             if(i<=0)
+             ctx.moveTo(inpoint[0].xo,inpoint[0].yo);
+             else
+             ctx.lineTo(outpoint[i].xo,outpoint[i].yo)
+             ctx.lineTo(inpoint[i].xo,inpoint[i].yo)
+             }
+             ctx.lineTo(outpoint[0].xo,outpoint[0].yo)*/
+            for(var i=0;i<n;i++){
+                if(i<=0)
+                    ctx.moveTo(inpoint[0].xo,inpoint[0].yo);
+                else
+                    ctx.bezierCurveTo(outpoint[i].xo,outpoint[i].yo,outpoint[i].xo,outpoint[i].yo,inpoint[i].xo,inpoint[i].yo);
+            }
+            ctx.bezierCurveTo(outpoint[0].xo,outpoint[0].yo,outpoint[0].xo,outpoint[0].yo,inpoint[0].xo,inpoint[0].yo);
+            ctx.fillStyle=self.color;
+            ctx.shadowColor=self.color;
+            ctx.shadowBlur=20;
+            ctx.fill();
+            ctx.closePath();
+        };
+        this.stars.prototype.draw=function(w,h,roat,scale){                                       // 画星星图片，w=图片宽，h=图片高，r=图片旋转角度，s=图片大小
+            var self=this;
+            var ctx=blossom.ctx;
+            ctx.save();
+            ctx.globalAlpha=Math.max(0,self.opacity);
+            ctx.translate(self.xo,self.yo);
+            ctx.rotate(roat*Math.PI/180);
+            ctx.scale(scale,scale);
+            ctx.drawImage(self.img,-w,-h);
+            ctx.restore();
+        };
+        this.rander();
+        this.listen();
+    }
+    blossom.prototype.makestar=function(a){
+        if(this.starbox.length<100){
+            this.starbox.push(new  this.stars(this.mouse_x,this.mouse_y));
+        }
+    };
+    blossom.prototype.rander=function(){
+        var self=this;
+        this.makestar();
+        this.ctx.clearRect(0, 0,this.cav_w,this.cav_h);
+        this.ctx.beginPath();
+        for(var i = 0,j=this.starbox.length;i<j;i++){
+            if(this.starbox[i].opacity<=0){
+                this.starbox.splice(i, 1);
+                i--;
+                j--
+            }
+            else{
+                this.starbox[i].move();
+                this.starbox[i].draw(this.starbox[i].img.width/2,this.starbox[i].img.height/2,this.starbox[i].deg,this.starbox[i].scale);
+                //this.starbox[i].shape(5,20);                                      //星星角的个数，和大小
+            }
+        }
+        this.ctx.globalAlpha=0;                                                     //背景透明度
+        //this.ctx.fillStyle="#000000";                                            //画布背景色
+        //this.ctx.fillRect(0,0,this.cav_w,this.cav_h);
+        this.ctx.closePath();
+        requestAnimationFrame(function(){self.rander()});
+    };
+    blossom.prototype.listen=function(){
+        var self=this;
+        this.canvas.addEventListener("mousemove", function(e) {
+            self.mouse_x = e.offsetX-25;
+            self.mouse_y = e.offsetY-25;
+        });
+        this.canvas.addEventListener('touchstart',function(e){
+            event.preventDefault();
+
+        });
+        this.canvas.addEventListener("touchmove", function(e) {
+            self.mouse_x = e.touches[0].offsetX-25;
+            self.mouse_y = e.touches[0].offsetY-25;
+        });
+        this.canvas.addEventListener('touchend',function(e){
+            event.preventDefault();
+            self.mouse_x = e.changedTouches[0].offsetX-25
+            self.mouse_y = e.changedTouches[0].offsetY-25;
+            for (var i = 0; i < 30; i++) {
+                self.starbox.opacity=0;
+                self.starbox.push(new self.stars(self.mouse_x,self.mouse_y));
+            }
+            for(var i = 0,j=self.starbox.length;i<j;i++){
+                self.starbox[i].speed=self.starbox[i].speed*5;
+            }
+        });
+        this.canvas.addEventListener("click", function(e) {
+            for (var i = 0; i < 30; i++) {
+                self.starbox.opacity=0;
+                self.starbox.push(new self.stars(self.mouse_x,self.mouse_y));
+            }
+            for(var i = 0,j=self.starbox.length;i<j;i++){
+                self.starbox[i].speed=self.starbox[i].speed*5;
+            }
+        })
+    };
+    var shine=new blossom("cav");
+    //shine.makestar();
+</script>
+</body>
+</html>
