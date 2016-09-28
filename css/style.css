@@ -359,3 +359,5 @@ input, select, textarea {vertical-align: middle;font-size: 13px;resize: none;col
 .scale{transition: all 1s;}
 .scale:hover{transform: scale(1.1,1.1)}
 #static .swiper-pagination-bullet-active{border: 2px solid #1abc9c;}
+/*  loading  */
+.loading{margin-left: 50%;-webkit-transform: translateX(-50%);-moz-transform: translateX(-50%);-ms-transform: translateX(-50%);-o-transform: translateX(-50%);transform: translateX(-50%);margin-top: 100px;}
