@@ -22,7 +22,3 @@
 <br>
 &lt;div class="i-photo">&lt;img src="images/article_07/3.png" alt="" title="WebWang-前端网"/>&lt;/div><br>
 &lt;div class="preface">&lt;/div><br>
-<style>
-i{font-weight:900;}
-i:hover{color:red;}
-</style>
