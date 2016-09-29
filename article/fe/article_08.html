@@ -1,0 +1,605 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3实现6种Loading效果-WebWang</title>
+    <meta name="keywords" content="WebWang,web前端网,HTML,javascript,jquery,前端,前端框架,UI设计,W3CSchool,前端工具箱,前端开发,用户体验,交互设计,jquery教程,javascript教程,html5教程,css3教程,web前端开发,网站模板,免费素材,AngularJS">
+    <meta name="description" content="WebWang-前端网，Web前端开发综合性网站，为广大WEB开发者提供HTML5/CSS3、Javascript/jQuery相关的技术文章，分享最前沿的Web开发技术，资源和素材，文章注重实用性和技巧性，是面向web开发人员和设计师的学习优质交流平台， 并为工程师及企业提供优质的前端资源和服务。  ">
+    <link href="../../back/images/ico.ico" rel="shortcut icon"/>
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type=text/javascript src="../../js/jquery-1.7.1.min.js"></script>
+    <script src="../../js/juicer-min.js"></script>
+    <script src="../../js/common.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCoreDefault.css"/>
+    <script type="text/javascript" src="../../js/shCore.js"></script>
+    <script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../js/SyntaxSetting.js"></script>
+    <style>
+        .box { width:100%; padding:3%; box-sizing:border-box; overflow:hidden;}
+        .box .loader {  width:30%; float:left; height:200px; margin-right:3%; border:1px solid #ccc; box-sizing:border-box; display:flex; align-items: center; justify-content: center;}
+        .loading_1 { width:35px; height:35px; position:relative;}
+        @-webkit-keyframes loading_1 {
+            0% { transform: rotate(0deg);}
+            50% { transform: rotate(180deg);}
+            100% { transform: rotate(360deg);}
+        }
+        .loading_1 i { display:block; width:100%; height:100%; border-radius:50%; background: linear-gradient(transparent 0%, transparent 70%, #333 30%, #333 100%); animation: loading_1 0.5s linear infinite;}
+
+        @-webkit-keyframes loading_2 {
+            0% { transform: scaleY(1)}
+            50% { transform: scaleY(0.4)}
+            100% { transform: scaleY(1)}
+        }
+        .loading_2 i { width:4px; border-radius:2px; height:35px; margin:0 2px; display:inline-block; background:#333;}
+        .loading_2 i:nth-child(1) { animation: loading_2 .8s linear 0.1s infinite;}
+        .loading_2 i:nth-child(2) { animation: loading_2 .8s linear 0.2s infinite;}
+        .loading_2 i:nth-child(3) { animation: loading_2 .8s linear 0.3s infinite;}
+        .loading_2 i:nth-child(4) { animation: loading_2 .8s linear 0.4s infinite;}
+
+
+        .loading_3 { position:relative;}
+        @-webkit-keyframes loading_3 {
+            0% { transform: scale(1); opacity:1;}
+            50% { transform: scale(.5); opacity: .3;}
+            100% { transform: scale(1); opacity:1;}
+        }
+        .loading_3 i { display:block; width:15px; height:15px; border-radius:50%; background:#333; position:absolute;}
+        .loading_3 i:nth-child(1) { top:25px; left:0; animation:loading_3 .7s ease 0s infinite;}
+        .loading_3 i:nth-child(2) { top:17px; left:17px; animation:loading_3 .7s ease -0.12s infinite;}
+        .loading_3 i:nth-child(3) { top:0; left:25px; animation:loading_3 .7s ease -0.24s infinite;}
+        .loading_3 i:nth-child(4) { top:-17px; left:17px; animation:loading_3 .7s ease -0.36s infinite;}
+        .loading_3 i:nth-child(5) { top:-25px; left:0; animation:loading_3 .7s ease -0.48s infinite;}
+        .loading_3 i:nth-child(6) { top:-17px; left:-17px; animation:loading_3 .7s ease -0.60s infinite;}
+        .loading_3 i:nth-child(7) { top:0; left:-25px; animation:loading_3 .7s ease -0.72s infinite;}
+        .loading_3 i:nth-child(8) { top:17px; left:-17px; animation:loading_3 .7s ease -0.84s infinite;}
+
+        .loading_4 { width:60px; height:60px; position:relative; }
+        @-webkit-keyframes loading_4 {
+            0% { transform: scale(0); opacity:0;}
+            5% { opacity:1;}
+            100% { transform: scale(1); opacity:0;}
+        }
+        .loading_4 i { display:block; width:60px; height:60px; border-radius:50%; background:#333; position:absolute; left:0; top:0; opacity:0;}
+        .loading_4 i:nth-child(1) { -webkit-animation: loading_4  1s linear 0s infinite;}
+        .loading_4 i:nth-child(2) { -webkit-animation: loading_4  1s linear 0.2s infinite;}
+        .loading_4 i:nth-child(3) { -webkit-animation: loading_4  1s linear 0.4s infinite;}
+
+        .loading_5 { width:40px; height:40px; position:relative;}
+        @-webkit-keyframes loading_5 {
+            0% { transform: rotate(0deg) scale(1);}
+            50% { transform: rotate(180deg) scale(0.6);}
+            100% { transform: rotate(360deg) scale(1);}
+        }
+        .loading_5 i { display:block; border:2px solid #333; border-radius:50%; border-color:transparent #333; position:absolute;}
+        .loading_5 i:first-child { width:35px; height:35px; top:0; left:0; animation:loading_5 1s ease-in-out 0s infinite;}
+        .loading_5 i:last-child { width:15px; height:15px; top:10px; left:10px; animation: loading_5 1s ease-in-out .5s infinite reverse;}
+
+        .loading_6 { width:80px; height:20px; position:relative;}
+        @-webkit-keyframes loading_6 {
+            0% { left:100px; top:0;}
+            80% { left:0; top:0;}
+            85% { left:0; top:-20px; width:20px; height:20px;}
+            90% { width:40px; height:20px;}
+            95% { left:100px; top:-20px; width:20px; height:20px;}
+            100% { left:100px; top:0;}
+        }
+        .loading_6 i { display:inline-block; width:20px; height:20px; border-radius:50%; background:#333; margin-right:10px; position:absolute;}
+        .loading_6 i:nth-child(1) { animation:loading_6 2s linear 0s infinite;}
+        .loading_6 i:nth-child(2) { animation:loading_6 2s linear -0.4s infinite;}
+        .loading_6 i:nth-child(3) { animation:loading_6 2s linear -0.8s infinite;}
+        .loading_6 i:nth-child(4) { animation:loading_6 2s linear -1.2s infinite;}
+        .loading_6 i:nth-child(5) { animation:loading_6 2s linear -1.6s infinite;}
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="inner clearfix">
+        <div class="h-logo"><a href="../../index.html" title="WebWang">WebWang</a></div>
+        <div class="h-account"><img src="../../back/images/tx.jpg" alt="id"/> Hi，Welcome！<a href="../../back/center.html">进入后院</a></div>
+        <ul class="h-nav">
+            <li><a href="../../index.html" class="active">前端开发</a></li>
+            <li><a href="../../resource.html">前端资源</a></li>
+            <li><a href="../../source.html">开源项目</a></li>
+            <li><a href="../../website.html">网址导航</a></li>
+            <li><a href="../../about.html">关于</a></li>
+        </ul>
+    </div>
+    <div class="banner-detail"></div>
+</div>
+
+<div class="clear"></div>
+<div class="gray-box">
+    <div class="inner">
+        <div class="w720 fl">
+            <dl class="main02 pt20">
+                <dt>CSS3实现6种Loading效果<span class="info">发布者：heardwang&nbsp;&nbsp;&nbsp;发布时间：2016-09-29&nbsp;&nbsp;&nbsp;<span class="zz"></span></span>
+                    <a href="javascript:;" class="btn btn-large like-btn"><i class="icon16 icon16-like"></i> 喜欢 (10)</a></dt>
+                <dd>
+                    <div class="gallery-item">
+                        <div class="preface">CSS3实现6种Loading效果</div>
+                        <div class="box">
+                            <div class="loader">
+                                <div class="loading_1">
+                                    <i></i>
+                                </div>
+                            </div>
+                            <div class="loader">
+                                <div class="loading_2">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+                            <div class="loader">
+                                <div class="loading_3">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="loader">
+                                <div class="loading_4">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+                            <div class="loader">
+                                <div class="loading_5">
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+                            <div class="loader">
+                                <div class="loading_6">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>HTML代码</h3>
+                        <pre class="brush:js;">
+&lt;div class="box">
+    &lt;div class="loader">
+        &lt;div class="loading_1">
+            &lt;i>&lt;/i>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="loader">
+        &lt;div class="loading_2">
+            &lt;i>&lt;/i>
+            &lt;i>&lt;/i>
+            &lt;i>&lt;/i>
+            &lt;i>&lt;/i>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="loader">
+        &lt;div class="loading_3">
+            &lt;i>&lt;/i>
+            &lt;i>&lt;/i>
+            &lt;i>&lt;/i>
+            &lt;i>&lt;/i>
+            &lt;i>&lt;/i>
+            &lt;i>&lt;/i>
+            &lt;i>&lt;/i>
+            &lt;i>&lt;/i>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+&lt;div class="box">
+    &lt;div class="loader">
+        &lt;div class="loading_4">
+            &lt;i>&lt;/i>
+            &lt;i>&lt;/i>
+            &lt;i>&lt;/i>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="loader">
+        &lt;div class="loading_5">
+            &lt;i>&lt;/i>
+            &lt;i>&lt;/i>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="loader">
+        &lt;div class="loading_6">
+            &lt;i>&lt;/i>
+            &lt;i>&lt;/i>
+            &lt;i>&lt;/i>
+            &lt;i>&lt;/i>
+            &lt;i>&lt;/i>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+
+                        </pre>
+                        <h3>CSS代码</h3>
+                        <pre class="brush:js;">
+    .box {
+        width: 100%;
+        padding: 3%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .box .loader {
+        width: 30%;
+        float: left;
+        height: 200px;
+        margin-right: 3%;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .loading_1 {
+        width: 35px;
+        height: 35px;
+        position: relative;
+    }
+
+    @-webkit-keyframes loading_1 {
+        0% {
+            transform: rotate(0deg);
+        }
+        50% {
+            transform: rotate(180deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /**/
+    .loading_1 i {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: linear-gradient(transparent 0%, transparent 70%, #333 30%, #333 100%);
+        animation: loading_1 0.5s linear infinite;
+    }
+
+    @-webkit-keyframes loading_2 {
+        0% {
+            transform: scaleY(1)
+        }
+        50% {
+            transform: scaleY(0.4)
+        }
+        100% {
+            transform: scaleY(1)
+        }
+    }
+
+    .loading_2 i {
+        width: 4px;
+        border-radius: 2px;
+        height: 35px;
+        margin: 0 2px;
+        display: inline-block;
+        background: #333;
+    }
+
+    .loading_2 i:nth-child(1) {
+        animation: loading_2 .8s linear 0.1s infinite;
+    }
+
+    .loading_2 i:nth-child(2) {
+        animation: loading_2 .8s linear 0.2s infinite;
+    }
+
+    .loading_2 i:nth-child(3) {
+        animation: loading_2 .8s linear 0.3s infinite;
+    }
+
+    .loading_2 i:nth-child(4) {
+        animation: loading_2 .8s linear 0.4s infinite;
+    }
+
+    .loading_3 {
+        position: relative;
+    }
+
+    @-webkit-keyframes loading_3 {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        50% {
+            transform: scale(.5);
+            opacity: .3;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .loading_3 i {
+        display: block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #333;
+        position: absolute;
+    }
+
+    .loading_3 i:nth-child(1) {
+        top: 25px;
+        left: 0;
+        animation: loading_3 .7s ease 0s infinite;
+    }
+
+    .loading_3 i:nth-child(2) {
+        top: 17px;
+        left: 17px;
+        animation: loading_3 .7s ease -0.12s infinite;
+    }
+
+    .loading_3 i:nth-child(3) {
+        top: 0;
+        left: 25px;
+        animation: loading_3 .7s ease -0.24s infinite;
+    }
+
+    .loading_3 i:nth-child(4) {
+        top: -17px;
+        left: 17px;
+        animation: loading_3 .7s ease -0.36s infinite;
+    }
+
+    .loading_3 i:nth-child(5) {
+        top: -25px;
+        left: 0;
+        animation: loading_3 .7s ease -0.48s infinite;
+    }
+
+    .loading_3 i:nth-child(6) {
+        top: -17px;
+        left: -17px;
+        animation: loading_3 .7s ease -0.60s infinite;
+    }
+
+    .loading_3 i:nth-child(7) {
+        top: 0;
+        left: -25px;
+        animation: loading_3 .7s ease -0.72s infinite;
+    }
+
+    .loading_3 i:nth-child(8) {
+        top: 17px;
+        left: -17px;
+        animation: loading_3 .7s ease -0.84s infinite;
+    }
+
+    .loading_4 {
+        width: 60px;
+        height: 60px;
+        position: relative;
+    }
+
+    @-webkit-keyframes loading_4 {
+        0% {
+            transform: scale(0);
+            opacity: 0;
+        }
+        5% {
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 0;
+        }
+    }
+
+    .loading_4 i {
+        display: block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #333;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+
+    .loading_4 i:nth-child(1) {
+        -webkit-animation: loading_4 1s linear 0s infinite;
+    }
+
+    .loading_4 i:nth-child(2) {
+        -webkit-animation: loading_4 1s linear 0.2s infinite;
+    }
+
+    .loading_4 i:nth-child(3) {
+        -webkit-animation: loading_4 1s linear 0.4s infinite;
+    }
+
+    .loading_5 {
+        width: 40px;
+        height: 40px;
+        position: relative;
+    }
+
+    @-webkit-keyframes loading_5 {
+        0% {
+            transform: rotate(0deg) scale(1);
+        }
+        50% {
+            transform: rotate(180deg) scale(0.6);
+        }
+        100% {
+            transform: rotate(360deg) scale(1);
+        }
+    }
+
+    .loading_5 i {
+        display: block;
+        border: 2px solid #333;
+        border-radius: 50%;
+        border-color: transparent #333;
+        position: absolute;
+    }
+
+    .loading_5 i:first-child {
+        width: 35px;
+        height: 35px;
+        top: 0;
+        left: 0;
+        animation: loading_5 1s ease-in-out 0s infinite;
+    }
+
+    .loading_5 i:last-child {
+        width: 15px;
+        height: 15px;
+        top: 10px;
+        left: 10px;
+        animation: loading_5 1s ease-in-out .5s infinite reverse;
+    }
+
+    .loading_6 {
+        width: 80px;
+        height: 20px;
+        position: relative;
+    }
+
+    @-webkit-keyframes loading_6 {
+        0% {
+            left: 100px;
+            top: 0;
+        }
+        80% {
+            left: 0;
+            top: 0;
+        }
+        85% {
+            left: 0;
+            top: -20px;
+            width: 20px;
+            height: 20px;
+        }
+        90% {
+            width: 40px;
+            height: 20px;
+        }
+        95% {
+            left: 100px;
+            top: -20px;
+            width: 20px;
+            height: 20px;
+        }
+        100% {
+            left: 100px;
+            top: 0;
+        }
+    }
+
+    .loading_6 i {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #333;
+        margin-right: 10px;
+        position: absolute;
+    }
+
+    .loading_6 i:nth-child(1) {
+        animation: loading_6 2s linear 0s infinite;
+    }
+
+    .loading_6 i:nth-child(2) {
+        animation: loading_6 2s linear -0.4s infinite;
+    }
+
+    .loading_6 i:nth-child(3) {
+        animation: loading_6 2s linear -0.8s infinite;
+    }
+
+    .loading_6 i:nth-child(4) {
+        animation: loading_6 2s linear -1.2s infinite;
+    }
+
+    .loading_6 i:nth-child(5) {
+        animation: loading_6 2s linear -1.6s infinite;
+    }
+                        </pre>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="main03">
+                <dt><i class="icon24 icon24-comment"></i> 评论 (1)<a href="#" class="more"><i
+                        class="icon16 icon16-edit"></i> 发表评论</a></dt>
+                <dd>
+                    <ul class="comment-1column">
+                        <li>
+                            <p class="i-info"><b>WebWang</b> 发表于 2016-09-29</p>
+                            <p class="i-text">CSS3时代，你还在用图片吗？</p>
+                        </li>
+                    </ul>
+                    <div class="page-mini">
+                        <div class="list"><span><</span><span class="active">1</span><a href="javascript:;">2</a><a
+                                href="javascript:;">3</a><a href="javascript:;">4</a><a href="javascript:;">5</a><a href="javascript:;">></a></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="i-textarea">
+                            <textarea></textarea>
+                        </div>
+                        <div class="i-btn">
+                            <input type="button" class="btn btn-large btn-blue" value="提交评论">
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="w220 fr">
+            <dl class="main04 pt20">
+                <dt>最新文章</dt>
+                <dd class="clearfix">
+                    <ul class="widget-1column">
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="f-copyright"><p>分享与创新开发，版权所有，保留一切权利&nbsp;Copyright © 2016-2021 · All rights reserved.</p></div>
+</div>
+<a id="return_top" title="返回顶部"></a>
+<!--  推荐文章模版  -->
+<script id="content-item" type="text/template">
+    {@each data as it,index}
+    {@if index <=3}
+    <li>
+        <div class="item-cont">
+            <div class="i-photo"><a href='../../${it.link}'><img src='../../${it.img}' alt=""/></a></div>
+            <div class="i-text"><a class="like"><i class="icon16 icon16-interest"></i> 15</a><a href="#">${it.title}</a></div>
+        </div>
+    </li>
+    {@/if}
+    {@/each}
+</script>
+<script>
+    getAjax('content-item','widget-1column',"../../json/project.json");
+</script>
+</body>
+</html>
