@@ -42,7 +42,29 @@ $(document).ready(function(){
     $("dt .like-btn").click(function () {
         $(this).css("color","red");
         $(".icon16-like").css("background-position","-16px -100px")
-    })
+    });
+    /*  移动端适配  */
+    var wth =  window.screen.width;
+    var p_meta = '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" id="p_meta">';
+    var hy = '<a href="javascript:;" id="nav_btn"></a>';
+    var stark = false;
+    if(wth <= 414){
+        $('head').append(p_meta);
+        $('.inner').css('width',wth);
+        $('.h-account').empty().append(hy);
+
+        $('#nav_btn').click(function () {
+            if (stark){
+                $('.h-nav').css("top","-175px");
+                stark = !stark;
+            }else{
+                $('.h-nav').css("top","35px");
+                stark = !stark;
+            }
+        })
+    }else{
+        $('#p_meta').remove();
+    }
 });
 
 /*  ajax&juicer函数  */
