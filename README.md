@@ -23,3 +23,6 @@
 <br>
 &lt;div class="i-photo">&lt;img src="images/article_07/3.png" alt="" title="WebWang-前端网"/>&lt;/div><br>
 &lt;div class="preface">&lt;/div><br>
+<h3>V2.1</h3><br>
+2016/9/29<br>
+处理了移动端适配，增加了媒体查询，基本兼容iphone5-6P，资源页移动端打开仍会有问题。
