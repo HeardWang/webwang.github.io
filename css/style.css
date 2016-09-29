@@ -410,6 +410,19 @@ input, select, textarea {vertical-align: middle;font-size: 13px;resize: none;col
 	.banner-about img{width: 920px;height: auto;}
 	.begin-item .container-left{margin: 0;width: 100%;}
 	.begin-item .container-left ul{padding: 20px;}
+	.main02 dt{font-size: 21px;}
+	.gray-box .w220{display: none;}
+	.banner-detail{display: none;}
+	.gallery-item .i-photo{width: 82%;padding: 4%;}
+	.comment-item .i-textarea textarea{width: 96%;padding: 2%;height: 60px;}
+	dt .like-btn {position: absolute;top: 0;right: 5px;}
+	.btn-large {line-height: 32px;height: 32px;padding: 0px 8px;}
+	.main03{padding-bottom: 5px;}
+	.comment-item{padding: 0;}
+	.page-mini{padding: 5px;}
+	.page-mini .list{height: 25px;}
+	.page-mini .list a, .page-mini .list span{width: 20px;height: 25px;line-height: 25px;font-size: 12px;}
+	.comment-item .i-btn input{width: 80px;}
 }
 @media screen and (max-width:320px){
 	.banner-template img{width: 800px;height: auto;}
