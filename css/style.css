@@ -414,6 +414,7 @@ input, select, textarea {vertical-align: middle;font-size: 13px;resize: none;col
 	.begin-item .container-left ul{padding: 20px;}
 	.main02 dt{font-size: 21px;}
 	.gray-box .w220{display: none;}
+	.main05 .w220{display: block;}
 	.banner-detail{display: none;}
 	.gallery-item .i-photo{width: 82%;padding: 4%;}
 	.comment-item .i-textarea textarea{width: 96%;padding: 2%;height: 60px;}
