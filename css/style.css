@@ -358,10 +358,12 @@ input, select, textarea {vertical-align: middle;font-size: 13px;resize: none;col
 /*  媒体查询  */
 @media screen and (max-width: 970px){
 	.inner {width: 100%;}
-	.container-right{display: none;}
+	.container-right{display: none;margin:0;}
 	.container-left{width: 100%;}
+	.container-left{margin:0;}
 }
 @media screen and (max-width:414px) and (min-width:320px){
+	html{overflow-x: hidden;}
 	body{padding-top: 35px;}
 	.theme-3column{width: 100%;}
 	.header{background: #fff;z-index: 999;}
