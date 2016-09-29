@@ -48,7 +48,7 @@ $(document).ready(function(){
     var p_meta = '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" id="p_meta">';
     var hy = '<a href="javascript:;" id="nav_btn"></a>';
     var stark = false;
-    if(wth <= 414){
+    if(wth <= 500){
         $('head').append(p_meta);
         $('.inner').css('width',wth);
         $('.h-account').empty().append(hy);
