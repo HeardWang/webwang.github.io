@@ -362,7 +362,7 @@ input, select, textarea {vertical-align: middle;font-size: 13px;resize: none;col
 	.container-left{width: 100%;}
 	.container-left{margin:0;}
 }
-@media screen and (max-width:414px) and (min-width:320px){
+@media screen and (max-width:500px) and (min-width:320px){
 	html{overflow-x: hidden;}
 	body{padding-top: 35px;}
 	.theme-3column{width: 100%;}
