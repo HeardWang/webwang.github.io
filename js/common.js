@@ -1,13 +1,20 @@
 $(document).ready(function(){
+    var wth =  window.screen.width;
+    var timer;
+    if(wth > 414){
+        timer = 300;
+    }else{
+        timer = 0;
+    }
     /*  屏幕滚动事件 */
     var p = 0,t = 0;
     $(window).scroll(function(e){
         p = $(this).scrollTop();
 
         if(t <= p && p >=75){//下滚
-            $('.header').fadeOut(300);
+            $('.header').fadeOut(timer);
         }else{//上滚
-            $('.header').fadeIn(300);
+            $('.header').fadeIn(timer);
         }
         setTimeout(function(){t = p;},0);
     });
