@@ -365,7 +365,7 @@ input, select, textarea {vertical-align: middle;font-size: 13px;resize: none;col
 	.container-right{display: none;}
 	.container-left{width: 100%;}
 }
-@media (min-width:320px) and (max-width:500px) {
+@media screen and (min-width:320px) and (max-width:414px) {
 	html{overflow-x: hidden;max-width:100%;}
 	body{padding-top: 35px;}
 	.container-right{display: none;}
