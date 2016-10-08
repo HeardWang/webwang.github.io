@@ -1,0 +1,623 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>常用正则表达式总结-WebWang</title>
+    <meta name="keywords" content="WebWang,web前端网,HTML,javascript,jquery,前端,前端框架,UI设计,W3CSchool,前端工具箱,前端开发,用户体验,交互设计,jquery教程,javascript教程,html5教程,css3教程,web前端开发,网站模板,免费素材,AngularJS">
+    <meta name="description" content="WebWang-前端网，Web前端开发综合性网站，为广大WEB开发者提供HTML5/CSS3、Javascript/jQuery相关的技术文章，分享最前沿的Web开发技术，资源和素材，文章注重实用性和技巧性，是面向web开发人员和设计师的学习优质交流平台， 并为工程师及企业提供优质的前端资源和服务。  ">
+    <link href="../../back/images/ico.ico" rel="shortcut icon"/>
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type=text/javascript src="../../js/jquery-1.7.1.min.js"></script>
+    <script src="../../js/juicer-min.js"></script>
+    <script src="../../js/common.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCoreDefault.css"/>
+    <script type="text/javascript" src="../../js/shCore.js"></script>
+    <script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../js/SyntaxSetting.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="inner clearfix">
+        <div class="h-logo"><a href="../../index.html" title="WebWang">WebWang</a></div>
+        <div class="h-account"><img src="../../back/images/tx.jpg" alt="id"/> Hi，Welcome！<a href="../../back/center.html">进入后院</a></div>
+        <ul class="h-nav">
+            <li><a href="../../index.html" class="active">首页</a></li>
+            <li><a href="../../resource.html">前端资源</a></li>
+            <li><a href="../../source.html">开源项目</a></li>
+            <li><a href="../../website.html">网址导航</a></li>
+            <li><a href="../../about.html">关于</a></li>
+        </ul>
+    </div>
+    <div class="banner-detail"></div>
+</div>
+
+<div class="clear"></div>
+<div class="gray-box">
+    <div class="inner">
+        <div class="w720 fl">
+            <dl class="main02 pt20">
+                <dt>常用正则表达式总结<span class="info">发布者：heardwang&nbsp;&nbsp;&nbsp;发布时间：2016-10-08&nbsp;&nbsp;&nbsp;<span class="zz"></span></span>
+                    <a href="javascript:;" class="btn btn-large like-btn"><i class="icon16 icon16-like"></i> 喜欢 (10)</a></dt>
+                <dd>
+                    <div class="gallery-item">
+                        <h3>常用正则表达式合集</h3>
+                        <pre class="brush:js;">
+验证数字：^[0-9]*$
+验证n位的数字：^\d{n}$
+验证至少n位数字：^\d{n,}$
+验证m-n位的数字：^\d{m,n}$
+验证零和非零开头的数字：^(0|[1-9][0-9]*)$
+验证有两位小数的正实数：^[0-9]+(.[0-9]{2})?$
+验证有1-3位小数的正实数：^[0-9]+(.[0-9]{1,3})?$
+验证非零的正整数：^\+?[1-9][0-9]*$
+验证非零的负整数：^\-[1-9][0-9]*$
+验证非负整数（正整数 + 0）  ^\d+$
+验证非正整数（负整数 + 0）  ^((-\d+)|(0+))$
+验证长度为3的字符：^.{3}$
+验证由26个英文字母组成的字符串：^[A-Za-z]+$
+验证由26个大写英文字母组成的字符串：^[A-Z]+$
+验证由26个小写英文字母组成的字符串：^[a-z]+$
+验证由数字和26个英文字母组成的字符串：^[A-Za-z0-9]+$
+验证由数字、26个英文字母或者下划线组成的字符串：^\w+$
+验证用户密码:^[a-zA-Z]\w{5,17}$ 正确格式为：以字母开头，长度在6-18之间，只能包含字符、数字和下划线。
+验证是否含有 ^%&',;=?$\" 等字符：[^%&',;=?$\x22]+
+验证汉字：^[\u4e00-\u9fa5],{0,}$
+验证Email地址：^\w+[-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$
+验证InternetURL：^http://([\w-]+\.)+[\w-]+(/[\w-./?%&=]*)?$ ；^[a-zA-z]+://(w+(-w+)*)(.(w+(-w+)*))*(?S*)?$
+验证电话号码：^(\d3,4|\d{3,4}-)?\d{7,8}$：--正确格式为：XXXX-XXXXXXX，XXXX-XXXXXXXX，XXX-XXXXXXX，XXX-XXXXXXXX，XXXXXXX，XXXXXXXX。
+验证身份证号（15位或18位数字）：^\d{15}|\d{}18$
+验证一年的12个月：^(0?[1-9]|1[0-2])$ 正确格式为：“01”-“09”和“1”“12”
+验证一个月的31天：^((0?[1-9])|((1|2)[0-9])|30|31)$    正确格式为：01、09和1、31。
+整数：^-?\d+$
+非负浮点数（正浮点数 + 0）：^\d+(\.\d+)?$
+正浮点数   ^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$
+非正浮点数（负浮点数 + 0） ^((-\d+(\.\d+)?)|(0+(\.0+)?))$
+负浮点数  ^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$
+浮点数  ^(-?\d+)(\.\d+)?$
+其它常用验证举例:
+目录:
+1:js 字符串长度限制、判断字符长度 、js限制输入、限制不能输入、textarea 长度限制
+2.:js判断汉字、判断是否汉字 、只能输入汉字
+3:js判断是否输入英文、只能输入英文
+4:js只能输入数字,判断数字、验证数字、检测数字、判断是否为数字、只能输入数字
+5:只能输入英文字符和数字
+6: js email验证 、js 判断email 、信箱/邮箱格式验证
+7:js字符过滤,屏蔽关键字
+8:js密码验证、判断密码
+2.1: js 不为空、为空或不是对象 、判断为空 、判断不为空
+2.2:比较两个表单项的值是否相同
+2.3:表单只能为数字和"_"
+2.4:表单项输入数值/长度限定
+2.5:中文/英文/数字/邮件地址合法性判断
+2.6:限定表单项不能输入的字符
+2.7表单的自符控制
+2.8:form文本域的通用校验函数
+
+1. 长度限制
+&lt;script>
+function test()
+{
+if(document.a.b.value.length>50)
+{
+alert("不能超过50个字符！");
+document.a.b.focus();
+return false;
+}
+}
+&lt;/script>
+&lt;form name=a onsubmit="return test()">
+&lt;textarea name="b" cols="40" wrap="VIRTUAL" rows="6">&lt;/textarea>
+&lt;input type="submit" name="Submit" value="check">
+&lt;/form>
+
+2. 只能是汉字
+&lt;input onkeyup="value="/oblog/value.replace(/[^u4E00-u9FA5]/g,'')">
+
+3." 只能是英文
+&lt;script language=javascript>
+function onlyEng()
+{
+if(!(event.keyCode>=65&&event.keyCode&lt;=90))
+event.returnvalue=false;
+}
+&lt;/script>
+
+&lt;input onkeydown="onlyEng();">
+
+4. 只能是数字
+&lt;script language=javascript>
+function onlyNum()
+{
+if(!((event.keyCode>=48&&event.keyCode&lt;=57)||(event.keyCode>=96&&event.keyCode&lt;=105)))
+//考虑小键盘上的数字键
+event.returnvalue=false;
+}
+&lt;/script>
+
+&lt;input onkeydown="onlyNum();">
+
+5. 只能是英文字符和数字
+&lt;input onkeyup="value="/oblog/value.replace(/[W]/g,"'')
+          "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^d]/g,''))">
+
+6. 验证油箱格式
+&lt;SCRIPT LANGUAGE=javascript RUNAT=Server>
+function isEmail(strEmail) {
+if (strEmail.search(/^w+((-w+)|(.w+))*@[A-Za-z0-9]+((.|-)[A-Za-z0-9]+)*.[A-Za-z0-9]+$/) != -1)
+return true;
+else
+alert("oh");
+}
+&lt;/SCRIPT>
+&lt;input type=text onblur=isEmail(this.value)>
+
+7. 屏蔽关键字(这里屏蔽***和****)
+&lt;script language="javascript1.2">
+function test() {
+if((a.b.value.indexOf ("***") == 0)||(a.b.value.indexOf ("****") == 0)){
+alert(":)");
+a.b.focus();
+return false;}
+}
+&lt;/script>
+&lt;form name=a onsubmit="return test()">
+&lt;input type=text name=b>
+&lt;input type="submit" name="Submit" value="check">
+&lt;/form>
+
+8. 两次输入密码是否相同
+&lt;FORM METHOD=POST ACTION="">
+&lt;input type="password" id="input1">
+&lt;input type="password" id="input2">
+&lt;input type="button" value="test" onclick="check()">
+&lt;/FORM>
+&lt;script>
+function check()
+{
+with(document.all){
+if(input1.value!=input2.value)
+{
+alert("false")
+input1.value = "";
+input2.value = "";
+}
+else document.forms[0].submit();
+}
+}
+&lt;/script>
+
+
+屏蔽右键 很酷
+oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+加在body中
+
+
+二
+
+2.1 表单项不能为空
+
+&lt;script language="javascript">
+&lt;!--
+function CheckForm()
+{
+if (document.form.name.value.length == 0) {
+alert("请输入您姓名!");
+document.form.name.focus();
+return false;
+}
+return true;
+}
+-->
+&lt;/script>
+
+2.2 比较两个表单项的值是否相同
+
+&lt;script language="javascript">
+&lt;!--
+function CheckForm()
+if (document.form.PWD.value != document.form.PWD_Again.value) {
+alert("您两次输入的密码不一样！请重新输入.");
+document.ADDUser.PWD.focus();
+return false;
+}
+return true;
+}
+-->
+&lt;/script>
+
+2.3 表单项只能为数字和"_",用于电话/银行帐号验证上,可扩展到域名注册等
+
+&lt;script language="javascript">
+&lt;!--
+function isNumber(String)
+{
+var Letters = "1234567890-"; //可以自己增加可输入值
+var i;
+var c;
+if(String.charAt( 0 )=='-')
+return false;
+if( String.charAt( String.length - 1 ) == '-' )
+return false;
+for( i = 0; i &lt; String.length; i ++ )
+{
+c = String.charAt( i );
+if (Letters.indexOf( c ) &lt; 0)
+return false;
+}
+return true;
+}
+function CheckForm()
+{
+if(! isNumber(document.form.TEL.value)) {
+alert("您的电话号码不合法！");
+document.form.TEL.focus();
+return false;
+}
+return true;
+}
+-->
+&lt;/script>
+
+
+2.4 表单项输入数值/长度限定
+
+&lt;script language="javascript">
+&lt;!--
+function CheckForm()
+{
+if (document.form.count.value > 100 || document.form.count.value &lt; 1)
+{
+alert("输入数值不能小于零大于100!");
+document.form.count.focus();
+return false;
+}
+if (document.form.MESSAGE.value.length&lt;10)
+{
+alert("输入文字小于10!");
+document.form.MESSAGE.focus();
+return false;
+}
+return true;
+}
+//-->
+&lt;/script>
+
+2.5 中文/英文/数字/邮件地址合法性判断
+
+&lt;SCRIPT LANGUAGE="javascript">
+&lt;!--
+
+function isEnglish(name) //英文值检测
+{
+if(name.length == 0)
+return false;
+for(i = 0; i &lt; name.length; i++) {
+if(name.charCodeAt(i) > 128)
+return false;
+}
+return true;
+}
+
+function isChinese(name) //中文值检测
+{
+if(name.length == 0)
+return false;
+for(i = 0; i &lt; name.length; i++) {
+if(name.charCodeAt(i) > 128)
+return true;
+}
+return false;
+}
+
+function isMail(name) // E-mail值检测
+{
+if(! isEnglish(name))
+return false;
+i = name.indexOf(" at ");
+j = name dot lastIndexOf(" at ");
+if(i == -1)
+return false;
+if(i != j)
+return false;
+if(i == name dot length)
+return false;
+return true;
+}
+
+function isNumber(name) //数值检测
+{
+if(name.length == 0)
+return false;
+for(i = 0; i &lt; name.length; i++) {
+if(name.charAt(i) &lt; "0" || name.charAt(i) > "9")
+return false;
+}
+return true;
+}
+
+function CheckForm()
+{
+if(! isMail(form.Email.value)) {
+alert("您的电子邮件不合法！");
+form.Email.focus();
+return false;
+}
+if(! isEnglish(form.name.value)) {
+alert("英文名不合法！");
+form.name.focus();
+return false;
+}
+if(! isChinese(form.cnname.value)) {
+alert("中文名不合法！");
+form.cnname.focus();
+return false;
+}
+if(! isNumber(form.PublicZipCode.value)) {
+alert("邮政编码不合法！");
+form.PublicZipCode.focus();
+return false;
+}
+return true;
+}
+//-->
+&lt;/SCRIPT>
+
+2.6 限定表单项不能输入的字符
+
+&lt;script language="javascript">
+&lt;!--
+
+function contain(str,charset)// 字符串包含测试函数
+{
+var i;
+for(i=0;i&lt;charset.length;i++)
+if(str.indexOf(charset.charAt(i))>=0)
+return true;
+return false;
+}
+
+function CheckForm()
+{
+if ((contain(document.form.NAME.value, "%()>&lt;")) || (contain(document.form.MESSAGE.value, "%()>&lt;")))
+{
+alert("输入了非法字符");
+document.form.NAME.focus();
+return false;
+}
+return true;
+}
+//-->
+&lt;/script>
+
+1. 检查一段字符串是否全由数字组成
+---------------------------------------
+&lt;script language="Javascript">&lt;!--
+function checkNum(str){return str.match(/D/)==null}
+alert(checkNum("1232142141"))
+alert(checkNum("123214214a1"))
+// -->&lt;/script>
+
+2. 怎么判断是否是字符
+---------------------------------------
+if (/[^x00-xff]/g.test(s)) alert("含有汉字");
+else alert("全是字符");
+
+3. 怎么判断是否含有汉字
+---------------------------------------
+if (escape(str).indexOf("%u")!=-1) alert("含有汉字");
+else alert("全是字符");
+
+4. 邮箱格式验证
+---------------------------------------
+//函数名：chkemail
+//功能介绍：检查是否为Email Address
+//参数说明：要检查的字符串
+//返回值：0：不是 1：是
+function chkemail(a)
+{ var i=a.length;
+var temp = a.indexOf('@');
+var tempd = a.indexOf('.');
+if (temp > 1) {
+if ((i-temp) > 3){
+if ((i-tempd)>0){
+return 1;
+}
+
+}
+}
+return 0;
+}
+
+5. 数字格式验证
+---------------------------------------
+//函数名：fucCheckNUM
+//功能介绍：检查是否为数字
+//参数说明：要检查的数字
+//返回值：1为是数字，0为不是数字
+function fucCheckNUM(NUM)
+{
+var i,j,strTemp;
+strTemp="0123456789";
+if ( NUM.length== 0)
+return 0
+for (i=0;i&lt;NUM.length;i++)
+{
+j=strTemp.indexOf(NUM.charAt(i));
+if (j==-1)
+{
+//说明有字符不是数字
+return 0;
+}
+}
+//说明是数字
+return 1;
+}
+
+6. 电话号码格式验证
+---------------------------------------
+//函数名：fucCheckTEL
+//功能介绍：检查是否为电话号码
+//参数说明：要检查的字符串
+//返回值：1为是合法，0为不合法
+function fucCheckTEL(TEL)
+{
+var i,j,strTemp;
+strTemp="0123456789-()# ";
+for (i=0;i&lt;TEL.length;i++)
+{
+j=strTemp.indexOf(TEL.charAt(i));
+if (j==-1)
+{
+//说明有字符不合法
+return 0;
+}
+}
+//说明合法
+return 1;
+}
+
+7. 判断输入是否为中文的函数
+---------------------------------------
+function ischinese(s){
+var ret=true;
+for(var i=0;i&lt;s.length;i++)
+ret=ret && (s.charCodeAt(i)>=10000);
+return ret;
+}
+
+8. 综合的判断用户输入的合法性的函数
+---------------------------------------
+&lt;script language="javascript">
+//限制输入字符的位数开始
+//m是用户输入，n是要限制的位数
+function issmall(m,n)
+{
+if ((m&lt;n) && (m>0))
+{
+return(false);
+}
+else
+{return(true);}
+}
+
+9. 判断密码是否输入一致
+---------------------------------------
+function issame(str1,str2)
+{
+if (str1==str2)
+{return(true);}
+else
+{return(false);}
+}
+
+10. 判断用户名是否为数字字母下滑线
+---------------------------------------
+function notchinese(str){
+var reg=/[^A-Za-z0-9_]/g
+if (reg.test(str)){
+return (false);
+}else{
+return(true); }
+}
+
+2.8. form文本域的通用校验函数
+---------------------------------------
+作用：检测所有必须非空的input文本，比如姓名，账号，邮件地址等等。
+该校验现在只针对文本域，如果要针对form里面的其他域对象，可以改变判断条件。
+
+使用方法：在要检测的文本域中加入title文字。文字是在提示信息，你要提示给用户的该字段的中文名。比如要检测用户名
+html如下&lt;input name="txt_1" title="姓名">,当然，最好用可视化工具比如dreamweaver什么的来编辑域。
+如果要检测数字类型数据的话，再把域的id统一为sz.
+javascript判断日期类型比较麻烦，所以就没有做日期类型校验的程序了.高手可以补充。
+
+程序比较草，只是提供一个思路。抛砖引玉！ ：）
+哦，对了，函数调用方法：&lt; form onsubmit="return dovalidate()">
+
+function dovalidate()
+{
+fm=document.forms[0] //只检测一个form,如果是多个可以改变判断条件
+for(i=0;i&lt;fm.length;i++)
+{
+//检测判断条件，根据类型不同可以修改
+if(fm.tagName.toUpperCase()=="INPUT" &&fm.type.toUpperCase()=="TEXT" && (fm.title!=""))
+
+if(fm.value="/blog/="")//
+{
+str_warn1=fm.title+"不能为空!";
+alert(str_warn1);
+fm.focus();
+return false;
+}
+if(fm.id.toUpperCase()=="SZ")//数字校验
+{
+if(isNaN(fm.value))
+{ str_warn2=fm.title+"格式不对";
+alert(str_warn2);
+fm.focus();
+return false;
+}
+}
+}
+return true;
+}
+                        </pre>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="main03">
+                <dt><i class="icon24 icon24-comment"></i> 请在此处发表您的宝贵意见</dt>
+                <dd>
+                    <!-- 多说评论框 start -->
+                    <div class="ds-thread" data-thread-key="article_12" data-title="常用正则表达式总结" data-url="https://heardwang.github.io/article/fe/article_12.html"></div>
+                    <!-- 多说评论框 end -->
+                    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+                    <script type="text/javascript">
+                        var duoshuoQuery = {short_name:"heardwang"};
+                        (function() {
+                            var ds = document.createElement('script');
+                            ds.type = 'text/javascript';ds.async = true;
+                            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                            ds.charset = 'UTF-8';
+                            (document.getElementsByTagName('head')[0]
+                            || document.getElementsByTagName('body')[0]).appendChild(ds);
+                        })();
+                    </script>
+                    <!-- 多说公共JS代码 end -->
+                </dd>
+            </dl>
+        </div>
+        <div class="w220 fr">
+            <dl class="main04 pt20">
+                <dt>最新文章</dt>
+                <dd class="clearfix">
+                    <ul class="widget-1column">
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="f-copyright"><p>分享与创新开发，版权所有，保留一切权利&nbsp;Copyright © 2016-2021 · All rights reserved.</p></div>
+</div>
+<a id="return_top" title="返回顶部"></a>
+<!--  推荐文章模版  -->
+<script id="content-item" type="text/template">
+    {@each data as it,index}
+    {@if index <=3}
+    <li>
+        <div class="item-cont">
+            <div class="i-photo"><a href='../../${it.link}'><img src='../../${it.img}' alt=""/></a></div>
+            <div class="i-text"><a class="like"><i class="icon16 icon16-interest"></i> 15</a><a href="#">${it.title}</a></div>
+        </div>
+    </li>
+    {@/if}
+    {@/each}
+</script>
+<script>
+    getAjax('content-item','widget-1column',"../../json/project.json");
+</script>
+</body>
+</html>

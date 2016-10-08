@@ -1,0 +1,362 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS代码重构与优化之路-WebWang</title>
+    <meta name="keywords" content="WebWang,web前端网,HTML,javascript,jquery,前端,前端框架,UI设计,W3CSchool,前端工具箱,前端开发,用户体验,交互设计,jquery教程,javascript教程,html5教程,css3教程,web前端开发,网站模板,免费素材,AngularJS">
+    <meta name="description" content="WebWang-前端网，Web前端开发综合性网站，为广大WEB开发者提供HTML5/CSS3、Javascript/jQuery相关的技术文章，分享最前沿的Web开发技术，资源和素材，文章注重实用性和技巧性，是面向web开发人员和设计师的学习优质交流平台， 并为工程师及企业提供优质的前端资源和服务。  ">
+    <link href="../../back/images/ico.ico" rel="shortcut icon"/>
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type=text/javascript src="../../js/jquery-1.7.1.min.js"></script>
+    <script src="../../js/juicer-min.js"></script>
+    <script src="../../js/common.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCoreDefault.css"/>
+    <script type="text/javascript" src="../../js/shCore.js"></script>
+    <script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../js/SyntaxSetting.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="inner clearfix">
+        <div class="h-logo"><a href="../../index.html" title="WebWang">WebWang</a></div>
+        <div class="h-account"><img src="../../back/images/tx.jpg" alt="id"/> Hi，Welcome！<a href="../../back/center.html">进入后院</a></div>
+        <ul class="h-nav">
+            <li><a href="../../index.html" class="active">首页</a></li>
+            <li><a href="../../resource.html">前端资源</a></li>
+            <li><a href="../../source.html">开源项目</a></li>
+            <li><a href="../../website.html">网址导航</a></li>
+            <li><a href="../../about.html">关于</a></li>
+        </ul>
+    </div>
+    <div class="banner-detail"></div>
+</div>
+
+<div class="clear"></div>
+<div class="gray-box">
+    <div class="inner">
+        <div class="w720 fl">
+            <dl class="main02 pt20">
+                <dt>CSS代码重构与优化之路<span class="info">发布者：heardwang&nbsp;&nbsp;&nbsp;发布时间：2016-10-08&nbsp;&nbsp;&nbsp;<span class="zz">转载自：http://luopq.com/2016/01/05/css-optimize/</span></span>
+                    <a href="javascript:;" class="btn btn-large like-btn"><i class="icon16 icon16-like"></i> 喜欢 (10)</a></dt>
+                <dd>
+                    <div class="gallery-item">
+                        <div class="preface">写CSS的同学们往往会体会到，随着项目规模的增加，项目中的CSS代码也会越来越多，如果没有及时对CSS代码进行维护，CSS代码不断会越来越多。CSS代码交错复杂，像一张庞大的蜘蛛网分布在网站的各个位置，你不知道修改这行代码会有什么影响，所以如果有修改或增加新功能时，开发人员往往不敢去删除旧的冗余的代码，而保险地增加新代码，最终的坏处就是项目中的CSS会越来越多，最终陷入无底洞。</div>
+                        <h3>CSS代码重构的目的</h3>
+                        <p>我们写CSS代码时，不仅仅只是完成页面设计的效果，还应该让CSS代码易于管理，维护。我们对CSS代码重构主要有两个目的：</p>
+                        <p>1、提高代码性能<br>2、提高代码的可维护性</p>
+                        <h4>提高代码性能</h4>
+                        提高CSS代码性能主要有两个点：<br>
+                        1、提高页面的加载性能<br>
+                        提高页面的加载性能，简单说就是减小CSS文件的大小，提高页面的加载速度，尽可以的利用http缓存<br>
+                        2、提高CSS代码性能<br>
+                        不同的CSS代码，浏览器对其解析的速度也是不一样的，如何提高浏览器解析CSS代码的速度也是我们要考虑的<br>
+                        <h4>提高代码的可维护性</h4>
+                        提高CSS代码的可维护性主要是体现在下面几点：<br>
+                        1、可重用性<br>
+                        一般来说，一个项目的整体设计风格是一致的，页面中肯定有几个风格一致但有些许不同的模块，如何在尽可能多地重用CSS代码，尽可能少地增加新代码，这是CSS代码中非常重要的一点。如果CSS代码的重用性高，我们可能只需要写一些不一样的地方，对页面性能和可维护性、提高开发效率都有很大的帮助。<br>
+                        2、可扩展性如果产品增加了某个功能，我们应该保证新增加的CSS代码不会影响到旧的CSS代码和页面，并且尽可能少地增加新代码而重用旧代码。<br>
+                        3、可修改性如果某个模块产品经理觉得要修改样式，或者要删掉它，如果没有规划好相应的CSS代码，过了一段时间之后，开发人员可能已经不记得这段代码作用了几个地方，不敢修改或删除它，这样下去CSS代码也就越来越多，影响了页面的性能，还造成了代码的复杂度。<br>
+                        <h3>CSS代码重构的基本方法</h3>
+                        前面说到了CSS代码重构的目的，现在我们来说说一些如何达到这些目的的一些基本方法，这些方法都是易于理解，容易实施的一些手段，大家平时可能也不知不觉地在使用它。<br>
+                        <h4>提高CSS性能的手段</h4>
+                        首先说说如何提高CSS性能，根据页面的加载性能和CSS代码性能，主要总结有下面几点：<br>
+                        1、尽量将样式写在单独的css文件里面，在head元素中引用<br>
+                        有时候为了图方便或者快速搞定功能，我们可能会直接将样式写在页面的style标签或者直接内联在元素上，这样虽然简单方便，但是非常不利于日后的维护。将代码写成单独的css文件有几点好处：<br>
+                        （1）内容和样式分离，易于管理和维护<br>
+                        （2）减少页面体积<br>
+                        （3）css文件可以被缓存、重用，维护成本降低<br>
+                        2、不使用@import这条手段已经是众所周知，这里简单提一下，@import影响css文件的加载速度<br>
+                        3、避免使用复杂的选择器，层级越少越好<br>
+                        有时候项目的模块越来越多，功能越来越复杂，我们写的CSS选择器会内套多层，越来越复杂。<br>
+                        建议选择器的嵌套最好不要超过三层，比如：
+                        <pre class="brush:js;">.header .logo .text{}</pre>
+                        可以优化成
+                        <pre class="brush:js;">.haeder .logo-text{}</pre>
+                        简洁的选择器不仅可以减少css文件大小，提高页面的加载性能，浏览器解析时也会更加高效，也会提高开发人员的开发效率，降低了维护成本。<br>
+                        4、精简页面的样式文件，去掉不用的样式<br>
+                        很多时候，我们会把所有的样式文件合并成一个文件，但是这样有一个问题：很多其他页面的CSS同时引用到当前页面中，
+                        而当前页面并没有用到它们，这种情况会造成两个问题：<br>
+                        （1）样式文件偏大，影响加载速度<br>
+                        （2）浏览器会进行多余的样式匹配，影响渲染时间。<br>
+                        正确的处理方法是根据当前页面需要的css去合并那些当前页面用到的CSS文件。<br>
+                        PS：合并成一个文件有一个优点：样式文件会被浏览器缓存，进入到其他页面样式文件不用再去下载。
+                        这条规则应根据场景来区别对待，如果是大项目，应该合并成不同的样式文件，如果是简单的项目，建议合并成一个文件即可。
+                        如果无法确认项目规模，建议分开成不同的样式文件，日后要合并也比较方便。<br>
+                        5、利用CSS继承减少代码量<br>
+                        我们知道有一部分CSS代码是可以继承的，如果父元素已经设置了该样式，子元素就不需要去设置该样式，这个也是提高性能的行之有效的方法。<br>
+                        常见的可以继承的属性比如：<br>
+                        color，font-size，font-family等等<br>
+                        不可继承的比如：<br>
+                        position，display，float等<br>
+                        大家可以查看 <a href="http://www.css88.com/book/css/properties/layout/float.htm">CSS参考手册</a>
+                        <h4>提高可维护性的方法</h4>
+                        提高CSS代码的可维护性，简单的说就是要让开发人员易于理解CSS代码，容易去修改它，不会破坏原有的功能。下面说说一些常用的手段。<br>
+                        1、命名与备注<br>
+                        命名是提高代码可读性的第一步，也是及其重要的一步。很多人都有这样的体会：命名是写代码中最让程序员头疼的事情之一，尤其是对母语非英语的开发人员来说，要找一个合适贴切的名字并不容易。提高自己命名的能力，可以多看看别人的代码。下面是CSS中的一些命名相关的建议：<br>
+                        <pre class="brush:js;">
+头：header
+内容：content/container
+尾：footer
+导航：nav
+侧栏：sidebar
+栏目：column
+页面外围控制整体佈局宽度：wrapper
+左右中：left right center
+登录条：loginbar
+标志：logo
+广告：banner
+页面主体：main
+热点：hot
+新闻：news
+下载：download
+子导航：subnav
+菜单：menu
+子菜单：submenu
+搜索：search
+友情链接：friendlink
+页脚：footer
+版权：copyright
+滚动：scroll
+内容：content
+标签：tags
+文章列表：list
+提示信息：msg
+小技巧：tips
+栏目标题：title
+加入：joinus
+指南：guide
+服务：service
+注册：regsiter
+状态：status
+投票：vote
+合作伙伴：partner
+导航：nav
+主导航：mainnav
+子导航：subnav
+顶导航：topnav
+边导航：sidebar
+左导航：leftsidebar
+右导航：rightsidebar
+菜单：menu
+子菜单：submenu
+标题: title
+摘要: summary</pre>
+                        2、提取重复样式<br>
+                        这一个方法很容易理解，简单说就是提取相同的样式成为一个单独的类再引用，这样不仅可以精简CSS文件大小，
+                        而且CSS代码变少，更易于重用和维护。例如下面的例子：<br>
+                        原来的代码是这样：
+                        <pre class="brush:js;">
+about-title{
+    margin: 0 auto 6rem; color: #333; text-align: center; letter-spacing: 4px; font-size: 2rem;
+}
+.achieve-title{
+    margin: 0 auto 6rem; color: #fff; text-align: center; letter-spacing: 4px; font-size: 2rem;
+}
+                        </pre>
+                        这两个样式的区别在于文字颜色的不同，我们可以将其公共的样式提取出来，然后再分别设置其不同的样式
+                        <pre class="brush:js;">
+.column-title{
+    margin: 0 auto 6rem; text-align: center; letter-spacing: 4px; font-size: 2rem;
+}
+.about{
+    color: #333;
+}
+.achieve{
+    color:#fff;
+}
+                        </pre>
+                        提取公用的部分，然后在页面上分别引用column-title和about等，这样代码更简洁，维护起来也更方便了。这个例子非常简单，实际上项目中可能有更复杂的情况，总之就要要尽可能的DRY，尽可能的提取重复的东西。
+                        <br>
+                        3、书写顺序<br>
+                        这个书写顺序指的是各个样式的书写顺序，下面是推荐的CSS书写顺序<br>
+                        （1）位置属性(position, top, right, z-index, display, float等)
+                        <br>
+                        （2）大小(width, height, padding, margin)
+                        <br>
+                        （3）文字系列(font, line-height, letter-spacing, color- text-align等)
+                        <br>
+                        （4）背景(background, border等)
+                        <br>
+                        （5）其他(animation, transition等)
+                        <br>
+                        书写顺序不一定非得按照上面的推荐来进行，而是根据你自己的习惯，但是最好能保证前后的习惯一致的，或者团队应该有一个共同的代码规范去遵守，这样后期维护起来也会方便许多。
+                        <br>
+                        以上是我个人总结的一些简单的写好和重构CSS代码的方法，大家当然不必拘泥于此，有不同的意见和建议欢迎进行交流！
+                        <h3>CSS方法论</h3>
+                        什么是CSS方法论呢？简单地说就是一些同行为了提高CSS的可维护性、提出的一些编写CSS代码的规范和方法。他们提出了一些概念，这些概念可能听起来很高大上，但是实际你平时可能不知不觉也会用到这些所谓的CSS方法论。下面我简单地介绍下几个比较常见的CSS方法论。<br>
+                        <h4>OOCSS</h4>
+                        OOCSS是（Object Oriented CSS），顾名思义就是面向对象的CSS。<br>
+                        OOCSS主要有两个原则：<br>
+                        1、结构和样式分离<br>
+                        我们平时一定遇到过这种情况，比如一个页面存在着多个不同功能的按钮，这些按钮的形状大小都差不多，但是根据不同的功能会有不同的颜色或背景来加以区分。如果不进行结构和样式分离，我们的CSS代码可能是这样的
+                        <pre class="brush:js;">
+.btn-primary{
+    width:100px;
+    height:50px;
+    padding:5px 3px;
+    background:#ccc;
+    color:#000;
+}
+.btn-delete{
+    width:100px;
+    height:50px;
+    padding:5px 3px;
+    background:red;
+    color:#fff;
+}
+                        </pre>
+                        这两个或者可能更多的按钮拥有一些不同的样式，但是它们同时拥有相同的大小样式等，我们将其抽象的部分提取出来，结果如下：
+                        <pre class="brush:js;">
+.btn-primary{
+    width:100px;
+    height:50px;
+    padding:5px 3px;
+    background:#ccc;
+    color:#000;
+}
+.btn-delete{
+    width:100px;
+    height:50px;
+    padding:5px 3px;
+    background:red;
+    color:#fff;
+}
+                        </pre>
+                        这样提取公用的样式出来，然后按钮同时引用btn和primary等。这种做法除了减少重复的代码精简CSS之外，还有一个好处是复用性，如果需要增加其他额外的按钮，只需要编写不同的样式，和btn配合使用即可。<br>
+                        （2）容器和内容分离我们平时写代码一定写过这样代码
+                        <pre class="brush:js;">
+.content h3{
+    font-size:20px;
+    color:#333;
+}
+                        </pre>
+                        这样的代码就是内容依赖于容器，没有分离的代码，也就是说h3的样式依赖于.content容器，如果其他地方要用到相同的样式，但是它的容器却不是.content，那你可能就是要再写一遍.something h3。所以OOCSS推荐分离容器和内容，可以修改成：
+                        <pre class="brush:js;">
+.title{
+    font-size:20px;
+    color:#333;
+}
+                        </pre>
+                        关于这一点，我个人建议要分情况来看，像前面这个例子，它适合样式和容器分离。但是比如下面这种情况：
+                        <pre class="brush:js;">
+.menu li{
+    font-size:12px;
+}
+                        </pre>
+                        这种ul，li列表的样式，我觉的就按照我们原先的做法就可以，不一定非得给一个类给li来设定样式，即
+                        <pre class="brush:js;">
+.menu-item{
+    font-size:12px;
+}
+                        </pre>
+                        这样页面的li标签需要引用menu-item类。<br>
+                        当然采用哪一种方式更好我也不却确定，我自己比较喜欢.menu li的写法，大家自行思考。<br>
+                        这就是OOCSS的两个基本原则，这里只是简单介绍OOCSS，各位如果有兴趣的话请自行Google查找相关资料。
+                        <h4>SMACSS</h4>
+                        SMACSS是什么呢，它的全称是Scalable and Modular Architecture for CSS。简单说就是可扩展和模块化的CSS架构。<br>
+                        SMACSS将样式分成5种类型：Base，Layout，Module，State，Theme，我们简单来说说每一种类型分别指什么。<br>
+                        1、Base<br>
+                        基础样式表，定义了基本的样式，我们平时写CSS比如reset.css就是属于基础样式表，另外我认为清除浮动，一些动画也可以归类为基础样式。<br>
+                        2、Layout布局样式，用于实现网页的基本布局，搭起整个网页的基本骨架。<br>
+                        3、Module网页中不同的区域有这个不同的功能，这些功能是相对独立的，我们可以称其为模块。模块是独立的，可重用的组件，它们不依赖于布局组件，可以安全的删除修改而不影响其他模块。<br>
+                        4、State<br>
+                        状态样式，通常和js一起配合使用，表示某个组件或功能不同的状态，比如菜单选中状态，按钮不可用状态等。<br>
+                        关于状态样式，我个人觉得要分情况进行讨论：<br>
+                        （1）不同组件的同一状态的样式是一样的，比如头部的导航菜单的选中状态样式和侧栏的菜单选中状态样式是一样的，我认为这部分状态样式可以归类为State<br>
+                        （2）不同组件的统一状态的样式是不一样的，即两个地方的菜单虽然都是选中状态，但是他们却又不同的选中样式，这部分样式不应该被认为是State类型，而是应该放在其组件对应的Module中。<br>
+                        5、Theme皮肤样式，对于可更换皮肤的站点来说，这个是很有必要的，分离了结构和皮肤，根据不同的皮肤应用不同的样式文件。
+                        <h4>BEM</h4>
+                        BEM是Block，Element，Modifier的缩写。下面分别来介绍一下这三个概念：<br>
+                        （1）Block：在BEM的理论中，一个网页是由block组成的，比如头部是个block，内容是block，logo也是block，一个block可能由几个子block组成。<br>
+                        （2）Element：element是block的一部分，具有某种功能，element依赖于block，比如在logo中，img是logo的一个element，在菜单中，菜单项是菜单的一个element<br>
+                        （3）Modifier：modifier是用来修饰block或者element的，它表示block或者element在外观或行为上的改变<br>
+                        我们通过BEM命名法写样式如下：<br>
+                        .block{}<br>
+                        .block-element{}<br>
+                        .block-modifier{}<br>
+                        .block-element-modifier{}<br>
+                        BEM将页面解析为block和element，然后根据不同的状态使用modifier来设置样式。<br>
+                        我对BEM的思想理解可能不到位，对BEM的看法主要是由两点：<br>
+                        （1）页面CSS模块化，每个block就是一个模块，模块间相互独立<br>
+                        （2）多级的class命名，避免选择器的嵌套结构
+                        <h4>关于CSS方法论</h4>
+                        上面提到的这些CSS方法论，大家看了就会发现，它们其实有很多思想是相同的，比如：<br>
+                        1、选择器的嵌套的优化<br>
+                        2、CSS代码模块化<br>
+                        3、抽象CSS代码<br>
+                        …<br>
+                        这些方法论，我们学习的时候，最重要的是去理解其思想，不一定非得照搬它的实现形式，多种方法结合使用。
+                        <h3>我自己总结的方法</h3>
+                        谈了这么多，下面来说说我自己总结的写CSS代码的一些关键点。<br>
+                        1、写代码之前：从PSD文件出发<br>
+                        当我们拿到设计师给的PSD时，首先不要急于写CSS代码，首先对整个页面进行分析，主要关注点是下面几个：<br>
+                        （1）页面分成了几个模块，哪些模块是公用的，常见的比如头部和底部，还有一些菜单栏等等<br>
+                        （2）分析每一个模块都有什么样式，提取出公用的样式，注意公用样式是全局公用（整个页面公用）还是局部公用（模块内公用），公用样式包括公用的状态样式，比如公用的选中状态，禁用状态等等。<br>
+                        2、开始写代码<br>
+                        根据对PSD文件的分析，我们就可以开始着手写代码，我比较推荐SMACSS将样式分成不同类型的做法：<br>
+                        （1）第一步是搭好页面的骨架，也就是base样式，layout样式。<br>
+                        （2）第二步就是依次实现不同的模块，在这里我推荐BEM的命名思想，但是可以嵌套一到两层的选择器结构<br>
+                        3、优化代码<br>
+                        我相信当我们完成基本的页面效果后，还是会存在着一些重复的或者不够简洁的代码，这时候就是要去优化这些代码，主要是在提取重复代码，尽可能地精简代码。<br>
+                        关于CSS代码的优化，我相信大家有很多自己的看法，欢迎交流和讨论！<br>
+                        原文地址： http://luopq.com/2016/01/05/css-optimize/
+                    </div>
+                </dd>
+            </dl>
+            <dl class="main03">
+                <dt><i class="icon24 icon24-comment"></i> 请在此处发表您的宝贵意见</dt>
+                <dd>
+                    <!-- 多说评论框 start -->
+                    <div class="ds-thread" data-thread-key="article_10" data-title="CSS代码重构与优化之路" data-url="https://heardwang.github.io/article/fe/article_10.html"></div>
+                    <!-- 多说评论框 end -->
+                    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+                    <script type="text/javascript">
+                        var duoshuoQuery = {short_name:"heardwang"};
+                        (function() {
+                            var ds = document.createElement('script');
+                            ds.type = 'text/javascript';ds.async = true;
+                            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                            ds.charset = 'UTF-8';
+                            (document.getElementsByTagName('head')[0]
+                            || document.getElementsByTagName('body')[0]).appendChild(ds);
+                        })();
+                    </script>
+                    <!-- 多说公共JS代码 end -->
+                </dd>
+            </dl>
+        </div>
+        <div class="w220 fr">
+            <dl class="main04 pt20">
+                <dt>最新文章</dt>
+                <dd class="clearfix">
+                    <ul class="widget-1column">
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="f-copyright"><p>分享与创新开发，版权所有，保留一切权利&nbsp;Copyright © 2016-2021 · All rights reserved.</p></div>
+</div>
+<a id="return_top" title="返回顶部"></a>
+<!--  推荐文章模版  -->
+<script id="content-item" type="text/template">
+    {@each data as it,index}
+    {@if index <=3}
+    <li>
+        <div class="item-cont">
+            <div class="i-photo"><a href='../../${it.link}'><img src='../../${it.img}' alt=""/></a></div>
+            <div class="i-text"><a class="like"><i class="icon16 icon16-interest"></i> 15</a><a href="#">${it.title}</a></div>
+        </div>
+    </li>
+    {@/if}
+    {@/each}
+</script>
+<script>
+    getAjax('content-item','widget-1column',"../../json/project.json");
+</script>
+</body>
+</html>
