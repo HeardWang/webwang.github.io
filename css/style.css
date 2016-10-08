@@ -288,6 +288,7 @@ input, select, textarea {vertical-align: middle;font-size: 13px;resize: none;col
 .gallery-item{font-size: 13px;line-height: 21px;}
 .gallery-item p{margin-top: 5px;font-size: 13px;line-height: 21px;}
 .gallery-item h3{font-size: 18px;line-height: 28px;margin: 15px 0;background: #fff;border-left: 4px solid #00b7ee;padding-left: 10px;}
+.gallery-item h4{font-size: 16px;line-height: 22px;margin: 8px 0;}
 /*  散文  */
 .gallery-item .indent{text-indent: 20px;font-family: 楷体;font-size: 18px;padding: 5px 50px 0px;}
 /*  文章-突出引用  */
