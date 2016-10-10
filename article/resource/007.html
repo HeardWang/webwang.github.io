@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+
+<body>
+<div class="header">
+    <div class="inner clearfix">
+        <div class="h-logo"><a href="../../index.html" title="WebWang">WebWang</a></div>
+        <div class="h-account"><img src="../../back/images/tx.jpg" alt="id"/> Hi，Welcome！<a href="../../back/center.html">进入后院</a></div>
+        <ul class="h-nav">
+            <li><a href="../../index.html">首页</a></li>
+            <li><a href="../../resource.html" class="active">前端资源</a></li>
+            <li><a href="../../source.html">开源项目</a></li>
+            <li><a href="../../website.html">网址导航</a></li>
+            <li><a href="../../about.html">关于</a></li>
+        </ul>
+    </div>
+    <div class="banner-detail"></div>
+</div>
+
+<div class="clear"></div>
+<div class="gray-box">
+    <div class="inner">
+        <div class="w720 fl">
+            <dl class="main02 pt20">
+                <!--******************************************-->
+                <!--  文章主体  -->
+                <dt>带感的抽奖转盘<span class="info">发布者：heardwang&nbsp;&nbsp;&nbsp;发布时间：2016-10-10&nbsp;&nbsp;&nbsp;<span class="zz">转载自：http://www.w3cfuns.com/notes/15182/bd63d66e42ac103242470199414fb9ef.html</span></span>
+                    <a href="javascript:;" class="btn btn-large like-btn"><i class="icon16 icon16-like"></i> 喜欢 (10)</a></dt>
+                <dd>
+                    <div class="gallery-item">
+                        <div class="preface">带感的抽奖转盘，不由自主的配上了转动的声音有木有？</div>
+                        <h3>请看效果</h3>
+                        <div class="main">
+                            <div class="wrap">
+                                <div class="frame">
+                                    <div class="circle">
+                                        <p data-lottery="1"><span>一等奖</span></p>
+                                        <p><span>谢谢参与</span></p>
+                                        <p data-lottery="2"><span>二等奖</span></p>
+                                        <p><span>谢谢参与</span></p>
+                                        <p data-lottery="3"><span>三等奖</span></p>
+                                        <p><span>谢谢参与</span></p>
+                                        <p data-lottery="4"><span>四等奖</span></p>
+                                        <p><span>谢谢参与</span></p>
+                                    </div>
+                                    <div class="button">
+                                        <button>抽奖</button>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="bubbles">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <mark class="white"></mark>
+                                <div class="dialog">
+                                    <p></p>
+                                    <button>确定</button>
+                                </div>
+                            </div>
+                            <div class="particle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <!--  内容区域  -->
+                        <div class="download"><a href="../demo/demo07.zip">下载源代码</a></div>
+                    </div>
+                </dd>
+                <!--******************************************-->
+                <!--  文章主体  -->
+            </dl>
+            <dl class="main03">
+                <dt><i class="icon24 icon24-comment"></i>请在此处发表您的宝贵意见</dt>
+                <dd>
+                    <!-- 多说评论框 start -->
+                    <div class="ds-thread" data-thread-key="resource_007" data-title="带感的抽奖转盘" data-url="https://heardwang.github.io/article/resource/007.html"></div>
+                    <!-- 多说评论框 end -->
+                    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+                    <script type="text/javascript">
+                        var duoshuoQuery = {short_name:"heardwang"};
+                        (function() {
+                            var ds = document.createElement('script');
+                            ds.type = 'text/javascript';ds.async = true;
+                            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                            ds.charset = 'UTF-8';
+                            (document.getElementsByTagName('head')[0]
+                            || document.getElementsByTagName('body')[0]).appendChild(ds);
+                        })();
+                    </script>
+                    <!-- 多说公共JS代码 end -->
+                </dd>
+            </dl>
+        </div>
+        <div class="w220 fr">
+            <dl class="main04 pt20">
+                <dt>最新文章</dt>
+                <dd class="clearfix">
+                    <ul class="widget-1column">
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="f-copyright"><p>分享与创新开发，版权所有，保留一切权利&nbsp;Copyright © 2016-2021 · All rights reserved.</p></div>
+</div>
+<a id="return_top" title="返回顶部"></a>
+<!--  推荐文章模版  -->
+<script id="content-item" type="text/template">
+    {@each data as it,index}
+    {@if index <=3}
+    <li>
+        <div class="item-cont">
+            <div class="i-photo"><a href='../../${it.link}'><img src='../../${it.img}' alt=""/></a></div>
+            <div class="i-text"><a class="like"><i class="icon16 icon16-interest"></i> 15</a><a href="../../${it.link}">${it.title}</a></div>
+        </div>
+    </li>
+    {@/if}
+    {@/each}
+</script>
+<script>
+    getAjax('content-item','widget-1column',"../../json/resource.json");
+</script>
+<script type="text/javascript">
+    $(function(){
+        //var radius = $(window).width()/3;//半径
+        var sum = 8;
+        var loterry;//中奖的index
+        var minRotate = 2160;//最少转动角度
+        var rotate = 0;
+        var duration = 5;
+        var $items = $(".circle p");
+        var light = 0;
+        var showTime,loterryTime,bubblesInterval;
+        //var borderWidth = radius*Math.tan(360/sum/2*Math.PI/180);
+        // $(".circle").css("width",radius*2+"px").css("height",radius*2+"px");
+        $(".circle p").each(function(){
+            // $(this).css("border-width",radius+"px "+borderWidth+"px 0px "+borderWidth+"px");
+            //$(this).css("left",radius-borderWidth+"px");
+            var jiao = $(this).index()*360/sum;
+            $(this).css("transform","rotate("+jiao+"deg)");
+            //$(this).css("transform-origin",borderWidth+"px "+radius+"px");
+        });
+        $(".button").click(function(){
+            $(this).addClass("disabled");
+            loterry = Math.floor(Math.random()*sum);
+            rotate = rotate-rotate%360+minRotate+360-loterry*360/sum;//需要转动的角度
+            $(".circle").css("transform","rotate("+rotate+"deg)");
+            $(".circle").css("transition-duration",duration+"s");
+            $("body").addClass("playing");
+            setTimeout(function(){
+                if($items.eq(loterry).attr('data-lottery')){
+                    dialog(true,"恭喜你中了"+$items.eq(loterry).attr('data-lottery')+"等奖");
+                }else{
+                    dialog(true,"很遗憾你没有中奖");
+                }
+                bubblesInterval&&clearInterval(bubblesInterval);
+                $(".button").removeClass("disabled");
+                $("body").removeClass("playing");
+            },duration*1000);
+            setTimeout(function(){
+                $("body").addClass("animate");
+            },1000);
+            setTimeout(function(){
+                $("body").removeClass("animate");
+            },duration*1000-1000);
+            loterryLight();
+            bubbles();
+        });
+        function show(){
+            loterryTime&&clearInterval(loterryTime);
+            bubblesInterval&&clearInterval(bubblesInterval);
+            showTime = setInterval(function(){
+                light = light%sum;
+                $items.removeClass("light");
+                $items.eq(light).addClass("light");
+                $items.eq((light+sum/2)%sum).addClass("light");
+                light++;
+            },500);
+        }
+        show();
+        function loterryLight(){
+            showTime&&clearInterval(showTime);
+            var step;//到达中奖的区域 需要移动的步数
+            if(light>=loterry){
+                step = loterry+sum-light;
+            }else{
+                step = loterry-light;
+            }
+            var stepAll = step+3*sum;
+            var time = (duration*1000-500)/stepAll;
+            lightAnimate(time,stepAll)();
+        }
+        function bubbles(){
+            var $bubbles = $(".bubbles span");
+            var index = 0;
+            bubblesInterval = setInterval(function(){
+                index = index%($bubbles.length);
+                $bubbles.removeClass("light");
+                $bubbles.eq(index).addClass("light");
+                index++;
+            },1.5/12*1000);
+        }
+        function lightAnimate(time,stepAll){
+            var step = 0,lightInterval;
+            return function(){
+                lightInterval = setInterval(function(){
+                    light = light%sum;
+                    $items.removeClass("light");
+                    $items.eq(light).addClass("light");
+                    if(step == stepAll){//已经转动到了中奖项
+                        clearInterval(lightInterval);
+                    }
+                    light++;
+                    step++;
+                },time);
+            };
+        }
+        $(".dialog button").click(function(){
+            dialog(false);
+        });
+        function dialog(bool,txt){
+            if(bool){
+                $(".dialog").removeClass("hide").addClass("show").find("p").html(txt);
+            }else{
+                $(".dialog").removeClass("show").addClass("hide");
+            }
+        }
+    });
+</script>
+</body>
+</html>
