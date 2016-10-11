@@ -23,7 +23,7 @@ $(document).ready(function(){
         ocity = city.replace("自治区","");
     }
     console.log(ocity);
-    var url = 'http://wthrcdn.etouch.cn/weather_mini?city=';//每次初始值
+    var url = 'wthrcdn.etouch.cn/weather_mini?city=';//每次初始值
     url += ocity;
 
     $.ajax({
