@@ -1,6 +1,6 @@
 /*初始化***************************************************************************************************/
 * {margin: 0;padding: 0;list-style: none;}
-body {font-family: Verdana, "Microsoft YaHei", Helvetica, Arial, sans-serif;font-size: 13px;line-height: 24px;
+body {font-family: Michroma,'Segoe UI Light','Segoe UI','Segoe UI WP','Microsoft Jhenghei','微软雅黑',sans-serif,Times;font-size: 13px;line-height: 24px;
 	color: #666;padding-top: 75px;}
 a {color: #999;text-decoration: none;}
 a:hover {color: #00b7ee;text-decoration: none;}
