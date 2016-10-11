@@ -491,7 +491,7 @@ input, select, textarea {vertical-align: middle;font-size: 13px;resize: none;col
 	.page-mini .list{height: 25px;}
 	.page-mini .list a, .page-mini .list span{width: 20px;height: 25px;line-height: 25px;font-size: 12px;}
 	.comment-item .i-btn input{width: 80px;}
-
+        .auth{display: none;}
 }
 @media screen and (max-width:320px){
 	.banner-template img{width: 800px;height: auto;}
