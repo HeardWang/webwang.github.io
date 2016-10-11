@@ -306,6 +306,8 @@ input, select, textarea {vertical-align: middle;font-size: 13px;resize: none;col
 .container-left-item .note{color: #777;line-height: 24px;margin-bottom: 0;}
 /*  内容右边  */
 .container-right{width: 28%;float: left;}
+.container-right .top{position: relative;}
+.container-right .top ul{position: absolute;width: 272px;}
 .container-right-item{clear: both;margin-bottom: 10px;background-color: #fff;padding: 0 10px;}
 .container-right-item .title{position: relative;height: 45px;border-bottom: 1px solid #90bba8;margin: 5px 0px;}
 .container-right-item .title h2{font-size: 16px;font-weight: normal;width: 80px;line-height: 45px;color: #1abc9c;}
@@ -398,6 +400,14 @@ input, select, textarea {vertical-align: middle;font-size: 13px;resize: none;col
 	margin-right: 15px;margin-top: -5px;}
 .into{font-size: 14px;color: #ccc;transition: all 1s;}
 .into:hover{color: #d9534f;}
+/* 2016/10/10*/
+.welcome>p{font-size: 15px;background: #fff;padding-left: 10px;line-height: 28px;color: #232323;}
+.welcome>p span,.welcome>p i{color: #D9534F;}
+.weather{padding: 0 10px;background: #fff;font-size: 14px;color: #232323;line-height: 28px;}
+.weather img{vertical-align: middle;}
+.lv1{background: -webkit-gradient(linear,0% 0,0% 100%,from(#50b2fb),to(#a6d4f6));color: #fff;}
+.lv2{background: -webkit-gradient(linear,0% 0,0% 100%,from(#88a9ca),to(#bcd3e3));color: #fff;}
+.lv3{background: -webkit-gradient(linear,0% 0,0% 100%,from(#999691),to(#c5c5c5));color: #fff;}
 /*  媒体查询  */
 @media screen and (max-width:970px){
 	.inner {width: 100%;}
