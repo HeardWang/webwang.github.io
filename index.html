@@ -14,6 +14,8 @@
     <script src="js/swiper.min.js"></script>
     <script src="js/juicer-min.js"></script>
     <script src="js/common.js"></script>
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script src="js/index.js"></script>
     <script>
         $(function () {
 /*            setInterval(function () {
@@ -102,26 +104,35 @@
                 <!--  内容区域  -->
                 <img src="images/loading.gif" class="loading"/>
             </ul>
-            <div class="container-right clearfix">
-                <ul>
-                    <li class="container-right-item clearfix">
-                        <div class="title">
-                            <h2>置顶推荐</h2>
-                        </div>
-                        <a class="style01" href="article/fe/article_03.html" target="_blank">
-                            <h3>44个Javascript变态题，你遇到过几个？</h3>
-                            <p>让我们一起来看看这些变态题到底变态不变态吧!</p>
-                        </a>
-                        <a class="style01" href="article/fe/article_02.html" target="_blank">
-                            <h3>优秀程序员的十个习惯</h3>
-                            <p>如果你要成为一个优秀的程序员，你还可以需要有几件事你需要注意，如果你能让下 面十个条目成为你的习惯，那么你才能真正算得上是优秀程序员。</p>
-                        </a>
-                        <a class="style01" href="article/fe/article_04.html" target="_blank">
-                            <h3>前端开发规范</h3>
-                            <p>为提高团队协作效率, 便于后台人员添加功能及前端后期优化维护, 输出高质量的文档, 特制订此文档。</p>
-                        </a>
-                    </li>
-                </ul>
+ <div class="container-right clearfix" id="container-right">
+                <div class="welcome">
+                    <p>欢迎你！<span></span>网友</p>
+                    <p>您的ip地址是：<i></i></p>
+                    <ul class="weather">
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="top clearfix">
+                    <ul>
+                        <li class="container-right-item clearfix">
+                            <div class="title">
+                                <h2>置顶推荐</h2>
+                            </div>
+                            <a class="style01" href="article/fe/article_03.html" target="_blank">
+                                <h3>44个Javascript变态题，你遇到过几个？</h3>
+                                <p>让我们一起来看看这些变态题到底变态不变态吧!</p>
+                            </a>
+                            <a class="style01" href="article/fe/article_02.html" target="_blank">
+                                <h3>优秀程序员的十个习惯</h3>
+                                <p>如果你要成为一个优秀的程序员，你还可以需要有几件事你需要注意，如果你能让下 面十个条目成为你的习惯，那么你才能真正算得上是优秀程序员。</p>
+                            </a>
+                            <a class="style01" href="article/fe/article_04.html" target="_blank">
+                                <h3>前端开发规范</h3>
+                                <p>为提高团队协作效率, 便于后台人员添加功能及前端后期优化维护, 输出高质量的文档, 特制订此文档。</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
