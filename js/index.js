@@ -22,7 +22,7 @@ $(document).ready(function(){
     }else{
         ocity = city.replace("自治区","");
     }
-    console.log("%c", "padding:50px 150px;line-height:120px;background:url('https://heardwang.github.io/back/images/qaup_logo.png') no-repeat;background-size:100%;");
+    console.log("%c", "padding:20px 100px;line-height:120px;background:url('https://heardwang.github.io/back/images/qaup_logo.png') no-repeat;background-size:100%;");
     console.log("%c开发信息提醒","color:red;font-weight:bold;font-size:14px;");
     console.log("%c1、浏览器拦截阻止混合内容天气http接口请求，点击URL右侧的取消拦截显示天气信息。","color:blue");
     var url = 'http://wthrcdn.etouch.cn/weather_mini?city=';//每次初始值
