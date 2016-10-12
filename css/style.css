@@ -122,7 +122,7 @@ input, select, textarea {vertical-align: middle;font-size: 13px;resize: none;col
 .w720 img{max-width: 100%;}
 .w220 {width: 220px;position: relative;}
 /*模板轮播展示*************************************************/
-.main02 {padding-bottom: 35px;}
+.main02 {padding-bottom: 35px;overflow: hidden;}
 .main02 dt {position: relative;font-size: 24px;color: #234;text-align: left;line-height: 40px;}
 .main02 dt .info {font-size: 13px;color: #999;display: block;line-height: 20px;}
 .main02 dd {padding-top: 10px;}
