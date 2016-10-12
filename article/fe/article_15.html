@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chrome控制台的玩法简介-WebWang</title>
+    <meta name="keywords" content="WebWang,web前端网,HTML,javascript,jquery,前端,前端框架,UI设计,W3CSchool,前端工具箱,前端开发,用户体验,交互设计,jquery教程,javascript教程,html5教程,css3教程,web前端开发,网站模板,免费素材,AngularJS">
+    <meta name="description" content="WebWang-前端网，Web前端开发综合性网站，为广大WEB开发者提供HTML5/CSS3、Javascript/jQuery相关的技术文章，分享最前沿的Web开发技术，资源和素材，文章注重实用性和技巧性，是面向web开发人员和设计师的学习优质交流平台， 并为工程师及企业提供优质的前端资源和服务。  ">
+    <link href="../../back/images/ico.ico" rel="shortcut icon"/>
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type=text/javascript src="../../js/jquery-1.7.1.min.js"></script>
+    <script src="../../js/juicer-min.js"></script>
+    <script src="../../js/common.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCoreDefault.css"/>
+    <script type="text/javascript" src="../../js/shCore.js"></script>
+    <script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../js/SyntaxSetting.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="inner clearfix">
+        <div class="h-logo"><a href="../../index.html" title="WebWang">WebWang</a></div>
+        <div class="h-account"><img src="../../back/images/tx.jpg" alt="id"/> Hi，Welcome！<a href="../../back/center.html">进入后院</a></div>
+        <ul class="h-nav">
+            <li><a href="../../index.html" class="active">首页</a></li>
+            <li><a href="../../resource.html">前端资源</a></li>
+            <li><a href="../../source.html">开源项目</a></li>
+            <li><a href="../../website.html">网址导航</a></li>
+            <li><a href="../../about.html">关于</a></li>
+        </ul>
+    </div>
+    <div class="banner-detail"></div>
+</div>
+
+<div class="clear"></div>
+<div class="gray-box">
+    <div class="inner">
+        <div class="w720 fl">
+            <dl class="main02 pt20">
+                <dt>Chrome控制台的玩法简介<span class="info">发布者：heardwang&nbsp;&nbsp;&nbsp;发布时间：2016-10-12&nbsp;&nbsp;&nbsp;<span class="zz">转载自：http://www.cnblogs.com/Wayou/p/chrome_dev_tool_style_console.html</span></span>
+                    <a href="javascript:;" class="btn btn-large like-btn"><i class="icon16 icon16-like"></i> 喜欢 (10)</a></dt>
+                <dd>
+                    <div class="gallery-item">
+                        <div class="preface">Chrome控制台玩法-console显示图片以及为文字加样式</div>
+                        <div class="i-photo"><img src="../images/article_15/1.png" alt="" title="WebWang-前端网"/></div>
+                        在正常模式下，一般只能向console 控制台输出简单的文字信息。但为了把信息输出得更优雅更便于阅读，除了cosole.log()方法外还可以调用 cosole.warn() 来输出警告信息，在控制台中出来的效果如下：
+                        <div class="i-photo"><img src="../images/article_15/2.png" alt="" title="WebWang-前端网"/></div>
+                        在输出信息前面会有一个带感叹号的黄色三角警告符号。似乎比一般的console信息要友好得多了。虽然图标是黄色的，但输出的文字仍然是黑色。<br>
+                        另外经常用到的是输出错误信息。可以通过调用console.erro() 来实现。<br>
+                        输出的效果如下：
+                        <div class="i-photo"><img src="../images/article_15/3.png" alt="" title="WebWang-前端网"/></div>
+                        信息前面会出现一个带叉的红色圆形图标。<br>
+                        这个效果要比警告信息更友好了，字体颜色成红色了。<br>
+                        要更牛叉莫过于对文字应用样式。而现在这一特性已经在谷歌浏览器里实现了。<br>
+                        在Chrome的开发者工具里，console 可以加样式，可以显示缤纷的颜色，甚至图片。简直爽翻了。<br>
+                        具体来说，是可以对输出到console控制台的文字进行CSS控制。<br>
+                        格式如下：
+                        <pre class="brush:js;">console.log("%c需要输出的信息 ", "css 代码");</pre>
+                        下面是console.log() API的官方文档摘要。
+                        <table cellpadding="0" cellspacing="0">
+                            <tr><th>Format Specifier</th><th>Description</th></tr>
+                            <tr><td>%s</td><td>Formats the value as a string.</td></tr>
+                            <tr><td>%d or %i</td><td>Formats the value as an integer.</td></tr>
+                            <tr><td>%f</td><td>Formats the value as a floating point value.</td></tr>
+                            <tr><td>%o</td><td>Formats the value as an expandable DOM element (as in the Elements panel).</td></tr>
+                            <tr><td>%O</td><td>Formats the value as an expandable JavaScript object.</td></tr>
+                            <tr><td>%c</td><td>Formats the output string according to CSS styles you provide.</td></tr>
+                        </table>
+                        <h3>1、3D Text:</h3>
+                        <pre class="brush:js;">
+console.log("%c3D Text"," text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,
+0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),
+0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),
+0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),
+0 20px 20px rgba(0,0,0,.15);font-size:5em")
+                        </pre>
+                        <h3>2、Colorful CSS</h3>
+                        <pre class="brush:js;">
+console.log("%cColorful CSS","background: rgba(252,234,187,1);
+background: -moz-linear-gradient(left, rgba(252,234,187,1) 0%,
+rgba(175,250,77,1) 12%, rgba(0,247,49,1) 28%, rgba(0,210,247,1) 39%,
+rgba(0,189,247,1) 51%, rgba(133,108,217,1) 64%, rgba(177,0,247,1) 78%,
+rgba(247,0,189,1) 87%, rgba(245,22,52,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(252,234,187,1)),
+color-stop(12%, rgba(175,250,77,1)), color-stop(28%, rgba(0,247,49,1)),
+color-stop(39%, rgba(0,210,247,1)), color-stop(51%, rgba(0,189,247,1)),
+color-stop(64%, rgba(133,108,217,1)), color-stop(78%, rgba(177,0,247,1)),
+color-stop(87%, rgba(247,0,189,1)), color-stop(100%, rgba(245,22,52,1)));
+background: -webkit-linear-gradient(left, rgba(252,234,187,1) 0%, rgba(175,250,77,1) 12%,
+rgba(0,247,49,1) 28%, rgba(0,210,247,1) 39%, rgba(0,189,247,1) 51%,
+rgba(133,108,217,1) 64%, rgba(177,0,247,1) 78%, rgba(247,0,189,1) 87%,
+rgba(245,22,52,1) 100%);background: -o-linear-gradient(left, rgba(252,234,187,1) 0%,
+rgba(175,250,77,1) 12%, rgba(0,247,49,1) 28%, rgba(0,210,247,1) 39%,
+rgba(0,189,247,1) 51%, rgba(133,108,217,1) 64%, rgba(177,0,247,1) 78%,
+rgba(247,0,189,1) 87%, rgba(245,22,52,1) 100%);background: -ms-linear-gradient(left, rgba(252,234,187,1) 0%,
+rgba(175,250,77,1) 12%, rgba(0,247,49,1) 28%, rgba(0,210,247,1) 39%,
+rgba(0,189,247,1) 51%, rgba(133,108,217,1) 64%, rgba(177,0,247,1) 78%,
+rgba(247,0,189,1) 87%, rgba(245,22,52,1) 100%);
+background: linear-gradient(to right, rgba(252,234,187,1) 0%,
+rgba(175,250,77,1) 12%, rgba(0,247,49,1) 28%, rgba(0,210,247,1) 39%,
+rgba(0,189,247,1) 51%, rgba(133,108,217,1) 64%, rgba(177,0,247,1) 78%,
+rgba(247,0,189,1) 87%, rgba(245,22,52,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(
+startColorstr='#fceabb', endColorstr='#f51634', GradientType=1 );font-size:5em")
+                        </pre>
+                        <h3>3、Rainbow Text</h3>
+                        <pre class="brush:js;">
+console.log('%cRainbow Text ', 'background-image:-webkit-gradient(
+linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f),
+color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),
+color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+color:transparent;-webkit-background-clip: text;font-size:5em;');
+                        </pre>
+                        <h3>在Chrome控制台输出图片 </h3>
+                        除了上面介绍的那些炫目的文字效果外，你还可以在Chrome控制台中显示图片,自然地，显示gif这样的动态图片也是没问题的。<br>
+                        还是应用差不多的代码，只是将内容变成指定背景为图片。<br>
+                        下面是一个例子：
+                        <pre class="brush:js;">
+console.log("%c", "padding:50px 300px;line-height:120px;
+background:url('http://wayouliu.duapp.com/img/tagsImg/youth.gif') no-repeat;");
+                        </pre>
+                        <div class="i-photo"><img src="../images/article_15/4.gif" alt="" title="WebWang-前端网"/></div>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="main03">
+                <dt><i class="icon24 icon24-comment"></i> 请在此处发表您的宝贵意见</dt>
+                <dd>
+                    <!-- 多说评论框 start -->
+                    <div class="ds-thread" data-thread-key="article_15" data-title="Chrome控制台的玩法简介" data-url="https://heardwang.github.io/article/fe/article_15.html"></div>
+                    <!-- 多说评论框 end -->
+                    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+                    <script type="text/javascript">
+                        var duoshuoQuery = {short_name:"heardwang"};
+                        (function() {
+                            var ds = document.createElement('script');
+                            ds.type = 'text/javascript';ds.async = true;
+                            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                            ds.charset = 'UTF-8';
+                            (document.getElementsByTagName('head')[0]
+                            || document.getElementsByTagName('body')[0]).appendChild(ds);
+                        })();
+                    </script>
+                    <!-- 多说公共JS代码 end -->
+                </dd>
+            </dl>
+        </div>
+        <div class="w220 fr">
+            <dl class="main04 pt20">
+                <dt>最新文章</dt>
+                <dd class="clearfix">
+                    <ul class="widget-1column">
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="f-copyright"><p>分享与创新开发，版权所有，保留一切权利&nbsp;Copyright © 2016-2021 · All rights reserved.</p></div>
+</div>
+<a id="return_top" title="返回顶部"></a>
+<!--  推荐文章模版  -->
+<script id="content-item" type="text/template">
+    {@each data as it,index}
+    {@if index <=3}
+    <li>
+        <div class="item-cont">
+            <div class="i-photo"><a href='../../${it.link}'><img src='../../${it.img}' alt=""/></a></div>
+            <div class="i-text"><a class="like"><i class="icon16 icon16-interest"></i> 15</a><a href='../../${it.link}'>${it.title}</a></div>
+        </div>
+    </li>
+    {@/if}
+    {@/each}
+</script>
+<script>
+    getAjax('content-item','widget-1column',"../../json/project.json");
+</script>
+</body>
+</html>
