@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>前端开发者的悟性 | CSS-Tricks-WebWang</title>
+    <meta name="keywords" content="WebWang,web前端网,HTML,javascript,jquery,前端,前端框架,UI设计,W3CSchool,前端工具箱,前端开发,用户体验,交互设计,jquery教程,javascript教程,html5教程,css3教程,web前端开发,网站模板,免费素材,AngularJS">
+    <meta name="description" content="WebWang-前端网，Web前端开发综合性网站，为广大WEB开发者提供HTML5/CSS3、Javascript/jQuery相关的技术文章，分享最前沿的Web开发技术，资源和素材，文章注重实用性和技巧性，是面向web开发人员和设计师的学习优质交流平台， 并为工程师及企业提供优质的前端资源和服务。  ">
+    <link href="../../back/images/ico.ico" rel="shortcut icon"/>
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type=text/javascript src="../../js/jquery-1.7.1.min.js"></script>
+    <script src="../../js/juicer-min.js"></script>
+    <script src="../../js/common.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCoreDefault.css"/>
+    <script type="text/javascript" src="../../js/shCore.js"></script>
+    <script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../js/SyntaxSetting.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="inner clearfix">
+        <div class="h-logo"><a href="../../index.html" title="WebWang">WebWang</a></div>
+        <div class="h-account"><img src="../../back/images/tx.jpg" alt="id"/> Hi，Welcome！<a href="../../back/center.html">进入后院</a></div>
+        <ul class="h-nav">
+            <li><a href="../../index.html" class="active">首页</a></li>
+            <li><a href="../../resource.html">前端资源</a></li>
+            <li><a href="../../source.html">开源项目</a></li>
+            <li><a href="../../website.html">网址导航</a></li>
+            <li><a href="../../about.html">关于</a></li>
+        </ul>
+    </div>
+    <div class="banner-detail"></div>
+</div>
+
+<div class="clear"></div>
+<div class="gray-box">
+    <div class="inner">
+        <div class="w720 fl">
+            <dl class="main02 pt20">
+                <dt>前端开发者的悟性 | CSS-Tricks<span class="info">发布者：heardwang&nbsp;&nbsp;&nbsp;发布时间：2016-10-13&nbsp;&nbsp;&nbsp;<span class="zz">转载自：http://www.75team.com/post/a-front-end-developer-is-aware-css-tricks.html</span></span>
+                    <a href="javascript:;" class="btn btn-large like-btn"><i class="icon16 icon16-like"></i> 喜欢 (10)</a></dt>
+                <dd>
+                    <div class="gallery-item">
+                        <h3>前言</h3>
+                        <div class="preface">由于前端开发者处于核心位置，需要与许多不同的角色打交道，如果我们有身为前端的悟性，前端工作可以做得更好。前端应当知晓其他一切可以让网站运转的技术。</div>
+                        最近有一个想法一直在我的脑海里（大体上来自于这个小组讨论），即前端开发者需要怎样的悟性。一般而言，前端开发者位于其他许多工作的中心环节。在一个 web 开发团队里，其他角色的工作依赖于前端开发。这可以理解。前端开发者创建产品中与用户实际交互的部分。用户所能感知的一切都和前端开发人员有关。也许，这就是为什么前端是一项这么有意思的工作！
+                        <br><br>
+                        由于前端开发者处于核心位置，需要与许多不同的角色打交道，如果我们有身为前端的悟性，前端工作可以做得更好。前端应当知晓其他一切可以让网站运转的技术。
+                        <br><br>
+                        <span class="font_bold">前端开发者要知晓设计。</span>即使前端自己不是一名设计师，他们也应当知道设计有多重要。他们对设计有良好的品位。他们知晓设计相关的工具。他们了解设计角色在产品开发流程中的位置。
+                        <br>
+                        <span class="font_bold">前端开发者要知晓后端。</span>即使前端自己不是一名后端开发工程师，他们也应当知道后端有多重要。他们了解后端能够提供什么，不能做到什么。他们明白后端开发者的职责。他们知晓相关的语言。他们懂得如何与后端沟通得到前端需要的内容。
+                        <br>
+                        <span class="font_bold">前端开发者要知晓网络技术。</span>前端了解网站数据是通过互联网传递的，网络环境有时候是不可预知的。他们知晓网络有可能可用，有可能不可用，网速有可能快，有可能慢，数据传输有可能可靠，有可能不可靠。
+                        <br>
+                        <span class="font_bold">前端开发者要知晓性能。</span>即使前端自己不完全专注于性能，他们也应当知道性能对网站成功至关重要。他们了解性能本身是一个复杂的世界。他们知晓对付性能问题有速效方案和长期优化方法。他们懂得由于后端服务非常快，用户访问网站 80% 的时间消耗在前端的加载上。
+                        <br>
+                        <span class="font_bold">前端开发者要知晓内容策划。</span>即使前端自己不是内容策划师，他们也应当知道内容决定了网站的生或死。他们了解缺少内容计划会导致网站发展出现问题。他们知晓网站的用户至上，这些用户需要在网站上找到所需，网站要很好地符合他们的期望。
+                        <br>
+                        <span class="font_bold">前端开发者要知晓数据库。</span>内容是网站的生命。内容必须要有很好的组织形式。前端能使用的数据来自数据库。前端需要用模板组合这些数据，才能实现网站。
+                        <br>
+                        <span class="font_bold">前端开发者要知晓测试。</span>各种各样的测试！集成测试，回归测试，用户测试！
+                        <br>
+                        <span class="font_bold">前端开发者要知晓系统。</span>前端可能负责实现一个设计系统，或者一个图标系统，或者一个编码风格指南（coding style guide）。他们可能得自己创建这些系统。他们可能需要为这些系统撰写文档。
+                        <br>
+                        <span class="font_bold">前端开发者要知晓开发运维。</span>前端要与其他开发者一起在项目中编写和提交代码，因此他们需要与其他开发者一起遵守一致的配置。即使前端不自己写构建系统，他们也应当知道构建系统是什么，用来做什么，以及它的功能有哪些。即使前端不自己发布代码，他们也应当知道如何使用代码发布系统。
+                        <br>
+                        <span class="font_bold">前端开发者要知晓服务器。</span>没有服务器，就没有网站。
+                        <br>
+                        <span class="font_bold">前端开发者要知晓无障碍体验。</span>即使前端自身对建立无障碍体验不够精通，他们也应当知道无障碍体验是重要的。他们知晓如何测试无障碍性。他们了解应当与谁谈论无障碍。他们明白关于无障碍体验有速效方案和长期优化方法。
+                        <br>
+                        <span class="font_bold">前端开发者要知晓设备前景。</span>前端应当知道目前 web 无处不在，而一个好网站需要满足各类用户。大屏、小屏、触屏、远距离屏、黑白屏。前端开发者应知晓未知。
+                        <br><br>
+                        这只是一个好前端应该知晓的一小部分内容。知晓得越多越好。
+                        <br>
+                        当然，所有上面这些，是建立在前端的日常工作之上。而日常工作的前端技能，包括 HTML、CSS、JavaScript、响应式设计、框架和库、通信…… 这个列表简直无穷无尽！
+                    </div>
+                </dd>
+            </dl>
+            <dl class="main03">
+                <dt><i class="icon24 icon24-comment"></i> 请在此处发表您的宝贵意见</dt>
+                <dd>
+                    <!-- 多说评论框 start -->
+                    <div class="ds-thread" data-thread-key="article_17" data-title="前端开发者的悟性 | CSS-Tricks" data-url="https://heardwang.github.io/article/fe/article_17.html"></div>
+                    <!-- 多说评论框 end -->
+                    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+                    <script type="text/javascript">
+                        var duoshuoQuery = {short_name:"heardwang"};
+                        (function() {
+                            var ds = document.createElement('script');
+                            ds.type = 'text/javascript';ds.async = true;
+                            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                            ds.charset = 'UTF-8';
+                            (document.getElementsByTagName('head')[0]
+                            || document.getElementsByTagName('body')[0]).appendChild(ds);
+                        })();
+                    </script>
+                    <!-- 多说公共JS代码 end -->
+                </dd>
+            </dl>
+        </div>
+        <div class="w220 fr">
+            <dl class="main04 pt20">
+                <dt>最新文章</dt>
+                <dd class="clearfix">
+                    <ul class="widget-1column">
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="f-copyright"><p>分享与创新开发，版权所有，保留一切权利&nbsp;Copyright © 2016-2021 · All rights reserved.</p></div>
+</div>
+<a id="return_top" title="返回顶部"></a>
+<!--  推荐文章模版  -->
+<script id="content-item" type="text/template">
+    {@each data as it,index}
+    {@if index <=3}
+    <li>
+        <div class="item-cont">
+            <div class="i-photo"><a href='../../${it.link}'><img src='../../${it.img}' alt=""/></a></div>
+            <div class="i-text"><a class="like"><i class="icon16 icon16-interest"></i> 15</a><a href='../../${it.link}'>${it.title}</a></div>
+        </div>
+    </li>
+    {@/if}
+    {@/each}
+</script>
+<script>
+    getAjax('content-item','widget-1column',"../../json/project.json");
+</script>
+</body>
+</html>
