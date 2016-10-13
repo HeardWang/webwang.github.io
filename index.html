@@ -16,6 +16,7 @@
     <script src="js/common.js"></script>
     <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
     <script src="js/index.js"></script>
+        <script src="js/ajaxLoad.js"></script>
     <script>
         $(function () {
 /*            setInterval(function () {
@@ -99,11 +100,17 @@
     </div>
 <!--   container   -->
     <div id="container" class="clearfix">
-        <div class="inner clearfix">
-            <ul class="container-left">
-                <!--  内容区域  -->
-                <img src="images/loading.gif" class="loading"/>
-            </ul>
+            <div class="container-left">
+                <div class="container-content">
+                    <!--  内容区域  -->
+                    <img src="images/loading.gif" class="loading"/>
+                </div>
+                <div class="totalRec">
+                    <div class="pages">
+                        <div id="waChe"></div>
+                    </div>
+                </div>
+            </div>
  <div class="container-right clearfix" id="container-right">
                 <div class="welcome">
                     <p>欢迎你！<span></span>网友</p>
@@ -169,7 +176,11 @@
 </script>
 <script>
     window.onload = function () {
-        getAjax('container-item','container-left',"json/project.json");
+        ajaxLoad("json/project.json");    //调用ajax
+    };
+    function goto(target) {
+        cpage = target;        //把页面计数定位到第几页
+        ajaxLoad("json/project.json");
     }
 </script>
 </body>
