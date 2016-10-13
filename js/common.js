@@ -76,8 +76,7 @@ $(document).ready(function(){
     var stark = false;
     var link = document.createElement('link');
     $("#night_mode").click(function () {
-    $("#night_mode").click(function () {
-        if(stark){
+                if(stark){
             $(this).html("关灯");
             $(".gray-box").css("background-color","#f9f9f9");
             $(".gallery-item").css("color","#232323");
