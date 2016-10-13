@@ -127,11 +127,7 @@ input, select, textarea {vertical-align: middle;font-size: 13px;resize: none;col
 .main02 dt .info {font-size: 13px;color: #999;display: block;line-height: 20px;}
 .main02 dd {padding-top: 10px;}
 /*模板轮播展示*************************************************/
-.gallery-item {height: auto;}
-.gallery-item .i-photo {width: 700px; height: auto; padding: 10px; -webkit-border-radius: 4px; -moz-border-radius: 4px;border-radius: 4px;
-	webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);background: #fff;text-align: center;vertical-align: middle;display: table-cell;overflow: hidden;}
-.gallery-item .i-photo img { /*width: 700px; height: 467px;*/ max-width: 100%;width: 700px\0;}
-.gallery-item .i-thumb { height: auto; overflow: hidden; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; border: 1px #e3e3e3 solid; font-family: verdana; background: #f6f6f6; margin-top: 20px; text-align: left; position: relative; padding: 0 60px; }
+
 .es-carousel {overflow: hidden;background: #f6f6f6;}
 .es-carousel ul {display: none;}
 .es-carousel ul li {height: 100%;float: left;display: block;}
@@ -316,7 +312,12 @@ input, select, textarea {vertical-align: middle;font-size: 13px;resize: none;col
 	color: #428bca;}
 .container-right-item .style01 p{color: #999;margin-bottom: 0;font-size: 12px;}
 /*  文章样式  */
-.gallery-item{font-size: 14px;line-height: 21px;}
+.gallery-item{font-size: 14px;line-height: 24px;height: auto;}
+.gallery-item .i-photo {width: 700px; height: auto; padding: 10px; -webkit-border-radius: 4px; -moz-border-radius: 4px;border-radius: 4px;  webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);background: #fff;
+	text-align: center;vertical-align: middle;/*display: table-cell;*/overflow: hidden;margin: 10px 0;}
+.gallery-item .i-photo img { /*width: 700px; height: 467px;*/ max-width: 100%;width: 700px\0;}
+.gallery-item .i-thumb { height: auto; overflow: hidden; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; border: 1px #e3e3e3 solid; font-family: verdana; background: #f6f6f6; margin-top: 20px; text-align: left; position: relative; padding: 0 60px; }
+
 .gallery-item p{margin-top: 5px;font-size: 13px;line-height: 21px;}
 /*  散文  */
 .gallery-item .indent{text-indent: 20px;font-family: 楷体;font-size: 18px;padding: 5px 50px 0px;}
