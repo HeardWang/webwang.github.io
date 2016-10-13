@@ -92,6 +92,8 @@ $(document).ready(function(){
             $(".main03 dt").css({"color":"#232323"});
             $(".gallery-item h2").css({"color":"#232323"});
             $(".gallery-item a").css({"color":"#232323"});
+            $(".gallery-item .i-photo").css({"background-color":"#fff"});
+            $(".body").css({"font-family":"Michroma,'Segoe UI Light','Segoe UI','Segoe UI WP','Microsoft Jhenghei','微软雅黑',sans-serif,Times"});
             $(".dark").remove();
             stark = !stark;
         }else{
@@ -110,6 +112,8 @@ $(document).ready(function(){
             $(".main03 dt").css({"color":"#9699a0"});
             $(".gallery-item h2").css({"color":"#9699a0"});
             $(".gallery-item a").css({"color":"#9699a0"});
+            $(".gallery-item .i-photo").css({"background-color":"#354054"});
+            $(".body").css({"font-family":"微软雅黑"});
             link.href = "../../css/shCoreRDark.css";
             link.type = "text/css";
             link.rel = "stylesheet";
