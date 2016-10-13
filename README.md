@@ -11,23 +11,23 @@
 <p>首页小图尺寸：220*138</p><br>
 <i>更新：更新文章页，更新文章图片文件夹，更新json列表，更新demo以及其他素材</i><br>
 <h3>文章格式</h3><br>
-***副标题<br>
+<strong>副标题</strong><br>
 &lt;h3>&lt;/h3><br>
-***列表<br>
+<strong>列表</strong><br>
 &lt;ul class="code-list"><br>
 &lt;li>&lt;/li><br>
 &lt;li>&lt;/li><br>
 &lt;li>&lt;/li><br>
 &lt;/ul><br>
-代码<br>
+<strong>代码</strong><br>
 &lt;pre class="brush:js;">&lt;/pre><br>
-图片<br>
+<strong>图片</strong><br>
 &lt;div class="i-photo">&lt;img src="../images/article_09/1.jpg" alt="" title="WebWang-前端网"/>&lt;/div><br>
-引用<br>
+<strong>引用</strong><br>
 &lt;div class="preface">&lt;/div><br>
-散文<br>
+<strong>散文</strong><br>
 &lt;div class="indent">&lt;/div><br>
-表格<br>
+<strong>表格</strong><br>
 &lt;table cellpadding="0" cellspacing="0"><br>
 &lt;tr>&lt;th>1&lt;/th>&lt;th>2&lt;/th>&lt;/tr><br>
 &lt;tr>&lt;td>1&lt;/td>&lt;td>2&lt;/td>&lt;/tr><br>
