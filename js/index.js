@@ -52,6 +52,9 @@ $(document).ready(function(){
             case  "阴":
                 pic = "<img src='images/yin.png'>";oclass = "lv3";
                 break;
+                case  "霾":
+                pic = "<img src='images/yin.png'>";oclass = "lv3";
+                break;
             case  "多云":
                 pic = "<img src='images/duoyun.png'>";oclass = "lv3";
                 break;
