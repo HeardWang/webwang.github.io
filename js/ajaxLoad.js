@@ -13,7 +13,7 @@ function ajaxLoad(url) {
     $.ajax({
         url: url,
         dataType: "text",
-        type: "post",
+        type: "GET",
         success: function (data) {
             CallBack(data,cpage);
 
