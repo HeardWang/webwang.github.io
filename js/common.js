@@ -76,6 +76,7 @@ $(document).ready(function(){
     var stark = false;
     var link = document.createElement('link');
     $("#night_mode").click(function () {
+    $("#night_mode").click(function () {
         if(stark){
             $(this).html("关灯");
             $(".gray-box").css("background-color","#f9f9f9");
@@ -90,6 +91,8 @@ $(document).ready(function(){
             $(".widget-1column .i-text a").css({"color":"#232323"});
             $(".main04 dt").css({"color":"#232323"});
             $(".main03 dt").css({"color":"#232323"});
+            $(".gallery-item h2").css({"color":"#232323"});
+            $(".gallery-item a").css({"color":"#232323"});
             $(".dark").remove();
             stark = !stark;
         }else{
@@ -106,6 +109,8 @@ $(document).ready(function(){
             $(".widget-1column .i-text a").css({"color":"#9699a0"});
             $(".main04 dt").css({"color":"#9699a0"});
             $(".main03 dt").css({"color":"#9699a0"});
+            $(".gallery-item h2").css({"color":"#9699a0"});
+            $(".gallery-item a").css({"color":"#9699a0"});
             link.href = "../../css/shCoreRDark.css";
             link.type = "text/css";
             link.rel = "stylesheet";
