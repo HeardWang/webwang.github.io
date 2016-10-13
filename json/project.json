@@ -1,5 +1,6 @@
 {
   "data": [
+    {"title":"前端开发者的悟性 | CSS-Tricks","tag":"其他","img":"images/procedure.jpg","preface":"由于前端开发者处于核心位置，需要与许多不同的角色打交道，如果我们有身为前端的悟性，前端工作可以做得更好。前端应当知晓其他一切可以让网站运转的技术。","link":"article/fe/article_17.html","date":"2016.10.13"},
     {"title":"在2016年学JavaScript是一种什么样的体验？","tag":"前端开发","img":"images/js.jpg","preface":"现在可都是2016年了，你还在用jquery？html？ES5？","link":"article/fe/article_16.html","date":"2016.10.13"},
     {"title":"Chrome控制台的玩法简介","tag":"前端开发","img":"images/llq.jpg","preface":"Chrome控制台玩法-console显示图片以及为文字加样式","link":"article/fe/article_15.html","date":"2016.10.12"},
     {"title":"大前端工具集","tag":"前端开发","img":"images/h5c3.jpg","preface":"这个项目的定位是 大前端程序猿的百宝箱。主要针对 前端方向 和 Node 方向；主要内容是国内外优秀的库、工具、套路、设计/交互或关注的前端组织/博客等等，反正用 瑞士军刀 来总结这篇文章再合适不过了。","link":"article/fe/article_14.html","date":"2016.10.11"},
