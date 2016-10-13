@@ -11,9 +11,9 @@
 <p>首页小图尺寸：220*138</p><br>
 <i>更新：更新文章页，更新文章图片文件夹，更新json列表，更新demo以及其他素材</i><br>
 <h3>文章格式</h3><br>
-副标题<br>
+***副标题<br>
 &lt;h3>&lt;/h3><br>
-列表<br>
+***列表<br>
 &lt;ul class="code-list"><br>
 &lt;li>&lt;/li><br>
 &lt;li>&lt;/li><br>
