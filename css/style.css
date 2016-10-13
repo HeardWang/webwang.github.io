@@ -1,6 +1,6 @@
 /*初始化***************************************************************************************************/
 * {margin: 0;padding: 0;list-style: none;}
-body {font-family: Verdana, "Microsoft YaHei", Helvetica, Arial, sans-serif;font-size: 13px;line-height: 24px;
+body {font-family: Michroma,'Segoe UI Light','Segoe UI','Segoe UI WP','Microsoft Jhenghei','微软雅黑',sans-serif,Times;font-size: 13px;line-height: 24px;
 	color: #666;padding-top: 75px;}
 a {color: #999;text-decoration: none;}
 a:hover {color: #00b7ee;text-decoration: none;}
@@ -444,6 +444,10 @@ input, select, textarea {vertical-align: middle;font-size: 13px;resize: none;col
 	font-size: 12px;text-align: center;color: #666;padding: 3px 12px;}
 #waChe .current {border: 1px solid #83E7E4;background: #0F90D2;margin: 1px;color: #fff;}
 #waChe #info {width: auto;border-top-left-radius: 5px;border-bottom-left-radius: 5px;}
+/*  公共 */
+.line_24{line-height: 24px;}
+.font_bold{font-weight: bold;}
+.font_normal{font-weight: normal;}
 /*  媒体查询  */
 @media screen and (max-width:970px){
 	.inner {width: 100%;}
