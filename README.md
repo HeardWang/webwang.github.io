@@ -10,16 +10,28 @@
 <p>前院后院整合完成，整体结构完成，基本机构表现、动态效果整合完成。</p><br>
 <p>首页小图尺寸：220*138</p><br>
 <i>更新：更新文章页，更新文章图片文件夹，更新json列表，更新demo以及其他素材</i><br>
-<h3>文章格式</h3>
-&lt;h3>&lt;/h3><br>
-&lt;pre class="brush:js;">&lt;/pre><br>
-&lt;p>知识点:&lt;/p><br>
-&lt;ul class="code-list"><br>
-&lt;li>&lt;/li><br>
-&lt;li>&lt;/li><br>
-&lt;li>&lt;/li><br>
-&lt;/ul><br>
-&lt;p>&lt;/p><br>
+<h3>文章格式</h3><br>
+*******副标题*******<br>
+<h3></h3><br>
+*******列表*******<br>
+<ul class="code-list"><br>
+<li></li><br>
+<li></li><br>
+<li></li><br>
+</ul><br>
+*******代码*******<br>
+<pre class="brush:js;"></pre><br>
+*******图片*******<br>
+<div class="i-photo"><img src="../images/article_09/1.jpg" alt="" title="WebWang-前端网"/></div><br>
+*******引用*******<br>
+<div class="preface"></div><br>
+*******散文*******<br>
+<div class="indent"></div><br>
+*******表格*******<br>
+<table cellpadding="0" cellspacing="0"><br>
+<tr><th>1</th><th>2</th></tr><br>
+<tr><td>1</td><td>2</td></tr><br>
+</table><br>
 <br>
 &lt;div class="i-photo">&lt;img src="images/article_07/3.png" alt="" title="WebWang-前端网"/>&lt;/div><br>
 &lt;div class="preface">&lt;/div><br>
