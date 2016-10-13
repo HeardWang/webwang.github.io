@@ -71,7 +71,49 @@ $(document).ready(function(){
         })
     }else{
         $('#p_meta').remove();
-    }
+    };
+    /*  夜间阅读 */
+    var stark = false;
+    var link = document.createElement('link');
+    $("#night_mode").click(function () {
+        if(stark){
+            $(this).html("关灯");
+            $(".gray-box").css("background-color","#f9f9f9");
+            $(".gallery-item").css("color","#232323");
+            $(".main02 dt .info").css("color","#232323");
+            $(".main02 dt").css("color","#232323");
+            $(".preface").css({"color":"#232323","background-color":"#fff"});
+            $(".gallery-item h3").css({"color":"#232323","background-color":"#fff"});
+            $(".btn").css({"color":"#232323","background-color":"#fff",'border': '1px solid #ccc'});
+            $(".ds-replybox").css({"color":"#232323","background-color":"#fff"});
+            $(".widget-1column .item-cont").css({"background-color":"#fff"});
+            $(".widget-1column .i-text a").css({"color":"#232323"});
+            $(".main04 dt").css({"color":"#232323"});
+            $(".main03 dt").css({"color":"#232323"});
+            $(".dark").remove();
+            stark = !stark;
+        }else{
+            $(this).html("开灯");
+            $(".gray-box").css("background-color","#354054");
+            $(".gallery-item").css("color","#9699a0");
+            $(".main02 dt .info").css("color","#9699a0");
+            $(".main02 dt").css("color","#9699a0");
+            $(".preface").css({"color":"#9699a0","background-color":"#354054"});
+            $(".gallery-item h3").css({"color":"#9699a0","background-color":"#354054"});
+            $(".btn").css({"color":"#9699a0","background-color":"#354054"});
+            $(".ds-replybox").css({"color":"#9699a0","background-color":"#354054"});
+            $(".widget-1column .item-cont").css({"background-color":"#354054",'border':"1px solid #fff;"});
+            $(".widget-1column .i-text a").css({"color":"#9699a0"});
+            $(".main04 dt").css({"color":"#9699a0"});
+            $(".main03 dt").css({"color":"#9699a0"});
+            link.href = "../../css/shCoreRDark.css";
+            link.type = "text/css";
+            link.rel = "stylesheet";
+            link.className = "dark";
+            $('head')[0].append(link);
+            stark = !stark;
+        }
+    });
 });
 
 /*  ajax&juicer函数  */
