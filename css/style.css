@@ -15,6 +15,9 @@ a:hover {color: #00b7ee;text-decoration: none;}
 .mt10 {margin-top: 10px;}
 .mt20 {margin-top: 20px;}
 .mt30 {margin-top: 30px;}
+.line_24{line-height: 24px;}
+.font_bold{font-weight: bold;}
+.font_normal{font-weight: normal;}
 .inner {width: 970px;margin: 0 auto;/*text-align: center;*/}
 .clear {clear: both;}
 input, select, textarea {vertical-align: middle;font-size: 13px;resize: none;color: #666;}
@@ -23,7 +26,7 @@ input, select, textarea {vertical-align: middle;font-size: 13px;resize: none;col
 /*页头*************************************************/
 .header {height: 75px;background: #fff;text-align: left;position: fixed;left: 0;top: 0;width: 100%;z-index: 999;}
 /*logo****/
-.h-logo {float: left;padding-top: 17px;position: relative;overflow: hidden;}
+.h-logo {float: left;margin-top: 17px;position: relative;overflow: hidden;}
 .h-logo a {display: block;width: 180px;height:36px;overflow: hidden;background: url(../back/images/qaup_logo.png) no-repeat 0 0;line-height: 999;background-size: cover;}
 .h-logo:before{
 	content: "";
@@ -444,10 +447,7 @@ input, select, textarea {vertical-align: middle;font-size: 13px;resize: none;col
 	font-size: 12px;text-align: center;color: #666;padding: 3px 12px;}
 #waChe .current {border: 1px solid #83E7E4;background: #0F90D2;margin: 1px;color: #fff;}
 #waChe #info {width: auto;border-top-left-radius: 5px;border-bottom-left-radius: 5px;}
-/*  公共 */
-.line_24{line-height: 24px;}
-.font_bold{font-weight: bold;}
-.font_normal{font-weight: normal;}
+.night_btn{position: absolute;top: 0;right: 120px;}
 /*  媒体查询  */
 @media screen and (max-width:970px){
 	.inner {width: 100%;}
