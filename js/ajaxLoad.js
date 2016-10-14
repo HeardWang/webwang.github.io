@@ -48,7 +48,7 @@ function CallBack(data,cpage) {
             htm += '<span class="note">'+item.data[i].preface+'</span>';
             htm += '<div class="auth">';
             htm += '<span>发布日期：'+item.data[i].date+'</span>';
-            htm += '<a href='+item.data[i].link+' target="_blank">阅读全文</a>';
+            htm += '<a href='+item.data[i].link+' target="_blank" class="btn-4">阅读全文</a>';
             htm += '</div>';
             htm += '</div>';
         }
