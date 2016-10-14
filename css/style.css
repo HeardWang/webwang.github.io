@@ -448,10 +448,10 @@ dt .more{position:absolute;right:0;top:0;font-size:12px}
 /*  页脚分页  */
 #waChe a,
 #waChe a:visited,
-#waChe a:hover,
 #waChe .current,
 #waChe #info {border: 1px solid #ddd;background: #fff;display: inline-block;margin: 1px;text-decoration: none;font-size: 12px;text-align: center;color: #666;padding: 3px 12px;}
 #waChe .current {border: 1px solid #83E7E4;background: #0F90D2;margin: 1px;color: #fff;}
+#waChe a:hover{border: 1px solid #0F90D2;color: #0F90D2;}
 #waChe #info {width: auto;border-top-left-radius: 5px;border-bottom-left-radius: 5px;}
 .night_btn{position: absolute;top: 0;right: 120px;}
 /*  百度日历  */
