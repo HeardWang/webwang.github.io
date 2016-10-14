@@ -29,8 +29,8 @@ input, select, textarea {vertical-align: middle;font-size: 13px;resize: none;col
 /*logo****/
 .h-logo {float: left;margin-top: 17px;position: relative;overflow: hidden;}
 .h-logo a {display: block;width: 180px;height:36px;overflow: hidden;background: url(../back/images/qaup_logo.png) no-repeat 0 0;line-height: 999;background-size: cover;}
-.h-logo:before{content: "";position: absolute;left: -45px;top: 0px;width: 100px;height: 15px;background-color: rgba(255,255,255,0.5);-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-ms-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform: rotate(-45deg);-webkit-animation: searchLights 2s ease-in 1s infinite;-o-animation: searchLights 2s ease-in 1s infinite;animation: searchLights 2s ease-in 1s infinite;}
-@keyframes searchLights {from {left:-45px;top: 10px;}to {left:100px;top: 58px;}}
+.h-logo:before{content: "";position: absolute;left: -55px;top: -20px;width: 100px;height: 15px;background-color: rgba(255,255,255,0.5);-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-ms-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform: rotate(-45deg);-webkit-animation: searchLights 2s ease-in 1s infinite;-o-animation: searchLights 2s ease-in 1s infinite;animation: searchLights 2s ease-in 1s infinite;}
+@keyframes searchLights {from {left:-55px;top: -20px;}to {left:100px;top: 58px;}}
 /*主导航****/
 .h-nav {float: right;height: 75px;padding-right: 40px;}
 .h-nav li {float: left;height: 75px;text-align: center;padding: 0 15px;}
