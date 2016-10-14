@@ -2,7 +2,7 @@
 * {margin: 0;padding: 0;list-style: none;}
 body {font-family: Michroma,'Segoe UI Light','Segoe UI','Segoe UI WP','Microsoft Jhenghei','微软雅黑',sans-serif,Times;font-size: 13px;line-height: 24px;
 	color: #666;padding-top: 75px;}
-a {color: #999;text-decoration: none;}
+a{color: #999;text-decoration: none;-webkit-transition: all 1s;-moz-transition: all 1s;-ms-transition: all 1s;-o-transition: all 1s;transition: all 1s;}
 a:hover {color: #00b7ee;text-decoration: none;}
 img{border: none;outline: none;}
 .fl {float: left;}
