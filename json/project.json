@@ -1,5 +1,6 @@
 {
   "data": [
+    {"title":"射鸡师，干了这碗鸡汤我们继续改稿好不好？","tag":"设计","img":"images/Design.jpg","preface":"大部分人说,做设计的都比较辛苦，也许工资不错，但是对于大多数设计师而言,也不可能很高,也就那样吧。而且常常设计过程中要受到多人摆布，经常成品出来后，与最初的想法有很大差距。","link":"article/fe/article_18.html","date":"2016.10.14"},
     {"title":"前端开发者的悟性 | CSS-Tricks","tag":"其他","img":"images/procedure.jpg","preface":"由于前端开发者处于核心位置，需要与许多不同的角色打交道，如果我们有身为前端的悟性，前端工作可以做得更好。前端应当知晓其他一切可以让网站运转的技术。","link":"article/fe/article_17.html","date":"2016.10.13"},
     {"title":"在2016年学JavaScript是一种什么样的体验？","tag":"前端开发","img":"images/js.jpg","preface":"现在可都是2016年了，你还在用jquery？html？ES5？","link":"article/fe/article_16.html","date":"2016.10.13"},
     {"title":"Chrome控制台的玩法简介","tag":"前端开发","img":"images/llq.jpg","preface":"Chrome控制台玩法-console显示图片以及为文字加样式","link":"article/fe/article_15.html","date":"2016.10.12"},
@@ -13,7 +14,7 @@
     {"title":"移动端样式小技巧","tag":"前端开发","img":"images/h5c3.jpg","preface":"平时在移动端开发拼页面的过程中总会遇到一些问题，主要是各手机webview样式显示效果不一致造成的。以下总结了一些常见坑和一些小技巧，希望对看官有所帮助！","link":"article/fe/article_07.html","date":"2016.9.28"},
     {"title":"用CSS3打造酷炫的3D文本滚动效果","tag":"CSS","img":"images/css3.jpg","preface":"昨天看见了一篇文章关于用纯CSS实现文本滚动，在这里跟大家分享一下。首先把效果图贴给大家：根据效果图我们很容易发现肯定是要用到3D转换的，如果对这个还不是很了解的可以先看...","link":"article/fe/article_06.html","date":"2016.9.28"},
     {"title":"44个Javascript变态题，你遇到过几个","tag":"JS","img":"images/js.jpg","preface":"让我们一起来看看这些变态题到底变态不变态吧!","link":"article/fe/article_03.html","date":"2016.9.27"},
-    {"title":"视觉解剖让web设计变骨干","tag":"设计","img":"images/item.jpg","preface":"一段音乐的背后隐藏着节奏，一幅画作之下潜伏着一个构图，这些节奏、构图都无声隐于幕后。不要让你的设计看上去软塌塌的无骨感，重要的是摸清它的骨骼。前言行家自有解剖眼光看出...","link":"article/fe/article_01.html","date":"2016.9.23"},
+    {"title":"视觉解剖让web设计变骨干","tag":"设计","img":"images/Design.jpg","preface":"一段音乐的背后隐藏着节奏，一幅画作之下潜伏着一个构图，这些节奏、构图都无声隐于幕后。不要让你的设计看上去软塌塌的无骨感，重要的是摸清它的骨骼。前言行家自有解剖眼光看出...","link":"article/fe/article_01.html","date":"2016.9.23"},
     {"title":"优秀程序员的十个习惯","tag":"其他","img":"images/procedure.jpg","preface":"如果你要成为一个优秀的程序员，你还可以需要有几件事你需要注意，如果你能让下 面十个条目成为你的习惯，那么你才能真正算得上是优秀程序员。","link":"article/fe/article_02.html","date":"2016.9.27"},
     {"title":"前端开发规范","tag":"前端开发","img":"images/h5c3.jpg","preface":"为提高团队协作效率, 便于后台人员添加功能及前端后期优化维护, 输出高质量的文档, 特制订此文档。","link":"article/fe/article_04.html","date":"2016.9.27"},
     {"title":"DOM常用方法总结","tag":"JS","img":"images/js.jpg","preface":"DOM常用方法总结。","link":"article/fe/article_05.html","date":"2016.9.27"}
