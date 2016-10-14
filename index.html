@@ -187,28 +187,6 @@
         </tbody>
     </table>
 </div>
-<!--  模版  -->
-<script id="container-item" type="text/template">
-    {@each data as it}
-    <li class="container-left-item clearfix fadeIn animated">
-        <div class="item-title">
-            <a class="label label-important" href=${it.link}>${it.tag}<i class="label-arrow"></i></a>
-            <h2><a target="_blank" href=${it.link} title=${it.title}>${it.title}</a>
-            </h2>
-        </div>
-        <div class="focus">
-            <a target="_blank" href=${it.link}>
-                <img class="thumb scale" src=${it.img} alt=${it.title}>
-            </a>
-        </div>
-        <span class="note">${it.preface}</span>
-               <div class="auth">
-            <span>发布日期：${it.date}</span>
-            <a href=${it.link} target="_blank">阅读全文</a>
-        </div>
-    </li>
-    {@/each}
-</script>
 <script>
     window.onload = function () {
         ajaxLoad("json/project.json");    //调用ajax
