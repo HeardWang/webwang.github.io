@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>制作一个拼图游戏-WebWang</title>
+    <meta name="keywords" content="WebWang,web前端网,HTML,javascript,jquery,前端,前端框架,UI设计,W3CSchool,前端工具箱,前端开发,用户体验,交互设计,jquery教程,javascript教程,html5教程,css3教程,web前端开发,网站模板,免费素材,AngularJS">
+    <meta name="description" content="WebWang-前端网，Web前端开发综合性网站，为广大WEB开发者提供HTML5/CSS3、Javascript/jQuery相关的技术文章，分享最前沿的Web开发技术，资源和素材，文章注重实用性和技巧性，是面向web开发人员和设计师的学习优质交流平台， 并为工程师及企业提供优质的前端资源和服务。  ">
+    <link href="../../back/images/ico.ico" rel="shortcut icon"/>
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type=text/javascript src="../../js/jquery-1.7.1.min.js"></script>
+    <script src="../../js/juicer-min.js"></script>
+    <script src="../../js/common.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCoreDefault.css"/>
+    <script type="text/javascript" src="../../js/shCore.js"></script>
+    <script type="text/javascript" src="../../js/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../js/SyntaxSetting.js"></script>
+    <script type="text/javascript" src="../js/move.js"></script>
+    <script type="text/javascript" src="../js/tuozhuai.js"></script>
+    <style>
+        /*  高度均为376px */
+        #ul1{width:600px;position:relative;margin:10px auto;clear: both;height: 600px;}
+        #ul1 li{width:200px;height:200px;float:left;margin:0px;-moz-border-radius:25px;border-radius:25px;padding: 0;}
+        #ul1 li:hover{border-color:#9a9fa4; box-shadow:0 0 6px 0 rgba(0, 0, 0, 0.85);}
+        #ul1 .active{border:1px dashed red;}
+        #ul1 li img{-moz-border-radius:15px;border-radius:15px;}
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="inner clearfix">
+        <div class="h-logo"><a href="../../index.html" title="WebWang">WebWang</a></div>
+        <div class="h-account"><img src="../../back/images/tx.jpg" alt="id"/> Hi，Welcome！<a href="../../back/center.html">进入后院</a></div>
+        <ul class="h-nav">
+            <li><a href="../../index.html">首页</a></li>
+            <li><a href="../../resource.html" class="active">前端资源</a></li>
+            <li><a href="../../source.html">开源项目</a></li>
+            <li><a href="../../website.html">网址导航</a></li>
+            <li><a href="../../about.html">关于</a></li>
+        </ul>
+    </div>
+    <div class="banner-detail"></div>
+</div>
+
+<div class="clear"></div>
+<div class="gray-box">
+    <div class="inner">
+        <div class="w720 fl">
+            <dl class="main02 pt20">
+                <!--******************************************-->
+                <!--  文章主体  -->
+                <dt>制作一个拼图游戏
+                    <a href="javascript:;" class="btn btn-large like-btn"><i class="icon16 icon16-like"></i> 喜欢 (10)</a>
+                    <span class="info">发布者：heardwang&nbsp;&nbsp;&nbsp;发布时间：2016-10-14&nbsp;&nbsp;&nbsp;
+                        <span class="zz"></span></span></dt>
+                <dd>
+                    <div class="gallery-item">
+                        <div class="preface">制作一个拼图游戏</div>
+                        <h3>如下</h3>
+                        <ul id="ul1">
+                            <li data-name="1"><img src="../images/008/1.jpg" width="200" height="200" name="1"/></li>
+                            <li data-name="9"><img src="../images/008/9.jpg" width="200" height="200" name="9"/></li>
+                            <li data-name="3"><img src="../images/008/3.jpg" width="200" height="200" name="3"/></li>
+                            <li data-name="8"><img src="../images/008/8.jpg" width="200" height="200" name="8"/></li>
+                            <li data-name="4"><img src="../images/008/4.jpg" width="200" height="200" name="4"/></li>
+                            <li data-name="6"><img src="../images/008/6.jpg" width="200" height="200" name="6"/></li>
+                            <li data-name="2"><img src="../images/008/2.jpg" width="200" height="200" name="2"/></li>
+                            <li data-name="7"><img src="../images/008/7.jpg" width="200" height="200" name="7"/></li>
+                            <li data-name="5"><img src="../images/008/5.jpg" width="200" height="200" name="5"/></li>
+                        </ul>
+                        <a class="abtn" id="abtn">确定</a>
+                        <!--  内容区域  -->
+                        <div class="download"><a href="../demo/demo08.zip">下载源代码</a></div>
+                    </div>
+                </dd>
+                <!--******************************************-->
+                <!--  文章主体  -->
+            </dl>
+            <dl class="main03">
+                <dt><i class="icon24 icon24-comment"></i>请在此处发表您的宝贵意见</dt>
+                <dd>
+                    <!-- 多说评论框 start -->
+                    <div class="ds-thread" data-thread-key="resource_000" data-title="文章标题" data-url="https://heardwang.github.io/article/resource/000.html"></div>
+                    <!-- 多说评论框 end -->
+                    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+                    <script type="text/javascript">
+                        var duoshuoQuery = {short_name:"heardwang"};
+                        (function() {
+                            var ds = document.createElement('script');
+                            ds.type = 'text/javascript';ds.async = true;
+                            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                            ds.charset = 'UTF-8';
+                            (document.getElementsByTagName('head')[0]
+                            || document.getElementsByTagName('body')[0]).appendChild(ds);
+                        })();
+                    </script>
+                    <!-- 多说公共JS代码 end -->
+                </dd>
+            </dl>
+        </div>
+        <div class="w220 fr">
+            <dl class="main04 pt20">
+                <dt>最新文章</dt>
+                <dd class="clearfix">
+                    <ul class="widget-1column">
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="f-copyright"><p>分享与创新开发，版权所有，保留一切权利&nbsp;Copyright © 2016-2021 · All rights reserved.</p></div>
+</div>
+<a id="return_top" title="返回顶部"></a>
+<!--  推荐文章模版  -->
+<script id="content-item" type="text/template">
+    {@each data as it,index}
+    {@if index <=3}
+    <li>
+        <div class="item-cont">
+            <div class="i-photo"><a href='../../${it.link}'><img src='../../${it.img}' alt=""/></a></div>
+            <div class="i-text"><a class="like"><i class="icon16 icon16-interest"></i> 15</a><a href="../../${it.link}">${it.title}</a></div>
+        </div>
+    </li>
+    {@/if}
+    {@/each}
+</script>
+<script>
+    getAjax('content-item','widget-1column',"../../json/resource.json");
+    $(function () {
+        var oLis = $("#ul1 li");
+        $("#abtn").click(function () {
+            var a = $("#ul1 li[data-name=1]").css("top") == "0px" && $("#ul1 li[data-name=1]").css("left") == "0px";
+            var b = $("#ul1 li[data-name=2]").css("top") == "0px" && $("#ul1 li[data-name=2]").css("left") == "200px";
+            var c = $("#ul1 li[data-name=3]").css("top") == "0px" && $("#ul1 li[data-name=3]").css("left") == "400px";
+            var d = $("#ul1 li[data-name=4]").css("top") == "200px" && $("#ul1 li[data-name=4]").css("left") == "0px";
+            var e = $("#ul1 li[data-name=5]").css("top") == "200px" && $("#ul1 li[data-name=5]").css("left") == "200px";
+            var f = $("#ul1 li[data-name=6]").css("top") == "200px" && $("#ul1 li[data-name=6]").css("left") == "400px";
+            var g = $("#ul1 li[data-name=7]").css("top") == "400px" && $("#ul1 li[data-name=7]").css("left") == "0px";
+            var h = $("#ul1 li[data-name=8]").css("top") == "400px" && $("#ul1 li[data-name=8]").css("left") == "200px";
+            var i = $("#ul1 li[data-name=9]").css("top") == "400px" && $("#ul1 li[data-name=9]").css("left") == "400px";
+            if(a && b && c && d && e && f && g && h && h && i){
+                console.log("right");
+                alert("恭喜，正确！");
+            }else{
+                console.log("wrong");
+                alert("错误，try again！");
+            }
+
+        });
+    });
+</script>
+</body>
+</html>
