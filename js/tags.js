@@ -57,7 +57,7 @@ function ajaxLoad(url) {
     $.ajax({
         url: url,
         dataType: "text",
-        type: "post",
+        type: "get",
         success: function (data) {
             CallBack(data,cpage);
 
