@@ -589,6 +589,8 @@ table{border:0}
 	.page-mini .list a, .page-mini .list span{width: 20px;height: 25px;line-height: 25px;font-size: 12px;}
 	.comment-item .i-btn input{width: 80px;}
 	.auth{display: none;}
+        .night_btn{position: static;}
+	.like-btn{position: static;}
 }
 @media screen and (max-width:320px){
 	.banner-template img{width: 800px;height: auto;}
