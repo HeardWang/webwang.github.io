@@ -16,7 +16,8 @@
     <script src="js/common.js"></script>
     <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
     <script src="js/index.js"></script>
-        <script src="js/ajaxLoad.js"></script>
+    <script src="js/ajaxLoad.js"></script>
+    <script src="js/require.js"></script>
     <script>
         $(function () {
 /*            setInterval(function () {
@@ -187,6 +188,7 @@
         </tbody>
     </table>
 </div>
+    <div id="particle"></div>
 <script>
     window.onload = function () {
         ajaxLoad("json/project.json");    //调用ajax
@@ -194,7 +196,11 @@
     function goto(target) {
         cpage = target;        //把页面计数定位到第几页
         ajaxLoad("json/project.json");
-    }
+    };
+    require(['js/particleground.all'], function( pjs ){
+        var demo = new pjs.particle( '#particle' );
+
+    });
 </script>
     <script src="js/calendar.js"></script>
 </body>
