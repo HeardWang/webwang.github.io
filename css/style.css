@@ -521,6 +521,7 @@ table{border:0}
 	.container-left{width: 100%;}
 	.inner {width: 100%;}
 	#particle{display: none;}
+	.calendar{display: none;}
     /*
 	html{overflow-x: hidden;width: 100%;}
     */
