@@ -590,7 +590,7 @@ table{border:0}
 	.comment-item .i-btn input{width: 80px;}
 	.auth{display: none;}
         .night_btn{position: static;}
-	.like-btn{position: static;}
+	dt .like-btn{position: static;}
 }
 @media screen and (max-width:320px){
 	.banner-template img{width: 800px;height: auto;}
