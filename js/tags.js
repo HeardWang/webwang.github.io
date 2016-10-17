@@ -44,7 +44,25 @@ var queryUrl = myURL.query.slice(5);
  myURL.port;     // = '8080'
  myURL.protocol; // = 'http'*/
 console.log(queryUrl);
-
+switch (queryUrl){
+    case "JS":
+        document.title = "Javascript-WebWang";
+        break;
+    case "CSS":
+        document.title = "CSS-WebWang";
+        break;
+    case "FE":
+        document.title = "前端开发-WebWang";
+        break;
+    case "other":
+        document.title = "其他-WebWang";
+        break;
+    case "design":
+        document.title = "设计-WebWang";
+        break;
+    default:
+        document.title = "标签云-WebWang";
+}
 
 var totalpage, pagesize, cpage, count, curcount, out;
 //初始化
