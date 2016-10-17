@@ -520,6 +520,7 @@ table{border:0}
 	.container-right{display: none;}
 	.container-left{width: 100%;}
 	.inner {width: 100%;}
+	#particle{display: none;}
     /*
 	html{overflow-x: hidden;width: 100%;}
     */
